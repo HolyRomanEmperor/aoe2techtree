@@ -512,12 +512,10 @@ function getDefaultTree() {
 	archerylane.rows.bronze_1.push(unit(CHARIOT_ARCHER));
 	archerylane.rows.bronze_1.push(unit(IMPROVED_BOWMAN));
 	archerylane.rows.bronze_2.push(unit(COMPOSITE_BOWMAN));
-	archerylane.rows.iron_1.push(unit(ELEPHANT_ARCHER));
+    archerylane.rows.iron_1.push(unit(HORSE_ARCHER));
+    archerylane.rows.iron_2.push(unit(HEAVY_HORSE_ARCHER));
+    archerylane.rows.iron_2.push(unit(ELEPHANT_ARCHER));
 	tree.lanes.push(archerylane);
-	let horsearcherlane = new Lane();
-	horsearcherlane.rows.iron_1.push(unit(HORSE_ARCHER));
-	horsearcherlane.rows.iron_2.push(unit(HEAVY_HORSE_ARCHER));
-	tree.lanes.push(horsearcherlane);
 
 
 	let siegeworkshoplane = new Lane();
@@ -530,11 +528,9 @@ function getDefaultTree() {
     tree.lanes.push(siegeworkshoplane);
 
 
-	let scoutlane = new Lane();
-	scoutlane.rows.tool_2.push(unit(SCOUT));
-	tree.lanes.push(scoutlane);
 	let stablelane = new Lane();
 	stablelane.rows.tool_1.push(building(STABLE));
+    stablelane.rows.tool_2.push(unit(SCOUT));
 	stablelane.rows.bronze_1.push(unit(CHARIOT));
 	stablelane.rows.bronze_1.push(unit(CAVALRY));
 	stablelane.rows.bronze_1.push(unit(CAMEL_RIDER));
@@ -734,7 +730,7 @@ function getConnections() {
 		[b(ARCHERY_RANGE), u(IMPROVED_BOWMAN)],
 		[u(IMPROVED_BOWMAN), u(COMPOSITE_BOWMAN)],
 //		[b(ARCHERY_RANGE), u(ELEPHANT_ARCHER)],
-		[b(ARCHERY_RANGE), u(HORSE_ARCHER)],
+//		[b(ARCHERY_RANGE), u(HORSE_ARCHER)],
 		[u(HORSE_ARCHER), u(HEAVY_HORSE_ARCHER)],
 		[b(SIEGE_WORKSHOP), u(STONE_THROWER)],
 		[u(STONE_THROWER), u(CATAPULT)],
@@ -752,7 +748,7 @@ function getConnections() {
 		[u(LONG_SWORDSMAN), u(LEGIONARY)],
 		[b(STABLE), b(ACADEMY)],
 		[b(STABLE), u(SCOUT)],
-		[b(STABLE), u(CHARIOT)],
+//		[b(STABLE), u(CHARIOT)],
 		[u(CHARIOT), u(SCYTHE_CHARIOT)],
 		[b(STABLE), u(CAVALRY)],
 		[u(CAVALRY), u(HEAVY_CAVALRY)],
