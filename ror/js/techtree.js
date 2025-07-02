@@ -662,9 +662,10 @@ function getDefaultTree() {
 	tree.lanes.push(templelane);
 
 
-    let wonderlane = new Lane();
-    wonderlane.rows.iron_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
+    let miscbuildinglane = new Lane();
+    miscbuildinglane.rows.stone_1.push(building(HOUSE));
+    miscbuildinglane.rows.iron_1.push(building(WONDER));
+    tree.lanes.push(miscbuildinglane);
 
 
     let towncenterlane = new Lane();
@@ -675,11 +676,6 @@ function getDefaultTree() {
     towncenterlane.rows.tool_1.push(tech(BRONZE_AGE));
     towncenterlane.rows.bronze_1.push(tech(IRON_AGE));
     tree.lanes.push(towncenterlane);
-
-
-    let houselane = new Lane();
-    houselane.rows.stone_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
 
 
 	let fishinglane = new Lane();
