@@ -23316,9 +23316,11 @@
         }
       ],
       "unique": {
-        "castleAgeUniqueTech": 833,
+        "castleAgeUniqueTech1": 833,
+        "castleAgeUniqueTech2": 922,
         "castleAgeUniqueUnit": 1759,
-        "imperialAgeUniqueTech": 834,
+        "imperialAgeUniqueTech1": 834,
+        "imperialAgeUniqueTech2": 921,
         "imperialAgeUniqueUnit": 1761
       },
       "units": [
@@ -23855,9 +23857,11 @@
         }
       ],
       "unique": {
-        "castleAgeUniqueTech": 833,
+        "castleAgeUniqueTech1": 833,
+        "castleAgeUniqueTech2": 922,
         "castleAgeUniqueUnit": 1759,
-        "imperialAgeUniqueTech": 834,
+        "imperialAgeUniqueTech1": 834,
+        "imperialAgeUniqueTech2": 921,
         "imperialAgeUniqueUnit": 1761
       },
       "units": [
@@ -24394,9 +24398,11 @@
         }
       ],
       "unique": {
-        "castleAgeUniqueTech": 833,
+        "castleAgeUniqueTech1": 833,
+        "castleAgeUniqueTech2": 922,
         "castleAgeUniqueUnit": 1759,
-        "imperialAgeUniqueTech": 834,
+        "imperialAgeUniqueTech1": 834,
+        "imperialAgeUniqueTech2": 921,
         "imperialAgeUniqueUnit": 1761
       },
       "units": [

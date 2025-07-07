@@ -72,8 +72,10 @@ const animation_duration = 50;
 
 const UNIQUE_UNIT = 'UNIQUE UNIT';
 const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
-const UNIQUE_TECH_1 = 'UNIQUE TECH 1';
-const UNIQUE_TECH_2 = 'UNIQUE TECH 2';
+const UNIQUE_TECH_CASTLE_1 = 'UNIQUE TECH CASTLE 1';
+const UNIQUE_TECH_CASTLE_2 = 'UNIQUE TECH CASTLE 2';
+const UNIQUE_TECH_IMPERIAL_1 = 'UNIQUE TECH IMPERIAL 1';
+const UNIQUE_TECH_IMPERIAL_2 = 'UNIQUE TECH IMPERIAL 2';
 const MONK_SUFFIX_GENERIC = '_33';
 
 const BARRACKS = 12;
@@ -426,7 +428,6 @@ function enable(buildings, units, techs) {
         SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of units) {
-        console.log(item);
         SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
         SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
@@ -439,11 +440,13 @@ function enable(buildings, units, techs) {
 function applySelectedCiv(selectedCiv) {
     enable(selectedCiv.buildings,
         [...selectedCiv.units, {id:UNIQUE_UNIT, age: 3}, {id: ELITE_UNIQUE_UNIT, age: 4}],
-        [...selectedCiv.techs, {id: UNIQUE_TECH_1, age: 3}, {id: UNIQUE_TECH_2, age: 4}]);
+        [...selectedCiv.techs, {id: UNIQUE_TECH_CASTLE_1, age: 3}, {id: UNIQUE_TECH_CASTLE_2, age: 3}, {id: UNIQUE_TECH_IMPERIAL_1, age: 4}, {id: UNIQUE_TECH_IMPERIAL_2, age: 4}]);
     unique([selectedCiv.unique.castleAgeUniqueUnit,
         selectedCiv.unique.imperialAgeUniqueUnit,
-        selectedCiv.unique.castleAgeUniqueTech,
-        selectedCiv.unique.imperialAgeUniqueTech], selectedCiv.monkSuffix);
+        selectedCiv.unique.castleAgeUniqueTech1,
+        selectedCiv.unique.castleAgeUniqueTech2,
+        selectedCiv.unique.imperialAgeUniqueTech1,
+        selectedCiv.unique.imperialAgeUniqueTech2], selectedCiv.monkSuffix);
 }
 
 function formatName(originalname) {
@@ -486,10 +489,14 @@ function unique(ids, monk_suffix) {
     SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
     SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
     SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
     SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
     SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
     SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
@@ -701,14 +708,16 @@ function getDefaultTree() {
     let castlelane = new Lane();
     castlelane.rows.castle_1.push(building(FORT));
     castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, UNIQUE_UNIT, UNIQUE_UNIT));
-    castlelane.rows.castle_2.push(tech(UNIQUE_TECH_1));
+    castlelane.rows.castle_2.push(tech(UNIQUE_TECH_CASTLE_1));
+    castlelane.rows.castle_2.push(tech(UNIQUE_TECH_CASTLE_2));
     castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
-    castlelane.rows.imperial_1.push(unit(TREBUCHET));
-    castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
-    castlelane.rows.imperial_1.push(tech(HOARDINGS));
-    castlelane.rows.imperial_1.push(tech(SAPPERS));
-    castlelane.rows.imperial_1.push(tech(CONSCRIPTION));
+    castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_IMPERIAL_1));
+    castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_IMPERIAL_2));
     castlelane.rows.imperial_1.push(tech(SPIES_TREASON));
+    castlelane.rows.imperial_2.push(unit(TREBUCHET));
+    castlelane.rows.imperial_2.push(tech(HOARDINGS));
+    castlelane.rows.imperial_2.push(tech(SAPPERS));
+    castlelane.rows.imperial_2.push(tech(CONSCRIPTION));
     tree.lanes.push(castlelane);
 
 
@@ -872,11 +881,8 @@ function getConnections() {
         [t(DEVOTION), t(FAITH)],
         [b(FORT), u(UNIQUE_UNIT)],
         [u(UNIQUE_UNIT), u(ELITE_UNIQUE_UNIT)],
-        [b(FORT), t(UNIQUE_TECH_1)],
-        [b(FORT), t(UNIQUE_TECH_2)],
-        [b(FORT), t(HOARDINGS)],
-        [b(FORT), t(SAPPERS)],
-        [b(FORT), t(CONSCRIPTION)],
+        [b(FORT), t(UNIQUE_TECH_CASTLE_1)],
+        [b(FORT), t(UNIQUE_TECH_CASTLE_2)],
         [b(FORT), t(SPIES_TREASON)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],

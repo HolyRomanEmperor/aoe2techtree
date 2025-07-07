@@ -627,6 +627,8 @@ function styleXRefBadges(name, id, type) {
             } else if (type === 'TECHNOLOGY') {
                 if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
                     found = true;
+                } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.castleAgeUniqueTech2}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech2}` === id) {
+                    found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
                     found = true;
                 }
