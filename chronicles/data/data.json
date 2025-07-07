@@ -4098,18 +4098,6 @@
         "LanguageNameId": 7450,
         "Repeatable": false,
         "ResearchTime": 25,
-        "internal_name": "Gambesons"
-      },
-      "876": {
-        "Cost": {
-          "Food": 100,
-          "Gold": 100
-        },
-        "ID": 876,
-        "LanguageHelpId": 28450,
-        "LanguageNameId": 7450,
-        "Repeatable": false,
-        "ResearchTime": 25,
         "internal_name": "Battle Drills"
       },
       "883": {
@@ -23323,12 +23311,8 @@
           "id": 608
         },
         {
-          "age": 3,
-          "id": 875
-        },
-        {
           "age": 4,
-          "id": 876
+          "id": 875
         }
       ],
       "unique": {
@@ -23866,12 +23850,8 @@
           "id": 608
         },
         {
-          "age": 3,
-          "id": 875
-        },
-        {
           "age": 4,
-          "id": 876
+          "id": 875
         }
       ],
       "unique": {
@@ -24409,12 +24389,8 @@
           "id": 608
         },
         {
-          "age": 3,
-          "id": 875
-        },
-        {
           "age": 4,
-          "id": 876
+          "id": 875
         }
       ],
       "unique": {

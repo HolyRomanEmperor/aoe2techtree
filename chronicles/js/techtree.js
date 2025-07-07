@@ -234,7 +234,6 @@ const HERBAL_MEDICINE = 441;
 const ARSON = 602;
 const ARROWSLITS = 608;
 const GAMBESONS = 875;
-const BATTLE_DRILLS = 876;
 
 const BUILDING_INDEX = [
     ARCHERY_RANGE,
@@ -575,16 +574,15 @@ function getDefaultTree() {
     barrackslane.rows.dark_1.push(building(BARRACKS));
     barrackslane.rows.dark_2.push(unit(MILITIA));
     barrackslane.rows.feudal_1.push(unit(MAN_AT_ARMS));
-    barrackslane.rows.feudal_1.push(tech(ARSON));
     barrackslane.rows.feudal_1.push(unit(SPEARMAN));
+    barrackslane.rows.feudal_1.push(tech(ARSON));
     barrackslane.rows.castle_1.push(unit(LONG_SWORDSMAN));
-    barrackslane.rows.castle_1.push(tech(GAMBESONS));
     barrackslane.rows.castle_1.push(unit(PIKEMAN));
-    barrackslane.rows.castle_1.push(unit(HOPLITE));
     barrackslane.rows.castle_1.push(tech(SQUIRES));
+    barrackslane.rows.castle_1.push(unit(HOPLITE));
     barrackslane.rows.imperial_1.push(unit(LEGIONARY));
-    barrackslane.rows.imperial_1.push(tech(BATTLE_DRILLS));
     barrackslane.rows.imperial_1.push(unit(HALBERDIER));
+    barrackslane.rows.imperial_1.push(tech(GAMBESONS));
     barrackslane.rows.imperial_1.push(unit(ELITE_HOPLITE));
     tree.lanes.push(barrackslane);
 
@@ -717,8 +715,8 @@ function getDefaultTree() {
     let monasterylane = new Lane();
     monasterylane.rows.castle_1.push(building(MONASTERY));
     monasterylane.rows.castle_2.push(unit(MONK));
-    monasterylane.rows.castle_2.push(tech(DEVOTION));
     monasterylane.rows.castle_2.push(tech(REDEMPTION));
+    monasterylane.rows.castle_2.push(tech(DEVOTION));
     monasterylane.rows.castle_2.push(tech(ATONEMENT));
     monasterylane.rows.castle_2.push(tech(HERBAL_MEDICINE));
     monasterylane.rows.castle_2.push(tech(HERESY));
@@ -835,7 +833,6 @@ function getConnections() {
         [u(PIKEMAN), u(HALBERDIER)],
         [b(BARRACKS), u(HOPLITE)],
         [u(HOPLITE), u(ELITE_HOPLITE)],
-        [b(BARRACKS), t(SQUIRES)],
         [b(BARRACKS), t(ARSON)],
         [b(STABLE), u(SCOUT_CAVALRY)],
         [u(SCOUT_CAVALRY), u(LIGHT_CAVALRY)],
