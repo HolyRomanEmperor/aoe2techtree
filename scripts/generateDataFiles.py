@@ -35,6 +35,13 @@ ROR_AGE_NAMES = {
     "Iron Age": "4204"
 }
 
+CHRONICLES_AGE_NAMES = {
+   "Archaic Age": "4201",
+   "Civic Age": "4202",
+   "Classical Age": "4203",
+   "Imperial Age": "4204"
+}
+
 CIV_NAMES = {
     "Britons": "10271",
     "Franks": "10272",
@@ -108,6 +115,12 @@ ROR_CIV_NAMES = {
     "Lac Viet": "310287",
 }
 
+CHRONICLES_CIV_NAMES = {
+    "ACHAEMENIDS",
+    "ATHENIANS",
+    "SPARTANS"
+}
+
 CIV_HELPTEXTS = {
     "Britons": "120150",
     "Franks": "120151",
@@ -179,6 +192,12 @@ ROR_CIV_HELPTEXTS = {
     "Palmyrans": "120164",
     "Macedonians": "120165",
     "Lac Viet": "120166",
+}
+
+CHRONICLES_CIV_HELPTEXTS = {
+    "ACHAEMENIDS",
+    "ATHENIANS",
+    "SPARTANS"
 }
 
 ROR_BUILDING_STYLES = {
@@ -336,6 +355,48 @@ def ror_gather_language_data(programdir, data, language):
     return key_value_filtered
 
 
+def chronicles_gather_language_data(programdir, data, language):
+    key_value = {1: ''}
+    # some strings are shared with the base game; read these in first
+    key_value_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
+    with key_value_strings_file_en.open(encoding='utf-8') as f:
+        for line in f:
+            parse_line(key_value, line)
+    # override strings with everything specific to AoE1 / Return of Rome
+    key_value_pompeii_strings_file_en = programdir / 'modes' / 'Pompeii' / 'resources' / language / 'strings' / 'key-value' / 'key-value-pompeii-strings-utf8.txt'
+    with key_value_pompeii_strings_file_en.open(encoding='utf-8') as f:
+        for line in f:
+            parse_line(key_value, line)
+
+    key_value[5121] = key_value[305131]  # Villager
+    key_value[26121] = key_value[326131]
+
+    key_value[305471] = key_value[305470]  # Trade Cart
+    key_value[326471] = key_value[326470]
+
+    key_value_filtered = {}
+    for datatype in ("buildings", "units", "techs"):
+        for item_id in data[datatype]:
+            name_id = data[datatype][item_id]['LanguageNameId']
+            help_id = data[datatype][item_id]['LanguageHelpId']
+            key_value_filtered[name_id] = key_value[name_id]
+            key_value_filtered[help_id] = key_value[help_id]
+
+    for name in CHRONICLES_CIV_HELPTEXTS:
+        key = int(CHRONICLES_CIV_HELPTEXTS[name])
+        key_value_filtered[key] = key_value[key]
+    for name in CHRONICLES_CIV_NAMES:
+        key = int(CHRONICLES_CIV_NAMES[name])
+        key_value_filtered[key] = key_value[key]
+    for name in CHRONICLES_AGE_NAMES:
+        key = int(CHRONICLES_AGE_NAMES[name])
+        key_value_filtered[key] = key_value[key]
+    for name in TECH_TREE_STRINGS:
+        key = int(TECH_TREE_STRINGS[name])
+        key_value_filtered[key] = key_value[key]
+    return key_value_filtered
+
+
 def parse_line(key_value, line):
     items = line.split(" ")
     if items[0].isnumeric():
@@ -397,6 +458,37 @@ def gather_data(content, civs, unit_upgrades, node_types):
 
 def ror_gather_data(content, civs, unit_upgrades):
     ages = list(ROR_AGE_NAMES.keys())[1:]
+    building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
+    unit_ids = {u['id'] for c in civs.values() for u in c['units']}
+    tech_ids = set.union(
+        {t['id'] for c in civs.values() for t in c['techs']},
+        {t for t, tech in enumerate(content['Techs']) if tech['Name'] in ages},
+        {t for t, tech in enumerate(content['Techs']) if 'Wall' in tech['Name']},
+        {t for t, tech in enumerate(content['Techs']) if 'Tower' in tech['Name']},
+    )
+    gaia = content["Civs"][0]
+    graphics = content["Graphics"]
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
+    for unit in gaia["Units"]:
+        if unit["ID"] in building_ids:
+            add_building(unit["ID"], unit, data)
+        if unit["ID"] in unit_ids:
+            add_unit(unit["ID"], unit, graphics, data)
+    tech_id = 0
+    for tech in content["Techs"]:
+        if tech_id in tech_ids:
+            add_tech(tech_id, tech, data)
+        tech_id += 1
+
+    for unit_id, upgrade_id in unit_upgrades.items():
+        tech = content["Techs"][upgrade_id]
+        add_unit_upgrade(unit_id, upgrade_id, tech, data)
+
+    return data
+
+
+def chronicles_gather_data(content, civs, unit_upgrades, node_types):
+    ages = list(CHRONICLES_AGE_NAMES.keys())[1:]
     building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
     unit_ids = {u['id'] for c in civs.values() for u in c['units']}
     tech_ids = set.union(
@@ -585,7 +677,7 @@ def gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in ('ACHAEMENIDS','ATHENIANS','SPARTANS'):
+        if civ['civ_id'] in CHRONICLES_CIV_NAMES:
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
@@ -751,6 +843,57 @@ def ror_write_language_files(args, data, outputdir):
             json.dump(key_value_filtered, f, indent=4, sort_keys=True, ensure_ascii=False)
 
 
+def chronicles_gather_civs(techtrees):
+    unit_excludelist = (
+    )
+    civs = {}
+    unit_upgrades = {}
+    node_types = {'buildings': {}, 'units':{}}
+    for civ in techtrees['civs']:
+        if civ['civ_id'] not in CHRONICLES_CIV_NAMES:
+            continue
+        current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
+        for building in civ['civ_techs_buildings']:
+            node_types['buildings'][building['Node ID']] = building['Node Type']
+            if building['Node Status'] != 'NotAvailable':
+                current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
+        for unit in civ['civ_techs_units']:
+            if unit['Name'] == 'Monk':
+                current_civ['monkSuffix'] = f"_{unit['Picture Index']}"
+            if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
+                node_types['units'][unit['Node ID']] = unit['Node Type']
+                if is_castle_age_unique_unit(unit):
+                    current_civ['unique']['castleAgeUniqueUnit'] = unit['Node ID']
+                elif is_imperial_age_unique_unit(unit):
+                    current_civ['unique']['imperialAgeUniqueUnit'] = unit['Node ID']
+                elif unit['Node ID'] not in unit_excludelist:
+                    current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
+                if unit['Trigger Tech ID'] > -1:
+                    unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
+            if unit['Node Type'] in ('BuildingNonTech', 'UniqueBuilding'):
+                node_types['buildings'][unit['Node ID']] = unit['Node Type']
+                current_civ['buildings'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
+
+
+        for tech in civ['civ_techs_units']:
+            if tech['Node Type'] == 'Research' and tech['Node Status'] != 'NotAvailable':
+                if is_castle_age_unique_tech(tech):
+                    current_civ['unique']['castleAgeUniqueTech'] = tech['Node ID']
+                elif is_imperial_age_unique_tech(tech):
+                    current_civ['unique']['imperialAgeUniqueTech'] = tech['Node ID']
+                else:
+                    current_civ['techs'].append({'id': tech['Node ID'], 'age': tech['Age ID']})
+
+        current_civ['buildings'] = sorted(current_civ['buildings'], key=lambda x: x['id'])
+        current_civ['units'] = sorted(current_civ['units'], key=lambda x: x['id'])
+        current_civ['techs'] = sorted(current_civ['techs'], key=lambda x: x['id'])
+
+        civname = civ['civ_id'].capitalize()
+        civs[civname] = current_civ
+
+    return civs, unit_upgrades, node_types
+
+
 def process_ror(args, outputdir):
     techtreesfile = Path(args.programdir) / 'modes' / 'Pompeii' / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
     ttfcontent = techtreesfile.read_text()
@@ -779,10 +922,25 @@ def process_aoe2(args, outputdir):
     write_language_files(args, data, outputdir)
 
 
+def process_chronicles(args, outputdir):
+    techtreesfile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'civTechTrees.json'
+    ttfcontent = techtreesfile.read_text()
+    ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
+    techtrees = json.loads(ttfcontent)
+    civs, unit_upgrades, node_types = chronicles_gather_civs(techtrees)
+    datafile = Path(args.chroniclesdatafile)
+    content = json.loads(datafile.read_text())
+    data = chronicles_gather_data(content, civs, unit_upgrades, node_types)
+    chronicles_update_civ_techs(civs, data)
+    chronicles_write_datafile(data, civs, outputdir)
+    chronicles_write_language_files(args, data, outputdir)
+
+
 def main():
     parser = argparse.ArgumentParser(description='Generate data files for aoe2techtree')
     parser.add_argument('datafile', help='A full.json file generated by aoe2dat')
     parser.add_argument('rordatafile', help='A full.json file generated by aoe2dat, for the RoR dataset')
+    parser.add_argument('chroniclesdatafile', help='A full.json file generated by aoe2dat, for the Chronicles dataset')
     parser.add_argument('programdir', help='The main folder of an aoe2de installation, usually '
                                            'C:/Program Files (x86)/Steam/steamapps/common/AoE2DE/')
 
@@ -793,6 +951,9 @@ def main():
 
     outputdir = Path(__file__).parent / '..' / 'ror' / 'data'
     process_ror(args, outputdir)
+
+    outputdir = Path(__file__).parent / '..' / 'chronicles' / 'data'
+    process_chronicles(args, outputdir)
 
 
 
