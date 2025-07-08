@@ -3,7 +3,6 @@
 import argparse
 import json
 import re
-import sys
 from pathlib import Path
 
 TECH_TREE_STRINGS = {
@@ -120,6 +119,8 @@ CHRONICLES_CIV_NAMES = {
     "Athenians": "10317",
     "Spartans": "10318"
 }
+
+UPPER_CASE_CHRONICLES_CIV_NAMES = {key.upper() for key in CHRONICLES_CIV_NAMES}
 
 CIV_HELPTEXTS = {
     "Britons": "120150",
@@ -368,32 +369,44 @@ def chronicles_gather_language_data(programdir, data, language):
         for line in f:
             parse_line(key_value, line)
 
-    key_value[5121] = key_value[305131]  # Villager
-    key_value[26121] = key_value[326131]
-
-    key_value[305471] = key_value[305470]  # Trade Cart
-    key_value[326471] = key_value[326470]
-
     key_value_filtered = {}
     for datatype in ("buildings", "units", "techs"):
-        for item_id in data[datatype]:
-            name_id = data[datatype][item_id]['LanguageNameId']
-            help_id = data[datatype][item_id]['LanguageHelpId']
-            key_value_filtered[name_id] = key_value[name_id]
-            key_value_filtered[help_id] = key_value[help_id]
+        for item_id in data.get(datatype, {}):
+            try:
+                name_id = data[datatype][item_id]['LanguageNameId']
+                help_id = data[datatype][item_id]['LanguageHelpId']
+                key_value_filtered[name_id] = key_value[name_id]
+                key_value_filtered[help_id] = key_value[help_id]
+            except Exception as e:
+                print(f"Error processing {datatype} item {item_id}: {e}")
 
     for name in CHRONICLES_CIV_HELPTEXTS:
-        key = int(CHRONICLES_CIV_HELPTEXTS[name])
-        key_value_filtered[key] = key_value[key]
+        try:
+            key = int(CHRONICLES_CIV_HELPTEXTS[name])
+            key_value_filtered[key] = key_value[key]
+        except Exception as e:
+            print(f"Error processing CHRONICLES_CIV_HELPTEXTS entry {name}: {e}")
+
     for name in CHRONICLES_CIV_NAMES:
-        key = int(CHRONICLES_CIV_NAMES[name])
-        key_value_filtered[key] = key_value[key]
+        try:
+            key = int(CHRONICLES_CIV_NAMES[name])
+            key_value_filtered[key] = key_value[key]
+        except Exception as e:
+            print(f"Error processing CHRONICLES_CIV_NAMES entry {name}: {e}")
+
     for name in CHRONICLES_AGE_NAMES:
-        key = int(CHRONICLES_AGE_NAMES[name])
-        key_value_filtered[key] = key_value[key]
+        try:
+            key = int(CHRONICLES_AGE_NAMES[name])
+            key_value_filtered[key] = key_value[key]
+        except Exception as e:
+            print(f"Error processing CHRONICLES_AGE_NAMES entry {name}: {e}")
+
     for name in TECH_TREE_STRINGS:
-        key = int(TECH_TREE_STRINGS[name])
-        key_value_filtered[key] = key_value[key]
+        try:
+            key = int(TECH_TREE_STRINGS[name])
+            key_value_filtered[key] = key_value[key]
+        except Exception as e:
+            print(f"Error processing TECH_TREE_STRINGS entry {name}: {e}")
     return key_value_filtered
 
 
@@ -628,6 +641,57 @@ def is_imperial_age_unique_unit(unit):
     return True
 
 
+# The following four functions are for Chronicles unique technologies
+
+def is_castle_age_unique_tech_1(tech):
+    if tech['Node Type'] != 'Research':
+        return False
+    if tech['Building ID'] != 82:
+        return False
+    if tech['Age ID'] != 3:
+        return False
+    if tech['Link Node Type'] != 'BuildingTech':
+        return False
+    return tech['Picture Index'] == 164
+
+
+def is_castle_age_unique_tech_2(tech):
+    if tech['Node Type'] != 'Research':
+        return False
+    if tech['Building ID'] != 82:
+        return False
+    if tech['Age ID'] != 3:
+        return False
+    if tech['Link Node Type'] != 'BuildingTech':
+        return False
+    return tech['Picture Index'] == 165
+
+
+def is_imperial_age_unique_tech_1(tech):
+    if tech['Node Type'] != 'Research':
+        return False
+    if tech['Building ID'] != 82:
+        return False
+    if tech['Age ID'] != 4:
+        return False
+    if tech['Link Node Type'] != 'BuildingTech':
+        return False
+    return tech['Picture Index'] == 166
+
+
+def is_imperial_age_unique_tech_2(tech):
+    if tech['Node Type'] != 'Research':
+        return False
+    if tech['Building ID'] != 82:
+        return False
+    if tech['Age ID'] != 4:
+        return False
+    if tech['Link Node Type'] != 'BuildingTech':
+        return False
+    return tech['Picture Index'] == 167
+
+
+# The following two functions are for AoE2 unique technologies
 def is_castle_age_unique_tech(tech):
     if tech['Node Type'] != 'Research':
         return False
@@ -677,7 +741,7 @@ def gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in CHRONICLES_CIV_NAMES:
+        if civ['civ_id'] in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
@@ -850,7 +914,7 @@ def chronicles_gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] not in CHRONICLES_CIV_NAMES:
+        if civ['civ_id'] not in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
@@ -877,10 +941,14 @@ def chronicles_gather_civs(techtrees):
 
         for tech in civ['civ_techs_units']:
             if tech['Node Type'] == 'Research' and tech['Node Status'] != 'NotAvailable':
-                if is_castle_age_unique_tech(tech):
-                    current_civ['unique']['castleAgeUniqueTech'] = tech['Node ID']
-                elif is_imperial_age_unique_tech(tech):
-                    current_civ['unique']['imperialAgeUniqueTech'] = tech['Node ID']
+                if is_castle_age_unique_tech_1(tech):
+                    current_civ['unique']['castleAgeUniqueTech1'] = tech['Node ID']
+                elif is_castle_age_unique_tech_2(tech):
+                    current_civ['unique']['castleAgeUniqueTech2'] = tech['Node ID']
+                elif is_imperial_age_unique_tech_1(tech):
+                    current_civ['unique']['imperialAgeUniqueTech1'] = tech['Node ID']
+                elif is_imperial_age_unique_tech_2(tech):
+                    current_civ['unique']['imperialAgeUniqueTech2'] = tech['Node ID']
                 else:
                     current_civ['techs'].append({'id': tech['Node ID'], 'age': tech['Age ID']})
 
@@ -912,7 +980,7 @@ def chronicles_write_datafile(data, techtrees, outputdir):
 def chronicles_write_language_files(args, data, outputdir):
     programdir = Path(args.programdir)
     for language in LANGUAGES:
-        key_value_filtered = ror_gather_language_data(programdir, data, language)
+        key_value_filtered = chronicles_gather_language_data(programdir, data, language)
 
         languagedir = outputdir / 'locales' / language
         languagedir.mkdir(parents=True, exist_ok=True)
