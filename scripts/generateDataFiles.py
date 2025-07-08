@@ -512,7 +512,7 @@ def chronicles_gather_data(content, civs, unit_upgrades, node_types):
     )
     gaia = content["Civs"][0]
     graphics = content["Graphics"]
-    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
     for unit in gaia["Units"]:
         if unit["ID"] in building_ids:
             add_building(unit["ID"], unit, data)
