@@ -1,19 +1,19 @@
 {
   "age_names": {
-    "Classical Age": "4203",
-    "Archaic Age": "4201",
-    "Civic Age": "4202",
-    "Imperial Age": "4204"
+    "Archaic Age": "407084",
+    "Civic Age": "407085",
+    "Classical Age": "407086",
+    "Imperial Age": "407087"
   },
   "civ_helptexts": {
-    "Achaemenids": "120193",
-    "Athenians": "120164",
-    "Spartans": "120190"
+    "Achaemenids": "120195",
+    "Athenians": "120196",
+    "Spartans": "120197"
   },
   "civ_names": {
-    "Achaemenids": "10314",
-    "Athenians": "10285",
-    "Spartans": "10311"
+    "Achaemenids": "10316",
+    "Athenians": "10317",
+    "Spartans": "10318"
   },
   "data": {
     "buildings": {
@@ -22911,7 +22911,9 @@
     }
   },
   "tech_tree_strings": {
-    "Age of Empires II": "1001",
+    "Age of Empires II": "IDS_CIV_SELECTION_FILTER_AGE2DE",
+    "Return of Rome": "IDS_CIV_SELECTION_FILTER_POMPEII",
+    "Chronicles": "IDS_CIV_SELECTION_FILTER_PAPHOS",
     "Building": "300084",
     "Civilization": "9681",
     "Common": "20132",
