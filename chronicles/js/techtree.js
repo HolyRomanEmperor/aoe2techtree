@@ -462,9 +462,12 @@ function enable(buildings, units, techs) {
         SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of techs) {
-        console.log(item);
-        SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        try {
+            SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
+            SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        } catch (e) {
+            console.log(item);
+        }
     }
 }
 
@@ -516,21 +519,25 @@ function unique(ids, monk_suffix) {
     if (monk_suffix === undefined) {
         monk_suffix = MONK_SUFFIX_GENERIC;
     }
-    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
-    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
-    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
-    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
-    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-    SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
-    SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
-    SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-    SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
+    try {
+        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
+        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
+        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
+        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
+        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[2]});
+        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_text').text(formatName(data.strings[data.data.techs[ids[4]].LanguageNameId]));
+        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[4]].LanguageNameId], 'id':'tech_'+ids[3]});
+        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
+        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[3]});
+        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
+        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
+        SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
+    } catch (e) {
+        console.log(ids);
+    }
 }
 
 function getName(id, itemtype) {
