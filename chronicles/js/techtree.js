@@ -197,6 +197,8 @@ const IMPERIAL_AGE = 103;
 const WHEELBARROW = 213;
 const HAND_CART = 249;
 
+const POLEMARCH = 2162;
+
 // Market
 const TRADE_CART = 128;
 const GUILDS = 15;
@@ -458,8 +460,12 @@ function enable(buildings, units, techs) {
         SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of units) {
-        SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        try {
+            SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
+            SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        } catch (e) {
+            console.log(item);
+        }
     }
     for (let item of techs) {
         try {
@@ -484,6 +490,7 @@ function applySelectedCiv(selectedCiv) {
 }
 
 function formatName(originalname) {
+    if (!originalname) return "";
     let name = originalname.toString().replace(/<br>/g, '\n').replace(/\n+/g, '\n');
     const items = name.split('\n');
     for (let i = 0; i < items.length; i++) {
@@ -545,8 +552,12 @@ function getName(id, itemtype) {
     if(id.toString().startsWith('UNIQUE')){
         return id;
     }
-    const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
-    return data['strings'][languageNameId];
+    try {
+        const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
+        return data['strings'][languageNameId];
+    } catch {
+        console.log(id, itemtype);
+    }
 }
 
 function getColour(id, itemtype) {
@@ -795,6 +806,7 @@ function getDefaultTree() {
     towncenterlane.rows.feudal_1.push(tech(TOWN_WATCH));
     towncenterlane.rows.feudal_1.push(tech(CASTLE_AGE));
     towncenterlane.rows.feudal_1.push(tech(WHEELBARROW));
+    towncenterlane.rows.feudal_1.push(unit(POLEMARCH));
     towncenterlane.rows.castle_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.castle_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.castle_1.push(tech(HAND_CART));
@@ -932,6 +944,7 @@ function getConnections() {
         [b(FORT), t(UNIQUE_TECH_CASTLE_2)],
         [b(FORT), t(SPIES_TREASON)],
         [b(TOWN_CENTER), u(VILLAGER)],
+        [b(TOWN_CENTER), u(POLEMARCH)],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
         [t(CASTLE_AGE), t(IMPERIAL_AGE)],
