@@ -49,8 +49,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 1200,
                 "ID": 12,
-                "LanguageHelpId": 26135,
-                "LanguageNameId": 5135,
+                "LanguageHelpId": 426105,
+                "LanguageNameId": 405105,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -92,8 +92,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 1500,
                 "ID": 49,
-                "LanguageHelpId": 26169,
-                "LanguageNameId": 5169,
+                "LanguageHelpId": 426108,
+                "LanguageNameId": 405108,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -135,8 +135,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 480,
                 "ID": 50,
-                "LanguageHelpId": 26149,
-                "LanguageNameId": 5149,
+                "LanguageHelpId": 426123,
+                "LanguageNameId": 405123,
                 "LineOfSight": 1,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -178,8 +178,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 600,
                 "ID": 68,
-                "LanguageHelpId": 26157,
-                "LanguageNameId": 5157,
+                "LanguageHelpId": 426122,
+                "LanguageNameId": 405122,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -225,8 +225,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 550,
                 "ID": 70,
-                "LanguageHelpId": 26344,
-                "LanguageNameId": 5344,
+                "LanguageHelpId": 426118,
+                "LanguageNameId": 405118,
                 "LineOfSight": 2,
                 "MeleeArmor": -2,
                 "MinRange": 0,
@@ -274,8 +274,8 @@
                 "GarrisonCapacity": 15,
                 "HP": 2400,
                 "ID": 71,
-                "LanguageHelpId": 26164,
-                "LanguageNameId": 5164,
+                "LanguageHelpId": 426126,
+                "LanguageNameId": 405126,
                 "LineOfSight": 8,
                 "MeleeArmor": 4,
                 "MinRange": 0,
@@ -325,8 +325,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 150,
                 "ID": 72,
-                "LanguageHelpId": 26202,
-                "LanguageNameId": 5202,
+                "LanguageHelpId": 426112,
+                "LanguageNameId": 405112,
                 "LineOfSight": 2,
                 "MeleeArmor": 2,
                 "MinRange": 0,
@@ -398,8 +398,8 @@
                 "GarrisonCapacity": 5,
                 "HP": 850,
                 "ID": 79,
-                "LanguageHelpId": 26178,
-                "LanguageNameId": 5178,
+                "LanguageHelpId": 426125,
+                "LanguageNameId": 405125,
                 "LineOfSight": 10,
                 "MeleeArmor": 1,
                 "MinRange": 1,
@@ -475,8 +475,8 @@
                 "GarrisonCapacity": 20,
                 "HP": 4800,
                 "ID": 82,
-                "LanguageHelpId": 26142,
-                "LanguageNameId": 5142,
+                "LanguageHelpId": 426065,
+                "LanguageNameId": 405065,
                 "LineOfSight": 11,
                 "MeleeArmor": 8,
                 "MinRange": 1,
@@ -518,8 +518,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 1800,
                 "ID": 84,
-                "LanguageHelpId": 26161,
-                "LanguageNameId": 5161,
+                "LanguageHelpId": 426124,
+                "LanguageNameId": 405124,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -561,8 +561,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 1500,
                 "ID": 87,
-                "LanguageHelpId": 26128,
-                "LanguageNameId": 5128,
+                "LanguageHelpId": 426106,
+                "LanguageNameId": 405106,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -604,8 +604,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 1500,
                 "ID": 101,
-                "LanguageHelpId": 26171,
-                "LanguageNameId": 5171,
+                "LanguageHelpId": 426107,
+                "LanguageNameId": 405107,
                 "LineOfSight": 6,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -647,8 +647,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 1800,
                 "ID": 103,
-                "LanguageHelpId": 26131,
-                "LanguageNameId": 5131,
+                "LanguageHelpId": 426109,
+                "LanguageNameId": 405109,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -690,8 +690,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 2100,
                 "ID": 104,
-                "LanguageHelpId": 26138,
-                "LanguageNameId": 5138,
+                "LanguageHelpId": 426066,
+                "LanguageNameId": 405066,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -739,8 +739,8 @@
                 "GarrisonCapacity": 15,
                 "HP": 2400,
                 "ID": 109,
-                "LanguageHelpId": 26164,
-                "LanguageNameId": 5164,
+                "LanguageHelpId": 426126,
+                "LanguageNameId": 405126,
                 "LineOfSight": 8,
                 "MeleeArmor": 3,
                 "MinRange": 0,
@@ -790,8 +790,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 1080,
                 "ID": 117,
-                "LanguageHelpId": 26203,
-                "LanguageNameId": 5203,
+                "LanguageHelpId": 426114,
+                "LanguageNameId": 405114,
                 "LineOfSight": 2,
                 "MeleeArmor": 8,
                 "MinRange": 0,
@@ -841,8 +841,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 3000,
                 "ID": 155,
-                "LanguageHelpId": 26204,
-                "LanguageNameId": 5204,
+                "LanguageHelpId": 426116,
+                "LanguageNameId": 405116,
                 "LineOfSight": 2,
                 "MeleeArmor": 12,
                 "MinRange": 0,
@@ -884,8 +884,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 50,
                 "ID": 199,
-                "LanguageHelpId": 26495,
-                "LanguageNameId": 5495,
+                "LanguageHelpId": 426110,
+                "LanguageNameId": 405110,
                 "LineOfSight": 1,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -927,8 +927,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 2100,
                 "ID": 209,
-                "LanguageHelpId": 26176,
-                "LanguageNameId": 5176,
+                "LanguageHelpId": 426068,
+                "LanguageNameId": 405068,
                 "LineOfSight": 6,
                 "MeleeArmor": 2,
                 "MinRange": 0,
@@ -1073,8 +1073,8 @@
                 "GarrisonCapacity": 5,
                 "HP": 2250,
                 "ID": 235,
-                "LanguageHelpId": 26155,
-                "LanguageNameId": 5155,
+                "LanguageHelpId": 426083,
+                "LanguageNameId": 405083,
                 "LineOfSight": 10,
                 "MeleeArmor": 3,
                 "MinRange": 1,
@@ -1118,8 +1118,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 4800,
                 "ID": 276,
-                "LanguageHelpId": 26182,
-                "LanguageNameId": 5182,
+                "LanguageHelpId": 426119,
+                "LanguageNameId": 405119,
                 "LineOfSight": 8,
                 "MeleeArmor": 3,
                 "MinRange": 0,
@@ -1212,8 +1212,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 600,
                 "ID": 562,
-                "LanguageHelpId": 26464,
-                "LanguageNameId": 5464,
+                "LanguageHelpId": 426121,
+                "LanguageNameId": 405121,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -1255,8 +1255,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 600,
                 "ID": 584,
-                "LanguageHelpId": 26487,
-                "LanguageNameId": 5487,
+                "LanguageHelpId": 426120,
+                "LanguageNameId": 405120,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -1299,8 +1299,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 500,
                 "ID": 598,
-                "LanguageHelpId": 26504,
-                "LanguageNameId": 5504,
+                "LanguageHelpId": 426111,
+                "LanguageNameId": 405111,
                 "LineOfSight": 6,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -1343,8 +1343,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 2400,
                 "ID": 621,
-                "LanguageHelpId": 26164,
-                "LanguageNameId": 5164,
+                "LanguageHelpId": 426126,
+                "LanguageNameId": 405126,
                 "LineOfSight": 8,
                 "MeleeArmor": 0,
                 "MinRange": 0,
@@ -1561,8 +1561,8 @@
                 "2105": "UniqueUnit",
                 "2107": "UniqueUnit",
                 "2108": "UniqueUnit",
-                "2110": "Unit",
-                "2111": "UnitUpgrade",
+                "2110": "RegionalUnit",
+                "2111": "RegionalUnit",
                 "2123": "Unit",
                 "2124": "UnitUpgrade",
                 "2125": "UnitUpgrade",
@@ -1581,8 +1581,8 @@
                 "2140": "Unit",
                 "2148": "Unit",
                 "2149": "Unit",
-                "2150": "Unit",
-                "2151": "UnitUpgrade",
+                "2150": "RegionalUnit",
+                "2151": "RegionalUnit",
                 "2162": "UniqueUnit"
             }
         },
@@ -3046,7 +3046,7 @@
                     }
                 ],
                 "Attack": 4,
-                "AttackDelaySeconds": 0.35,
+                "AttackDelaySeconds": 0.349999,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -3075,12 +3075,12 @@
                     "Gold": 45,
                     "Wood": 25
                 },
-                "FrameDelay": 15,
+                "FrameDelay": 19,
                 "GarrisonCapacity": 0,
                 "HP": 30,
                 "ID": 4,
-                "LanguageHelpId": 26083,
-                "LanguageNameId": 5083,
+                "LanguageHelpId": 426052,
+                "LanguageNameId": 405052,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3149,12 +3149,12 @@
                     "Food": 45,
                     "Gold": 50
                 },
-                "FrameDelay": 15,
+                "FrameDelay": 16,
                 "GarrisonCapacity": 0,
                 "HP": 40,
                 "ID": 5,
-                "LanguageHelpId": 26086,
-                "LanguageNameId": 5086,
+                "LanguageHelpId": 426055,
+                "LanguageNameId": 405055,
                 "LineOfSight": 9,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
@@ -3194,7 +3194,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.5066666666666667,
+                "AttackDelaySeconds": 0.5066662222222222,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -3227,12 +3227,12 @@
                     "Food": 25,
                     "Wood": 35
                 },
-                "FrameDelay": 19,
+                "FrameDelay": 14,
                 "GarrisonCapacity": 0,
                 "HP": 35,
                 "ID": 6,
-                "LanguageHelpId": 26087,
-                "LanguageNameId": 5087,
+                "LanguageHelpId": 426090,
+                "LanguageNameId": 405090,
                 "LineOfSight": 7,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3309,8 +3309,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 30,
                 "ID": 7,
-                "LanguageHelpId": 26088,
-                "LanguageNameId": 5088,
+                "LanguageHelpId": 426089,
+                "LanguageNameId": 405089,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3357,8 +3357,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 13,
-                "LanguageHelpId": 26090,
-                "LanguageNameId": 5090,
+                "LanguageHelpId": 426088,
+                "LanguageNameId": 405088,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3394,7 +3394,7 @@
                     }
                 ],
                 "Attack": 5,
-                "AttackDelaySeconds": 0.35,
+                "AttackDelaySeconds": 0.349999,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -3423,12 +3423,12 @@
                     "Gold": 45,
                     "Wood": 25
                 },
-                "FrameDelay": 15,
+                "FrameDelay": 19,
                 "GarrisonCapacity": 0,
                 "HP": 35,
                 "ID": 24,
-                "LanguageHelpId": 26084,
-                "LanguageNameId": 5084,
+                "LanguageHelpId": 426053,
+                "LanguageNameId": 405053,
                 "LineOfSight": 7,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3464,7 +3464,7 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.6716666666666667,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -3501,12 +3501,12 @@
                     "Food": 60,
                     "Gold": 75
                 },
-                "FrameDelay": 13,
+                "FrameDelay": 0,
                 "GarrisonCapacity": 0,
                 "HP": 100,
                 "ID": 38,
-                "LanguageHelpId": 26068,
-                "LanguageNameId": 5068,
+                "LanguageHelpId": 426049,
+                "LanguageNameId": 405049,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 2,
@@ -3587,12 +3587,12 @@
                     "Gold": 60,
                     "Wood": 40
                 },
-                "FrameDelay": 35,
+                "FrameDelay": 26,
                 "GarrisonCapacity": 0,
                 "HP": 50,
                 "ID": 39,
-                "LanguageHelpId": 26085,
-                "LanguageNameId": 5085,
+                "LanguageHelpId": 426091,
+                "LanguageNameId": 405091,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3632,7 +3632,7 @@
                     }
                 ],
                 "Attack": 200,
-                "AttackDelaySeconds": 0.8800000000000001,
+                "AttackDelaySeconds": 0.5133333333333334,
                 "Attacks": [
                     {
                         "Amount": 250,
@@ -3649,12 +3649,12 @@
                     "Gold": 200,
                     "Wood": 200
                 },
-                "FrameDelay": 24,
+                "FrameDelay": 7,
                 "GarrisonCapacity": 0,
                 "HP": 150,
                 "ID": 42,
-                "LanguageHelpId": 26097,
-                "LanguageNameId": 5097,
+                "LanguageHelpId": 426063,
+                "LanguageNameId": 405063,
                 "LineOfSight": 19,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
@@ -3727,8 +3727,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 40,
                 "ID": 74,
-                "LanguageHelpId": 26079,
-                "LanguageNameId": 5079,
+                "LanguageHelpId": 426039,
+                "LanguageNameId": 405039,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3801,8 +3801,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 45,
                 "ID": 75,
-                "LanguageHelpId": 26080,
-                "LanguageNameId": 5080,
+                "LanguageHelpId": 426040,
+                "LanguageNameId": 405040,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -3875,8 +3875,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 77,
-                "LanguageHelpId": 26081,
-                "LanguageNameId": 5081,
+                "LanguageHelpId": 426041,
+                "LanguageNameId": 405041,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
@@ -4038,8 +4038,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 45,
                 "ID": 93,
-                "LanguageHelpId": 26078,
-                "LanguageNameId": 5078,
+                "LanguageHelpId": 426043,
+                "LanguageNameId": 405043,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4087,8 +4087,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 30,
                 "ID": 125,
-                "LanguageHelpId": 26099,
-                "LanguageNameId": 5099,
+                "LanguageHelpId": 426064,
+                "LanguageNameId": 405064,
                 "LineOfSight": 11,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4210,8 +4210,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 40,
                 "ID": 279,
-                "LanguageHelpId": 26096,
-                "LanguageNameId": 5096,
+                "LanguageHelpId": 426099,
+                "LanguageNameId": 405099,
                 "LineOfSight": 9,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4280,8 +4280,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 50,
                 "ID": 280,
-                "LanguageHelpId": 26095,
-                "LanguageNameId": 5095,
+                "LanguageHelpId": 426096,
+                "LanguageNameId": 405096,
                 "LineOfSight": 9,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4317,7 +4317,7 @@
                     }
                 ],
                 "Attack": 12,
-                "AttackDelaySeconds": 0.6716666666666667,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -4354,12 +4354,12 @@
                     "Food": 60,
                     "Gold": 75
                 },
-                "FrameDelay": 26,
+                "FrameDelay": 0,
                 "GarrisonCapacity": 0,
                 "HP": 120,
                 "ID": 283,
-                "LanguageHelpId": 26070,
-                "LanguageNameId": 5070,
+                "LanguageHelpId": 426050,
+                "LanguageNameId": 405050,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 2,
@@ -4416,8 +4416,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 150,
                 "ID": 331,
-                "LanguageHelpId": 26381,
-                "LanguageNameId": 5381,
+                "LanguageHelpId": 426062,
+                "LanguageNameId": 405062,
                 "LineOfSight": 19,
                 "MaxCharge": 0,
                 "MeleeArmor": 2,
@@ -4510,8 +4510,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 55,
                 "ID": 358,
-                "LanguageHelpId": 26408,
-                "LanguageNameId": 5408,
+                "LanguageHelpId": 426044,
+                "LanguageNameId": 405044,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4604,8 +4604,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 359,
-                "LanguageHelpId": 26409,
-                "LanguageNameId": 5409,
+                "LanguageHelpId": 426045,
+                "LanguageNameId": 405045,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4670,8 +4670,8 @@
                 "GarrisonCapacity": 6,
                 "HP": 200,
                 "ID": 422,
-                "LanguageHelpId": 26289,
-                "LanguageNameId": 5289,
+                "LanguageHelpId": 426094,
+                "LanguageNameId": 405094,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
                 "MeleeArmor": -3,
@@ -4707,7 +4707,7 @@
                     }
                 ],
                 "Attack": 7,
-                "AttackDelaySeconds": 0.5,
+                "AttackDelaySeconds": 0.3,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -4751,8 +4751,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 75,
                 "ID": 441,
-                "LanguageHelpId": 26661,
-                "LanguageNameId": 5661,
+                "LanguageHelpId": 426048,
+                "LanguageNameId": 405048,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4788,7 +4788,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.6,
+                "AttackDelaySeconds": 0.5400000000000001,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -4832,8 +4832,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 45,
                 "ID": 448,
-                "LanguageHelpId": 26326,
-                "LanguageNameId": 5326,
+                "LanguageHelpId": 426046,
+                "LanguageNameId": 405046,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -4877,7 +4877,7 @@
                     }
                 ],
                 "Attack": 7,
-                "AttackDelaySeconds": 0.8969999999999999,
+                "AttackDelaySeconds": 0.897,
                 "Attacks": [
                     {
                         "Amount": 4,
@@ -4914,12 +4914,12 @@
                     "Gold": 60,
                     "Wood": 40
                 },
-                "FrameDelay": 46,
+                "FrameDelay": 26,
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 474,
-                "LanguageHelpId": 26412,
-                "LanguageNameId": 5412,
+                "LanguageHelpId": 426092,
+                "LanguageNameId": 405092,
                 "LineOfSight": 6,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
@@ -4955,7 +4955,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.3422222222222222,
+                "AttackDelaySeconds": 0.3422216666666667,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -4984,12 +4984,12 @@
                     "Gold": 45,
                     "Wood": 25
                 },
-                "FrameDelay": 20,
+                "FrameDelay": 19,
                 "GarrisonCapacity": 0,
                 "HP": 40,
                 "ID": 492,
-                "LanguageHelpId": 26418,
-                "LanguageNameId": 5418,
+                "LanguageHelpId": 426054,
+                "LanguageNameId": 405054,
                 "LineOfSight": 7,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -5066,8 +5066,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 542,
-                "LanguageHelpId": 26439,
-                "LanguageNameId": 5439,
+                "LanguageHelpId": 426100,
+                "LanguageNameId": 405100,
                 "LineOfSight": 9,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
@@ -5103,7 +5103,7 @@
                     }
                 ],
                 "Attack": 7,
-                "AttackDelaySeconds": 0.5,
+                "AttackDelaySeconds": 0.45,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -5147,8 +5147,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 546,
-                "LanguageHelpId": 26444,
-                "LanguageNameId": 5444,
+                "LanguageHelpId": 426047,
+                "LanguageNameId": 405047,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -5213,8 +5213,8 @@
                 "GarrisonCapacity": 6,
                 "HP": 270,
                 "ID": 548,
-                "LanguageHelpId": 26446,
-                "LanguageNameId": 5446,
+                "LanguageHelpId": 426095,
+                "LanguageNameId": 405095,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
                 "MeleeArmor": -3,
@@ -5279,8 +5279,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 60,
                 "ID": 550,
-                "LanguageHelpId": 26448,
-                "LanguageNameId": 5448,
+                "LanguageHelpId": 426097,
+                "LanguageNameId": 405097,
                 "LineOfSight": 10,
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
@@ -5315,19 +5315,19 @@
                         "Class": 31
                     }
                 ],
-                "Attack": 14,
+                "Attack": 11,
                 "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
-                        "Amount": 8,
+                        "Amount": 6,
                         "Class": 29
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 3,
                         "Class": 21
                     },
                     {
-                        "Amount": 14,
+                        "Amount": 11,
                         "Class": 4
                     },
                     {
@@ -5353,9 +5353,9 @@
                 "GarrisonCapacity": 0,
                 "HP": 70,
                 "ID": 567,
-                "LanguageHelpId": 26469,
-                "LanguageNameId": 5469,
-                "LineOfSight": 5,
+                "LanguageHelpId": 426042,
+                "LanguageNameId": 405042,
+                "LineOfSight": 4,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
                 "MinRange": 0,
@@ -5390,7 +5390,7 @@
                     }
                 ],
                 "Attack": 14,
-                "AttackDelaySeconds": 0.6716666666666667,
+                "AttackDelaySeconds": 0.0,
                 "Attacks": [
                     {
                         "Amount": 14,
@@ -5427,12 +5427,12 @@
                     "Food": 60,
                     "Gold": 75
                 },
-                "FrameDelay": 13,
+                "FrameDelay": 0,
                 "GarrisonCapacity": 0,
                 "HP": 160,
                 "ID": 569,
-                "LanguageHelpId": 26471,
-                "LanguageNameId": 5471,
+                "LanguageHelpId": 426051,
+                "LanguageNameId": 405051,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": 2,
@@ -5484,8 +5484,8 @@
                 "GarrisonCapacity": 10,
                 "HP": 220,
                 "ID": 1105,
-                "LanguageHelpId": 26445,
-                "LanguageNameId": 5445,
+                "LanguageHelpId": 426101,
+                "LanguageNameId": 405101,
                 "LineOfSight": 8,
                 "MaxCharge": 0,
                 "MeleeArmor": -2,
@@ -5550,8 +5550,8 @@
                 "GarrisonCapacity": 6,
                 "HP": 175,
                 "ID": 1258,
-                "LanguageHelpId": 26094,
-                "LanguageNameId": 5094,
+                "LanguageHelpId": 426093,
+                "LanguageNameId": 405093,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
                 "MeleeArmor": -3,
@@ -7660,6 +7660,186 @@
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "Polemarch 1"
+            },
+            "2174": {
+                "AccuracyPercent": 70,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "Attack": 5,
+                "AttackDelaySeconds": 0.5,
+                "Attacks": [
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 34
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 20
+                },
+                "FrameDelay": 15,
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 2174,
+                "LanguageHelpId": 426036,
+                "LanguageNameId": 405036,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 4,
+                "RechargeRate": 0,
+                "ReloadTime": 1.8,
+                "Speed": 1.1,
+                "TrainTime": 12,
+                "Trait": 8,
+                "TraitPiece": 2101,
+                "internal_name": "Immortal Ranged"
+            },
+            "2175": {
+                "AccuracyPercent": 80,
+                "Armours": [
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "Attack": 6,
+                "AttackDelaySeconds": 0.5,
+                "Attacks": [
+                    {
+                        "Amount": 6,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 34
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 20
+                },
+                "FrameDelay": 15,
+                "GarrisonCapacity": 0,
+                "HP": 60,
+                "ID": 2175,
+                "LanguageHelpId": 426037,
+                "LanguageNameId": 405037,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 5,
+                "RechargeRate": 0,
+                "ReloadTime": 1.8,
+                "Speed": 1.1,
+                "TrainTime": 10,
+                "Trait": 8,
+                "TraitPiece": 2102,
+                "internal_name": "Elite Immortal Ranged"
             }
         }
     },

@@ -370,47 +370,6 @@ def chronicles_gather_language_data(programdir, data, language):
             parse_line(key_value, line, "Chronicles")
 
     key_value_filtered = {}
-    unused_substitutions = { # These were written partially and I did not want them to go to waste in case someone wanted to add in the future
-        26154: 426084, # Guard Tower building description
-        5155: 405083, # Keep name
-        7063: 407129, # Keep tech name
-        26155: 426083, # Keep tech building description
-        28063: 428129, # Keep tech description
-        28376: 428138, # Hoardings description
-        7210: 407132, # Baggage Carriers name
-        28210: 428132, # Baggage Carriers description
-        7093: 407128, # Target Practice name
-        28093: 428128, # Target Practice description
-        7374: 407120, # Lighthouse name
-        28374: 428120, # Lighthouse description
-        5088: 0, # Skirmisher name
-        5087: 0, # Elite Skirmisher name
-        5085: 0, # Cavalry Archer name
-        0: 0, # Heavy Cavalry Archer name
-        5079: 0, # Levy name
-        5080: 0, # Maceman name
-        5081: 0, # Swordsman name
-        0: 0, # Paragon name
-        5078: 0, # Spearman name
-        0: 0, # Guardsman name
-        0: 0, # Elite Guardsman name
-        0: 0, # Scout Cavalry name
-        0: 0, # Light Cavalry name
-        0: 0, # Raider name
-        5068: 0, # Lancer name
-        5069: 0, # Shock Cavalry name
-        0: 0, # Imperial Cavalry name
-        5094: 0, # Battering Ram name
-        5095: 0, # Capped Ram name
-        0: 0, # Siege Ram name
-        0: 0, # Mangonel name
-        0: 0, # Onager name
-        5096: 0, # Scorpion name
-        0: 0, # Heavy Scorpion name
-        0: 0, # Siege Tower name
-        0: 0, # Fishing Ship name
-        5099: 0, # Priestess name
-    }
     substitutions = {
         28101: 428090, # Civic Age tech description
         28102: 408091, # Classical Age tech description
@@ -420,24 +379,18 @@ def chronicles_gather_language_data(programdir, data, language):
         7103: 407092, # Imperial Age tech name
         7047: 407119, # Flaming Arrows name
         28047: 428119, # Flaming Arrows description
-        5083: 405052, # Bowman name
-        5084: 405053, # Laminated Bowman name
-        5418: 405054, # Recurve Bowman name
-        5086: 405055, # Gastropheteros name
         405069: 405016, # Galley name
         405070: 405017, # War Galley name
         405038: 405102, # Transort Ship name
-        26083: 426052, # Bowman description
-        26084: 426053, # Laminated Bowman description
-        26418: 426054, # Recurve Bowman description
-        26086: 426055, # Gastropheteros description
         426069: 426016, # Galley description
         426070: 426017, # War Galley description
         426038: 426061, # Transport Ship description
+        426063: 426062, # Unpacked Trebuchet description
+        426036: 426001, # Ranged Immortal description
+        426037: 426002, # Ranged Elite Immortal description
         5121: 5606, # Villager Male name
-        5381: 405063, # Palintonon name
+        405062: 405063, # Palintonon name
         5100: 5484, # Trade Cart name
-        26090: 426060, # Fishing Ship description
     }
     for key, value in substitutions.items():
         key_value[key] = key_value.get(value)
@@ -578,22 +531,24 @@ def ror_gather_data(content, civs, unit_upgrades):
 
 
 def chronicles_gather_data(content, civs, unit_upgrades, node_types):
+    IMMORTAL_RANGED = 2174
+    ELITE_IMMORTAL_RANGED = 2175
     building_ids = set.union({b['id'] for c in civs.values() for b in c['buildings']}, \
                              {RTWC2})
     unit_ids = set.union({u['id'] for c in civs.values() for u in c['units']}, \
                          {c['unique']['classicalAgeUniqueUnit'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueUnit'] for c in civs.values()}, \
-        {PTREB})
+        {PTREB, IMMORTAL_RANGED, ELITE_IMMORTAL_RANGED})
     tech_ids = set.union({t['id'] for c in civs.values() for t in c['techs']}, \
                          {c['unique']['classicalAgeUniqueTech1'] for c in civs.values()}, \
                          {c['unique']['classicalAgeUniqueTech2'] for c in civs.values()}, \
                          {c['unique']['imperialAgeUniqueTech1'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueTech2'] for c in civs.values()}, \
         {TRACKING})
-    gaia = content["Civs"][0]
+    base_civilization = content["Civs"][46] # selecting Achaemenids as base, since Gaia does not work for Chronicles civs
     graphics = content["Graphics"]
     data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
-    for unit in gaia["Units"]:
+    for unit in base_civilization["Units"]:
         if unit["ID"] in building_ids:
             add_building(unit["ID"], unit, data)
         if unit["ID"] in unit_ids:
@@ -1039,6 +994,11 @@ def chronicles_gather_civs(techtrees):
 
         civname = civ['civ_id'].capitalize()
         civs[civname] = current_civ
+
+    node_types['units'][2110] = 'RegionalUnit' # Marking Hoplite as regional
+    node_types['units'][2111] = 'RegionalUnit' # Marking Elite Hoplite as regional
+    node_types['units'][2150] = 'RegionalUnit' # Marking Hoplite as regional
+    node_types['units'][2151] = 'RegionalUnit' # Marking Hoplite as regional
 
     return civs, unit_upgrades, node_types
 
