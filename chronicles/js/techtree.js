@@ -785,11 +785,6 @@ function getDefaultTree() {
     monasterylane.rows.imperial_1.push(tech(THEOCRACY));
     tree.lanes.push(monasterylane);
 
-
-    let houselane = new Lane();
-    houselane.rows.archaic_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
-
     let towncenterlane = new Lane();
     towncenterlane.rows.archaic_1.push(building(TOWN_CENTER));
     towncenterlane.rows.archaic_2.push(unit(VILLAGER));
@@ -806,13 +801,10 @@ function getDefaultTree() {
 
 
     let additionaltowncenterlane = new Lane();
+    additionaltowncenterlane.rows.archaic_1.push(building(HOUSE));
     additionaltowncenterlane.rows.classical_1.push(building(TOWN_CENTER_2));
+    additionaltowncenterlane.rows.imperial_1.push(building(WONDER));
     tree.lanes.push(additionaltowncenterlane);
-
-
-    let wonderlane = new Lane();
-    wonderlane.rows.imperial_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
 
 
     let miningcamplane = new Lane();
