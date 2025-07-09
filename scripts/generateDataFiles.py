@@ -391,6 +391,8 @@ def chronicles_gather_language_data(programdir, data, language):
         5121: 5606, # Villager Male name
         405062: 405063, # Palintonon name
         5100: 5484, # Trade Cart name
+        405001: 405084, # Immortal name
+        405002: 405085, # Elite Immortal name
     }
     for key, value in substitutions.items():
         key_value[key] = key_value.get(value)
