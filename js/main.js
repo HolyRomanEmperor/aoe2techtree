@@ -460,6 +460,9 @@ function getHelpText(name, id, type) {
     let entitytype = getEntityType(type);
     const items = id.split('_', 1);
     id = id.substring(items[0].length + 1);
+    if (id === "null") {
+        return '?';
+    }
     let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
     if (text === undefined) {
         return '?';
@@ -853,6 +856,7 @@ function fillCivSelector() {
 
 function civ(name) {
     let selectedCiv = civs[name];
+    selectedCiv.name = name;
 
     SVG.find('.cross').each(function () {
         if (SVGObjectIsOpaque(this)) {
