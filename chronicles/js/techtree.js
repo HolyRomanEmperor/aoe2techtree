@@ -277,11 +277,9 @@ const BUILDING_INDEX = [
     PORT,
     SHIPYARD,
     UNIVERSITY,
-    WATCH_TOWER,
     FORT,
     MONASTERY,
-    TOWN_CENTER,
-    MARKET
+    TOWN_CENTER
 ];
 
 class Tree {
@@ -907,7 +905,6 @@ function getConnections() {
         [b(STABLE), u(WAR_CHARIOT)],
         [u(WAR_CHARIOT), u(ELITE_WAR_CHARIOT)],
         [b(STABLE), t(HUSBANDRY)],
-        [b(STABLE), u(KNIGHT)],
         [u(KNIGHT), u(CAVALIER)],
         [u(CAVALIER), u(PALADIN)],
         [b(PORT), u(FISHING_SHIP)],
