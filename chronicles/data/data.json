@@ -236,6 +236,55 @@
                 "TrainTime": 25,
                 "internal_name": "HOUS"
             },
+            "71": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 5,
+                "Attacks": [
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    }
+                ],
+                "Cost": {
+                    "Stone": 100,
+                    "Wood": 275
+                },
+                "GarrisonCapacity": 15,
+                "HP": 2400,
+                "ID": 71,
+                "LanguageHelpId": 26164,
+                "LanguageNameId": 5164,
+                "LineOfSight": 8,
+                "MeleeArmor": 4,
+                "MinRange": 0,
+                "PierceArmor": 6,
+                "Range": 6,
+                "ReloadTime": 2,
+                "TrainTime": 100,
+                "internal_name": "RTWC2"
+            },
             "72": {
                 "AccuracyPercent": 0,
                 "Armours": [
@@ -1512,8 +1561,8 @@
                 "2105": "UniqueUnit",
                 "2107": "UniqueUnit",
                 "2108": "UniqueUnit",
-                "2110": "RegionalUnit",
-                "2111": "RegionalUnit",
+                "2110": "Unit",
+                "2111": "UnitUpgrade",
                 "2123": "Unit",
                 "2124": "UnitUpgrade",
                 "2125": "UnitUpgrade",
@@ -1532,8 +1581,8 @@
                 "2140": "Unit",
                 "2148": "Unit",
                 "2149": "Unit",
-                "2150": "RegionalUnit",
-                "2151": "RegionalUnit",
+                "2150": "Unit",
+                "2151": "UnitUpgrade",
                 "2162": "UniqueUnit"
             }
         },
@@ -1739,18 +1788,6 @@
                 "ResearchTime": 75,
                 "internal_name": "Keep"
             },
-            "64": {
-                "Cost": {
-                    "Food": 800,
-                    "Wood": 400
-                },
-                "ID": 64,
-                "LanguageHelpId": 28320,
-                "LanguageNameId": 7320,
-                "Repeatable": false,
-                "ResearchTime": 60,
-                "internal_name": "Bombard Tower"
-            },
             "67": {
                 "Cost": {
                     "Food": 150
@@ -1773,24 +1810,6 @@
                 "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Iron casting"
-            },
-            "71": {
-                "Cost": {},
-                "ID": 71,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Walls HP castle age"
-            },
-            "72": {
-                "Cost": {},
-                "ID": 72,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Palisade Walls HP feudal age"
             },
             "74": {
                 "Cost": {
@@ -1874,6 +1893,15 @@
                 "ResearchTime": 60,
                 "internal_name": "Chain Barding Armor"
             },
+            "90": {
+                "Cost": {},
+                "ID": 90,
+                "LanguageHelpId": 28090,
+                "LanguageNameId": 7090,
+                "Repeatable": true,
+                "ResearchTime": 0,
+                "internal_name": "Tracking"
+            },
             "93": {
                 "Cost": {
                     "Gold": 175,
@@ -1921,15 +1949,6 @@
                 "ResearchTime": 190,
                 "internal_name": "Imperial Age"
             },
-            "127": {
-                "Cost": {},
-                "ID": 127,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Watch Tower (make avail)"
-            },
             "140": {
                 "Cost": {
                     "Food": 100,
@@ -1942,17 +1961,6 @@
                 "ResearchTime": 30,
                 "internal_name": "Guard Tower"
             },
-            "143": {
-                "Cost": {
-                    "Stone": 300
-                },
-                "ID": 143,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 100,
-                "internal_name": "Shadow Tower -- Age Four"
-            },
             "182": {
                 "Cost": {
                     "Food": 175,
@@ -1964,15 +1972,6 @@
                 "Repeatable": true,
                 "ResearchTime": 75,
                 "internal_name": "Gold Shaft Mining"
-            },
-            "189": {
-                "Cost": {},
-                "ID": 189,
-                "LanguageHelpId": 28162,
-                "LanguageNameId": 7162,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Wall 2 (make avail)"
             },
             "194": {
                 "Cost": {
@@ -2260,24 +2259,6 @@
                 "ResearchTime": 35,
                 "internal_name": "Murder Holes"
             },
-            "333": {
-                "Cost": {},
-                "ID": 333,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "C-Bonus, Tower Arrows"
-            },
-            "353": {
-                "Cost": {},
-                "ID": 353,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "C-Bonus, Tower Arrows"
-            },
             "377": {
                 "Cost": {
                     "Food": 500,
@@ -2397,50 +2378,6 @@
                 "ResearchTime": 35,
                 "internal_name": "Herbal Medicine"
             },
-            "462": {
-                "Cost": {
-                    "Stone": 200,
-                    "Wood": 400
-                },
-                "ID": 462,
-                "LanguageHelpId": 28368,
-                "LanguageNameId": 7368,
-                "Repeatable": true,
-                "ResearchTime": 40,
-                "internal_name": "Chinese Great Wall"
-            },
-            "504": {
-                "Cost": {
-                    "Food": 1000,
-                    "Gold": 600
-                },
-                "ID": 504,
-                "LanguageHelpId": 28264,
-                "LanguageNameId": 7264,
-                "Repeatable": true,
-                "ResearchTime": 60,
-                "internal_name": "Elite Siege Tower"
-            },
-            "523": {
-                "Cost": {},
-                "ID": 523,
-                "LanguageHelpId": 28213,
-                "LanguageNameId": 7213,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Palisade Wall (make avail)"
-            },
-            "525": {
-                "Cost": {
-                    "Wood": 10
-                },
-                "ID": 525,
-                "LanguageHelpId": 28164,
-                "LanguageNameId": 7164,
-                "Repeatable": true,
-                "ResearchTime": 10,
-                "internal_name": "Fire Tower (make avail)"
-            },
             "602": {
                 "Cost": {
                     "Food": 75,
@@ -2452,15 +2389,6 @@
                 "Repeatable": true,
                 "ResearchTime": 25,
                 "internal_name": "Arson"
-            },
-            "603": {
-                "Cost": {},
-                "ID": 603,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Siege Tower (make avail)"
             },
             "608": {
                 "Cost": {
@@ -2486,35 +2414,149 @@
                 "ResearchTime": 20,
                 "internal_name": "Supplies"
             },
-            "923": {
+            "1110": {
+                "Cost": {
+                    "Gold": 200,
+                    "Wood": 300
+                },
+                "ID": 1110,
+                "LanguageHelpId": 428005,
+                "LanguageNameId": 407005,
+                "Repeatable": false,
+                "ResearchTime": 40,
+                "internal_name": "Sparabaras, Achaemenid Unique Tech"
+            },
+            "1111": {
+                "Cost": {
+                    "Food": 400,
+                    "Gold": 300
+                },
+                "ID": 1111,
+                "LanguageHelpId": 428006,
+                "LanguageNameId": 407006,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Satrapies, Achaemenid Unique Tech"
+            },
+            "1112": {
+                "Cost": {
+                    "Gold": 500,
+                    "Wood": 500
+                },
+                "ID": 1112,
+                "LanguageHelpId": 428007,
+                "LanguageNameId": 407007,
+                "Repeatable": true,
+                "ResearchTime": 60,
+                "internal_name": "Scythed Chariots, Achaemenid Unique Tech"
+            },
+            "1113": {
+                "Cost": {
+                    "Food": 600,
+                    "Gold": 500
+                },
+                "ID": 1113,
+                "LanguageHelpId": 428008,
+                "LanguageNameId": 407008,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Palta, Achaemenid Unique Tech"
+            },
+            "1120": {
                 "Cost": {
                     "Food": 300,
-                    "Gold": 200
+                    "Gold": 400
                 },
-                "ID": 923,
-                "LanguageHelpId": 28440,
-                "LanguageNameId": 7440,
-                "Repeatable": true,
-                "ResearchTime": 45,
-                "internal_name": "Svan Towers"
-            },
-            "931": {
-                "Cost": {},
-                "ID": 931,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
-                "Repeatable": true,
-                "ResearchTime": 0,
-                "internal_name": "Fortified Church + Svan Towers"
-            },
-            "936": {
-                "Cost": {},
-                "ID": 936,
-                "LanguageHelpId": 28000,
-                "LanguageNameId": 7000,
+                "ID": 1120,
+                "LanguageHelpId": 428009,
+                "LanguageNameId": 407009,
                 "Repeatable": false,
-                "ResearchTime": 0,
-                "internal_name": "Svan Towers + Chemistry"
+                "ResearchTime": 40,
+                "internal_name": "Dekate, Athenian Unique Tech"
+            },
+            "1121": {
+                "Cost": {
+                    "Gold": 300,
+                    "Wood": 400
+                },
+                "ID": 1121,
+                "LanguageHelpId": 428010,
+                "LanguageNameId": 407010,
+                "Repeatable": false,
+                "ResearchTime": 40,
+                "internal_name": "Taxiarchs, Athenian Unique Tech"
+            },
+            "1122": {
+                "Cost": {
+                    "Food": 600,
+                    "Gold": 750
+                },
+                "ID": 1122,
+                "LanguageHelpId": 428011,
+                "LanguageNameId": 407011,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Eisphora, Athenian Unique Tech"
+            },
+            "1123": {
+                "Cost": {
+                    "Food": 900,
+                    "Gold": 600
+                },
+                "ID": 1123,
+                "LanguageHelpId": 428012,
+                "LanguageNameId": 407012,
+                "Repeatable": false,
+                "ResearchTime": 60,
+                "internal_name": "Mines of Laurion, Athenian Unique Tech"
+            },
+            "1130": {
+                "Cost": {
+                    "Gold": 300,
+                    "Wood": 500
+                },
+                "ID": 1130,
+                "LanguageHelpId": 428013,
+                "LanguageNameId": 407013,
+                "Repeatable": false,
+                "ResearchTime": 70,
+                "internal_name": "Helot Levies, Spartan Unique Tech"
+            },
+            "1131": {
+                "Cost": {
+                    "Food": 350,
+                    "Gold": 650
+                },
+                "ID": 1131,
+                "LanguageHelpId": 428014,
+                "LanguageNameId": 407014,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Krypteia, Spartan Unique Tech"
+            },
+            "1132": {
+                "Cost": {
+                    "Food": 400,
+                    "Gold": 300
+                },
+                "ID": 1132,
+                "LanguageHelpId": 428015,
+                "LanguageNameId": 407015,
+                "Repeatable": true,
+                "ResearchTime": 70,
+                "internal_name": "Xyphos, Spartan Unique Tech"
+            },
+            "1133": {
+                "Cost": {
+                    "Food": 700,
+                    "Gold": 400
+                },
+                "ID": 1133,
+                "LanguageHelpId": 428016,
+                "LanguageNameId": 407016,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Peloponnesian League, Spartan Unique Tech"
             },
             "1161": {
                 "Cost": {
@@ -3564,6 +3606,68 @@
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "CVRCH"
+            },
+            "42": {
+                "AccuracyPercent": 15,
+                "Armours": [
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 150,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 200,
+                "AttackDelaySeconds": 0.8800000000000001,
+                "Attacks": [
+                    {
+                        "Amount": 250,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 200,
+                        "Class": 3
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 200,
+                    "Wood": 200
+                },
+                "FrameDelay": 24,
+                "GarrisonCapacity": 0,
+                "HP": 150,
+                "ID": 42,
+                "LanguageHelpId": 26097,
+                "LanguageNameId": 5097,
+                "LineOfSight": 19,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 4,
+                "PierceArmor": 150,
+                "Range": 16,
+                "RechargeRate": 0,
+                "ReloadTime": 10,
+                "Speed": 0,
+                "TrainTime": 50,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "TREBU"
             },
             "74": {
                 "AccuracyPercent": 100,
@@ -5461,6 +5565,482 @@
                 "Trait": 1,
                 "TraitPiece": 0,
                 "internal_name": "BTRAM"
+            },
+            "2101": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "Attack": 10,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 20
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 2101,
+                "LanguageHelpId": 426001,
+                "LanguageNameId": 405001,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.8,
+                "Speed": 1.1,
+                "TrainTime": 12,
+                "Trait": 8,
+                "TraitPiece": 2174,
+                "internal_name": "Immortal"
+            },
+            "2102": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    }
+                ],
+                "Attack": 12,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 0
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 20
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 60,
+                "ID": 2102,
+                "LanguageHelpId": 426002,
+                "LanguageNameId": 405002,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.8,
+                "Speed": 1.1,
+                "TrainTime": 10,
+                "Trait": 8,
+                "TraitPiece": 2175,
+                "internal_name": "Elite Immortal"
+            },
+            "2104": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 15,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 15,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 55,
+                    "Gold": 25
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 60,
+                "ID": 2104,
+                "LanguageHelpId": 426003,
+                "LanguageNameId": 405003,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.9,
+                "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Strategos"
+            },
+            "2105": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 18,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 18,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 55,
+                    "Gold": 25
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 65,
+                "ID": 2105,
+                "LanguageHelpId": 426004,
+                "LanguageNameId": 405004,
+                "LineOfSight": 6,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.9,
+                "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Strategos"
+            },
+            "2107": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 9,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 9,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 30
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 80,
+                "ID": 2107,
+                "LanguageHelpId": 426005,
+                "LanguageNameId": 405005,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 4,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.85,
+                "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Hippeus"
+            },
+            "2108": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 11,
+                "AttackDelaySeconds": 0.0,
+                "Attacks": [
+                    {
+                        "Amount": 0,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 11,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    }
+                ],
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 60,
+                    "Gold": 30
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 90,
+                "ID": 2108,
+                "LanguageHelpId": 426006,
+                "LanguageNameId": 405006,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 5,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.85,
+                "TrainTime": 17,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Hippeus"
             },
             "2110": {
                 "AccuracyPercent": 100,

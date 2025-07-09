@@ -578,15 +578,18 @@ def ror_gather_data(content, civs, unit_upgrades):
 
 
 def chronicles_gather_data(content, civs, unit_upgrades, node_types):
-    ages = list(CHRONICLES_AGE_NAMES.keys())[1:]
-    building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
-    unit_ids = {u['id'] for c in civs.values() for u in c['units']}
-    tech_ids = set.union(
-        {t['id'] for c in civs.values() for t in c['techs']},
-        {t for t, tech in enumerate(content['Techs']) if tech['Name'] in ages},
-        {t for t, tech in enumerate(content['Techs']) if 'Wall' in tech['Name']},
-        {t for t, tech in enumerate(content['Techs']) if 'Tower' in tech['Name']},
-    )
+    building_ids = set.union({b['id'] for c in civs.values() for b in c['buildings']}, \
+                             {RTWC2})
+    unit_ids = set.union({u['id'] for c in civs.values() for u in c['units']}, \
+                         {c['unique']['classicalAgeUniqueUnit'] for c in civs.values()}, \
+        {c['unique']['imperialAgeUniqueUnit'] for c in civs.values()}, \
+        {PTREB})
+    tech_ids = set.union({t['id'] for c in civs.values() for t in c['techs']}, \
+                         {c['unique']['classicalAgeUniqueTech1'] for c in civs.values()}, \
+                         {c['unique']['classicalAgeUniqueTech2'] for c in civs.values()}, \
+                         {c['unique']['imperialAgeUniqueTech1'] for c in civs.values()}, \
+        {c['unique']['imperialAgeUniqueTech2'] for c in civs.values()}, \
+        {TRACKING})
     gaia = content["Civs"][0]
     graphics = content["Graphics"]
     data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
