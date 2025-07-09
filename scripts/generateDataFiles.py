@@ -276,7 +276,7 @@ def gather_language_data(resourcesdir, data, language):
     key_value = {1: ''}
     with key_value_strings_file_en.open() as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, "Age of Empires II")
 
     key_value[1] = ''  # Mode
     key_value[26708] = key_value[26186]  # Palisade Gate
@@ -320,12 +320,12 @@ def ror_gather_language_data(programdir, data, language):
     key_value_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
     with key_value_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, "Return of Rome")
     # override strings with everything specific to AoE1 / Return of Rome
     key_value_pompeii_strings_file_en = programdir / 'modes' / 'Pompeii' / 'resources' / language / 'strings' / 'key-value' / 'key-value-pompeii-strings-utf8.txt'
     with key_value_pompeii_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, "Return of Rome")
 
     key_value[5121] = key_value[305131]  # Villager
     key_value[26121] = key_value[326131]
@@ -362,14 +362,26 @@ def chronicles_gather_language_data(programdir, data, language):
     key_value_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
     with key_value_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, "Chronicles")
     # override strings with everything specific to Chronicles
     key_value_paphos_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-paphos-strings-utf8.txt'
     with key_value_paphos_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
-            parse_line(key_value, line)
+            parse_line(key_value, line, "Chronicles")
 
     key_value_filtered = {}
+    substitutions = {
+        28101: 428090,
+        28102: 408091,
+        28103: 408092,
+        5121: 5606,
+        5607: 5606,
+        5381: 405063,
+        5100: 5484
+    }
+    for key, value in substitutions.items():
+        key_value[key] = key_value.get(value)
+
     for datatype in ("buildings", "units", "techs"):
         for item_id in data.get(datatype, {}):
             try:
@@ -410,7 +422,7 @@ def chronicles_gather_language_data(programdir, data, language):
     return key_value_filtered
 
 
-def parse_line(key_value, line):
+def parse_line(key_value, line, mode):
     items = line.split(" ")
     if items[0].isnumeric():
         number = int(items[0])
@@ -426,7 +438,12 @@ def parse_line(key_value, line):
             text = re.sub(r'‹i›(.+?)‹i›', r'<i>\1</i>', text)
             text = re.sub(r'\\n', r'<br>\n', text)
             key_value[number] = text
-    elif items[0] == 'IDS_MPS_RETURN_OF_ROME_TOGGLE':
+    elif (mode == 'Return of Rome' and items[0] == 'IDS_MPS_RETURN_OF_ROME_TOGGLE'):
+        match = re.search('".+"', line)
+        if match:
+            text = match.group(0)[1:-1]
+            key_value[1] = text
+    elif (mode == 'Chronicles' and items[0] == 'IDS_MPS_AOE_II_DE_PAPHOS_TOGGLE'):
         match = re.search('".+"', line)
         if match:
             text = match.group(0)[1:-1]
@@ -692,6 +709,7 @@ def is_imperial_age_unique_tech_2(tech):
 
 
 # The following two functions are for AoE2 unique technologies
+
 def is_castle_age_unique_tech(tech):
     if tech['Node Type'] != 'Research':
         return False
