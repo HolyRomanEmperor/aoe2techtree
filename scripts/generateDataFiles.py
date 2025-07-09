@@ -927,7 +927,7 @@ def chronicles_gather_civs(techtrees):
             if unit['Node Type'] in ('Unit', 'UniqueUnit', 'UnitUpgrade', 'RegionalUnit') and unit['Node Status'] != 'NotAvailable':
                 node_types['units'][unit['Node ID']] = unit['Node Type']
                 if is_castle_age_unique_unit(unit):
-                    current_civ['unique']['castleAgeUniqueUnit'] = unit['Node ID']
+                    current_civ['unique']['classicalAgeUniqueUnit'] = unit['Node ID']
                 elif is_imperial_age_unique_unit(unit):
                     current_civ['unique']['imperialAgeUniqueUnit'] = unit['Node ID']
                 elif unit['Node ID'] not in unit_excludelist:
@@ -942,9 +942,9 @@ def chronicles_gather_civs(techtrees):
         for tech in civ['civ_techs_units']:
             if tech['Node Type'] == 'Research' and tech['Node Status'] != 'NotAvailable':
                 if is_castle_age_unique_tech_1(tech):
-                    current_civ['unique']['castleAgeUniqueTech1'] = tech['Node ID']
+                    current_civ['unique']['classicalAgeUniqueTech1'] = tech['Node ID']
                 elif is_castle_age_unique_tech_2(tech):
-                    current_civ['unique']['castleAgeUniqueTech2'] = tech['Node ID']
+                    current_civ['unique']['classicalAgeUniqueTech2'] = tech['Node ID']
                 elif is_imperial_age_unique_tech_1(tech):
                     current_civ['unique']['imperialAgeUniqueTech1'] = tech['Node ID']
                 elif is_imperial_age_unique_tech_2(tech):
