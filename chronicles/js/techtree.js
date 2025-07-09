@@ -76,7 +76,7 @@ const UNIQUE_TECH_CASTLE_1 = 'UNIQUE TECH CASTLE 1';
 const UNIQUE_TECH_CASTLE_2 = 'UNIQUE TECH CASTLE 2';
 const UNIQUE_TECH_IMPERIAL_1 = 'UNIQUE TECH IMPERIAL 1';
 const UNIQUE_TECH_IMPERIAL_2 = 'UNIQUE TECH IMPERIAL 2';
-const MONK_SUFFIX_GENERIC = '_33';
+const MONK_SUFFIX_GENERIC = '_629';
 
 // Buildings
 const BARRACKS = 12;
@@ -521,10 +521,11 @@ function formatName(originalname) {
 }
 
 function unique(ids, monk_suffix) {
-    if (monk_suffix === undefined) {
-        monk_suffix = MONK_SUFFIX_GENERIC;
-    }
+    monk_suffix = monk_suffix || MONK_SUFFIX_GENERIC;
     try {
+        SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
+        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
+        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
         SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
         SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
         SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
@@ -537,9 +538,6 @@ function unique(ids, monk_suffix) {
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[4]].LanguageNameId], 'id':'tech_'+ids[3]});
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[3]});
-        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
-        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-        SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
     } catch (e) {
         console.log(ids);
     }
@@ -695,6 +693,7 @@ function getDefaultTree() {
     portlane.rows.archaic_2.push(unit(FISHING_SHIP));
     portlane.rows.archaic_2.push(unit(TRANSPORT_SHIP));
     portlane.rows.civic_1.push(unit(WAR_LEMBOS));
+    portlane.rows.civic_1.push(building(FISH_TRAP));
     portlane.rows.civic_1.push(unit(MERCHANT_SHIP));
     portlane.rows.classical_1.push(unit(HEAVY_LEMBOS));
     portlane.rows.classical_1.push(tech(SCOOP_NETS));
@@ -702,11 +701,6 @@ function getDefaultTree() {
     portlane.rows.imperial_1.push(unit(ELITE_LEMBOS));
     portlane.rows.imperial_1.push(tech(SHIPWRIGHT));
     tree.lanes.push(portlane);
-
-
-    let fishtraplane = new Lane();
-    fishtraplane.rows.civic_1.push(building(FISH_TRAP));
-    tree.lanes.push(fishtraplane);
 
 
     let shipyardlane = new Lane();
@@ -913,7 +907,6 @@ function getConnections() {
         [u(LEMBOS), u(WAR_LEMBOS)],
         [u(WAR_LEMBOS), u(HEAVY_LEMBOS)],
         [u(HEAVY_LEMBOS), u(ELITE_LEMBOS)],
-        [b(PORT), b(FISH_TRAP)],
         [b(SHIPYARD), u(MONOREME)],
         [u(MONOREME), u(BIREME)],
         [u(BIREME), u(TRIREME)],
