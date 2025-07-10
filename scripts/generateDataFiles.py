@@ -274,7 +274,7 @@ def get_cost(creatable):
 def gather_language_data(resourcesdir, data, language):
     key_value_strings_file_en = resourcesdir / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
     key_value = {1: ''}
-    with key_value_strings_file_en.open() as f:
+    with key_value_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
             parse_line(key_value, line, "Age of Empires II")
 
@@ -356,15 +356,15 @@ def ror_gather_language_data(programdir, data, language):
     return key_value_filtered
 
 
-def chronicles_gather_language_data(programdir, data, language):
+def chronicles_gather_language_data(resourcedir, data, language):
     key_value = {1: ''}
     # some strings are shared with the base game; read these in first
-    key_value_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
+    key_value_strings_file_en = resourcedir / language / 'strings' / 'key-value' / 'key-value-strings-utf8.txt'
     with key_value_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
             parse_line(key_value, line, "Chronicles")
     # override strings with everything specific to Chronicles
-    key_value_paphos_strings_file_en = programdir / 'resources' / language / 'strings' / 'key-value' / 'key-value-paphos-strings-utf8.txt'
+    key_value_paphos_strings_file_en = resourcedir / language / 'strings' / 'key-value' / 'key-value-paphos-strings-utf8.txt'
     with key_value_paphos_strings_file_en.open(encoding='utf-8') as f:
         for line in f:
             parse_line(key_value, line, "Chronicles")
@@ -762,7 +762,7 @@ def write_language_files(args, data, outputdir):
         languagedir = outputdir / 'locales' / language
         languagedir.mkdir(parents=True, exist_ok=True)
         languagefile = languagedir / 'strings.json'
-        with languagefile.open('w') as f:
+        with languagefile.open('w', encoding='utf-8') as f:
             print(f'Writing language file {languagefile}')
             json.dump(key_value_filtered, f, indent=4, sort_keys=True, ensure_ascii=False)
 
@@ -1021,9 +1021,9 @@ def chronicles_write_datafile(data, techtrees, outputdir):
 
 
 def chronicles_write_language_files(args, data, outputdir):
-    programdir = Path(args.programdir)
+    resourcesdir = Path(args.programdir) / 'resources'
     for language in LANGUAGES:
-        key_value_filtered = chronicles_gather_language_data(programdir, data, language)
+        key_value_filtered = chronicles_gather_language_data(resourcesdir, data, language)
 
         languagedir = outputdir / 'locales' / language
         languagedir.mkdir(parents=True, exist_ok=True)
