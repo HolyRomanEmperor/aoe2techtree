@@ -149,11 +149,12 @@ function displayData() {
                     id: `${caret.id}_bg`
                 }).move(caret.x, caret.y);
                 let name = formatName(caret.name);
+                const y_correction = caret.name ? 0 : 9;
                 const text = item.text(name.toString())
                     .font({size: 9, weight: 'bold'})
                     .attr({fill: '#ffffff', opacity: 0.95, 'text-anchor': 'middle', id: caret.id + '_text'})
                     .cx(caret.x + caret.width / 2)
-                    .y(caret.y + caret.height / 1.5);
+                    .y(caret.y + caret.height / 1.5 + y_correction);
                 const image_placeholder = item.rect(caret.width * 0.6, caret.height * 0.6)
                     .attr({fill: '#000000', opacity: 0.5, id: caret.id + '_imgph'})
                     .move(caret.x + caret.width * 0.2, caret.y);
