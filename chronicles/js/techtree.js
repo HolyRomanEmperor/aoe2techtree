@@ -198,7 +198,7 @@ const WHEELBARROW = 213;
 const HAND_CART = 249;
 
 const POLEMARCH = 2162;
-const PLACEHOLDERS = ['Classical Age placeholder', 'Imperial Age placeholder 1',
+const TC_SPECIAL_TECH_PLACEHOLDERS = ['Classical Age placeholder', 'Imperial Age placeholder 1',
     'Imperial Age placeholder 2','Imperial Age placeholder 3', 'Imperial Age placeholder 4'];
 
 // Market
@@ -556,19 +556,20 @@ function unique(ids, monk_suffix, shenanigans) {
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[5]});
 
-        for (let i = 0; i < PLACEHOLDERS.length; i++) {
+        for (let i = 0; i < TC_SPECIAL_TECH_PLACEHOLDERS.length; i++) {
+            const formattedId = formatId(TC_SPECIAL_TECH_PLACEHOLDERS[i]);
             if (shenanigans[i] == null) {
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_img').load('img/cross.png');
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_text').text("");
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_overlay').data({'name': PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_x').attr({'opacity': 1});
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_disabled_gray').attr({'opacity': 1});
+                SVG('#tech_' + formattedId + '_img').load('img/cross.png');
+                SVG('#tech_' + formattedId + '_text').text("");
+                SVG('#tech_' + formattedId + '_overlay').data({'name': TC_SPECIAL_TECH_PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
+                SVG('#tech_' + formattedId + '_x').attr({'opacity': 1});
+                SVG('#tech_' + formattedId + '_disabled_gray').attr({'opacity': 1});
             } else {
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_img').load('img/Techs/' + formatId(shenanigans[i]) + '.png');
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_text').text(formatName(data.strings[data.data.techs[shenanigans[i]].LanguageNameId]));
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_overlay').data({'name': data.strings[data.data.techs[shenanigans[i]].LanguageNameId], 'id':'tech_'+shenanigans[i]});
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_x').attr({'opacity': 0});
-                SVG('#tech_' + formatId(PLACEHOLDERS[i]) + '_disabled_gray').attr({'opacity': 0});
+                SVG('#tech_' + formattedId + '_img').load('img/Techs/' + formatId(shenanigans[i]) + '.png');
+                SVG('#tech_' + formattedId + '_text').text(formatName(data.strings[data.data.techs[shenanigans[i]].LanguageNameId]));
+                SVG('#tech_' + formattedId + '_overlay').data({'name': data.strings[data.data.techs[shenanigans[i]].LanguageNameId], 'id':'tech_'+shenanigans[i]});
+                SVG('#tech_' + formattedId + '_x').attr({'opacity': 0});
+                SVG('#tech_' + formattedId + '_disabled_gray').attr({'opacity': 0});
             }
         }
     } catch (e) {
@@ -827,11 +828,11 @@ function getDefaultTree() {
     towncenterlane.rows.classical_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.classical_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.classical_1.push(tech(HAND_CART));
-    towncenterlane.rows.classical_1.push(tech(PLACEHOLDERS[0]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[1]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[2]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[3]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[4]));
+    towncenterlane.rows.classical_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[0]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[1]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[2]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[3]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[4]));
     tree.lanes.push(towncenterlane);
 
 
@@ -962,7 +963,7 @@ function getConnections() {
         [b(FORT), t(SPIES_TREASON)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), u(POLEMARCH)],
-        [t(PLACEHOLDERS[0]), t(PLACEHOLDERS[4])],
+        [t(TC_SPECIAL_TECH_PLACEHOLDERS[0]), t(TC_SPECIAL_TECH_PLACEHOLDERS[4])],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
         [t(CASTLE_AGE), t(IMPERIAL_AGE)],
