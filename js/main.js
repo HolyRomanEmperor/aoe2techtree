@@ -875,35 +875,6 @@ function civ(name) {
         makeSVGObjectOpaque(SVG('#' + this.id().replace('_x', '_disabled_gray')), 0.2);
     });
 
-    const placeholder_values = find_shenanigans(selectedCiv.name);
-    SVG.find('.earlier-age').each(function () {
-        let {id, type, ageId} = parseSVGObjectId2(this.id());
-        if (id === undefined || type === undefined || ageId === undefined) {
-            console.error("Could not process: ", this.id());
-            return;
-        }
-        const index = PLACEHOLDERS_IDS.indexOf(id);
-        if (index !== -1) {
-            id = placeholder_values[index];
-        }
-
-        let earlyItem;
-        switch (type) {
-            case 'unit': earlyItem = selectedCiv.units.find((item) => item.id === id && item.age <= ageId);
-                break;
-            case 'building': earlyItem = selectedCiv.buildings.find((item) => item.id === id && item.age <= ageId);
-                break;
-            case 'tech': earlyItem = selectedCiv.techs.find((item) => item.id === id && item.age <= ageId);
-        }
-        if (earlyItem) {
-            getShieldForEarlierAge(this, earlyItem.age);
-            return;
-        }
-        if (SVGObjectIsOpaque(this)) {
-            makeSVGObjectOpaque(this, 0);
-        }
-    });
-
     applySelectedCiv(selectedCiv);
 }
 

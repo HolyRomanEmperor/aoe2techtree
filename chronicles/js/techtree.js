@@ -78,10 +78,6 @@ const UNIQUE_TECH_IMPERIAL_1 = 'UNIQUE TECH IMPERIAL 1';
 const UNIQUE_TECH_IMPERIAL_2 = 'UNIQUE TECH IMPERIAL 2';
 const MONK_SUFFIX_GENERIC = '_629';
 
-const PLACEHOLDERS = ['Classical Age placeholder', 'Imperial Age placeholder 1',
-    'Imperial Age placeholder 2', 'Imperial Age placeholder 3', 'Imperial Age placeholder 4'];
-const PLACEHOLDERS_IDS = PLACEHOLDERS.map(name => name.toLowerCase().replace(/ /g, '_'));
-
 // Buildings
 const BARRACKS = 12;
 const PORT = 2172;
@@ -201,6 +197,10 @@ const IMPERIAL_AGE = 103;
 const WHEELBARROW = 213;
 const HAND_CART = 249;
 const POLEMARCH = 2162;
+
+const TC_SPECIAL_TECHS_PLACEHOLDERS = ['Classical Age placeholder', 'Imperial Age placeholder 1',
+    'Imperial Age placeholder 2', 'Imperial Age placeholder 3', 'Imperial Age placeholder 4'];
+const TC_SPECIAL_TECHS_PLACEHOLDERS_IDS = TC_SPECIAL_TECHS_PLACEHOLDERS.map(name => name.toLowerCase().replace(/ /g, '_'));
 
 // Market
 const TRADE_CART = 128;
@@ -493,8 +493,39 @@ function find_shenanigans(civ) {
     }
 }
 
+function applyEarlierAges(selectedCiv, shenanigans) {
+    SVG.find('.earlier-age').each(function () {
+        let {id, type, ageId} = parseSVGObjectId2(this.id());
+        if (id === undefined || type === undefined || ageId === undefined) {
+            console.error("Could not process: ", this.id());
+            return;
+        }
+        const index = TC_SPECIAL_TECHS_PLACEHOLDERS_IDS.indexOf(id);
+        if (index !== -1) {
+            id = shenanigans[index];
+        }
+
+        let earlyItem;
+        switch (type) {
+            case 'unit': earlyItem = selectedCiv.units.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'building': earlyItem = selectedCiv.buildings.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'tech': earlyItem = selectedCiv.techs.find((item) => item.id === id && item.age <= ageId);
+        }
+        if (earlyItem) {
+            getShieldForEarlierAge(this, earlyItem.age);
+            return;
+        }
+        if (SVGObjectIsOpaque(this)) {
+            makeSVGObjectOpaque(this, 0);
+        }
+    });
+}
+
 function applySelectedCiv(selectedCiv) {
     const shenanigans = find_shenanigans(selectedCiv.name);
+    applyEarlierAges(selectedCiv, shenanigans);
     enable(shenanigans, selectedCiv.buildings,
         [...selectedCiv.units, {id:UNIQUE_UNIT, age: 3}, {id: ELITE_UNIQUE_UNIT, age: 4}],
         [...selectedCiv.techs, {id: UNIQUE_TECH_CASTLE_1, age: 3}, {id: UNIQUE_TECH_CASTLE_2, age: 3}, {id: UNIQUE_TECH_IMPERIAL_1, age: 4}, {id: UNIQUE_TECH_IMPERIAL_2, age: 4}]);
@@ -558,12 +589,12 @@ function unique(ids, monk_suffix, shenanigans) {
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[5]});
 
-        for (let i = 0; i < PLACEHOLDERS.length; i++) {
-            const formattedId = formatId(PLACEHOLDERS[i]);
+        for (let i = 0; i < TC_SPECIAL_TECHS_PLACEHOLDERS.length; i++) {
+            const formattedId = formatId(TC_SPECIAL_TECHS_PLACEHOLDERS[i]);
             if (shenanigans[i] == null) {
                 SVG('#tech_' + formattedId + '_img').load('img/cross.png');
                 SVG('#tech_' + formattedId + '_text').text("");
-                SVG('#tech_' + formattedId + '_overlay').data({'name': PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
+                SVG('#tech_' + formattedId + '_overlay').data({'name': TC_SPECIAL_TECHS_PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
                 SVG('#tech_' + formattedId + '_x').attr({'opacity': 1});
                 SVG('#tech_' + formattedId + '_disabled_gray').attr({'opacity': 1});
             } else {
@@ -830,11 +861,11 @@ function getDefaultTree() {
     towncenterlane.rows.classical_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.classical_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.classical_1.push(tech(HAND_CART));
-    towncenterlane.rows.classical_1.push(tech(PLACEHOLDERS[0]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[1]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[2]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[3]));
-    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[4]));
+    towncenterlane.rows.classical_1.push(tech(TC_SPECIAL_TECHS_PLACEHOLDERS[0]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECHS_PLACEHOLDERS[1]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECHS_PLACEHOLDERS[2]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECHS_PLACEHOLDERS[3]));
+    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECHS_PLACEHOLDERS[4]));
     tree.lanes.push(towncenterlane);
 
 
@@ -965,7 +996,7 @@ function getConnections() {
         [b(FORT), t(SPIES_TREASON)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), u(POLEMARCH)],
-        [t(PLACEHOLDERS[0]), t(PLACEHOLDERS[4])],
+        [t(TC_SPECIAL_TECHS_PLACEHOLDERS[0]), t(TC_SPECIAL_TECHS_PLACEHOLDERS[4])],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
         [t(CASTLE_AGE), t(IMPERIAL_AGE)],
