@@ -74,6 +74,10 @@ const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
 const UNIQUE_TECH_1 = 'UNIQUE TECH 1';
 const UNIQUE_TECH_2 = 'UNIQUE TECH 2';
 const MONK_SUFFIX_GENERIC = '_33';
+
+const PLACEHOLDERS = [];
+const PLACEHOLDERS_IDS = PLACEHOLDERS.map(name => name.toLowerCase().replace(/ /g, '_'));
+
 const BARRACKS = 12;
 const DOCK = 45;
 const SIEGE_WORKSHOP = 49;
@@ -657,6 +661,16 @@ function enable(buildings, units, techs) {
     for (let item of techs) {
         SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
         SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+    }
+}
+
+/**
+ * @param civ
+ * @return {number[]}
+ */
+function find_shenanigans(civ) {
+    switch (civ) {
+        default: return [];
     }
 }
 

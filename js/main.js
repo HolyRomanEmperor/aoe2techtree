@@ -51,17 +51,6 @@ function updatePageTitle() {
     document.title = `${aoe2}${suffix} ${techtree}`;
 }
 
-function getShieldForEarlierRow(row) {
-    const age = row.split('_')[0];
-    for (let i = 1; i < AGE_IMAGES.length; i++) {
-        const ageimage = AGE_IMAGES[i];
-        if (ageimage.includes(age)) {
-            return AGE_IMAGES[i - 1];
-        }
-    }
-    return AGE_IMAGES[0];
-}
-
 function getAgeNumber(row) {
     const age = row.split('_')[0];
     for (let i = 0; i < AGE_IMAGES.length; i++) {
@@ -183,9 +172,9 @@ function displayData() {
                     .attr({id: caret.id + '_x'})
                     .addClass('cross')
                     .move(caret.x + caret.width * 0.15, caret.y - caret.height * 0.04);
-                const earlier_age_image = item.image('img/Ages/' + getShieldForEarlierRow(r))
+                const earlier_age_image = item.image('img/missing.png')
                     .size(caret.width * 0.3, caret.height * 0.3)
-                    .attr({id: caret.id + '_earlier_age_img_' + ageNumber, 'opacity': 0})
+                    .attr({id: caret.id + '_age_img_' + ageNumber, 'opacity': 0})
                     .addClass('earlier-age')
                     .move(caret.x + caret.width * 0.85, caret.y - caret.width * 0.15);
                 const overlaytrigger = item.rect(caret.width, caret.height)
@@ -886,27 +875,29 @@ function civ(name) {
         makeSVGObjectOpaque(SVG('#' + this.id().replace('_x', '_disabled_gray')), 0.2);
     });
 
+    const placeholder_values = find_shenanigans(selectedCiv.name);
     SVG.find('.earlier-age').each(function () {
         let {id, type, ageId} = parseSVGObjectId2(this.id());
         if (id === undefined || type === undefined || ageId === undefined) {
+            console.error("Could not process: ", this.id());
             return;
         }
+        const index = PLACEHOLDERS_IDS.indexOf(id);
+        if (index !== -1) {
+            id = placeholder_values[index];
+        }
 
-        if (type === 'unit') {
-            if (selectedCiv.units.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        } else if (type === 'building') {
-            if (selectedCiv.buildings.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
-        } else if (type === 'tech') {
-            if (selectedCiv.techs.some((item) => item.id === id && item.age === ageId)) {
-                makeSVGObjectOpaque(this);
-                return;
-            }
+        let earlyItem;
+        switch (type) {
+            case 'unit': earlyItem = selectedCiv.units.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'building': earlyItem = selectedCiv.buildings.find((item) => item.id === id && item.age <= ageId);
+                break;
+            case 'tech': earlyItem = selectedCiv.techs.find((item) => item.id === id && item.age <= ageId);
+        }
+        if (earlyItem) {
+            getShieldForEarlierAge(this, earlyItem.age);
+            return;
         }
         if (SVGObjectIsOpaque(this)) {
             makeSVGObjectOpaque(this, 0);
@@ -914,6 +905,11 @@ function civ(name) {
     });
 
     applySelectedCiv(selectedCiv);
+}
+
+function getShieldForEarlierAge(svgObj, actualAge) {
+    makeSVGObjectOpaque(svgObj);
+    SVG('#' + svgObj.node.id).load('img/Ages/' + AGE_IMAGES[actualAge-1]);
 }
 
 function SVGObjectIsOpaque(svgObj) {
@@ -942,13 +938,14 @@ function parseSVGObjectId(svgObjId) {
 }
 
 function parseSVGObjectId2(svgObjId) {
-    const id_regex = /(.+)_([\d]+)_earlier_age_img_([\d]+)/;
+    const id_regex = /^(unit|tech|building)_([\w]+)_age_img_(\d+)$/;
 
     const found = svgObjId.match(id_regex);
     if (!found) {
         return {id: undefined, type: undefined, ageId: undefined};
     }
-    let id = parseInt(found[2]);
+    let id = found[2];
+    if (!isNaN(parseInt(id))) id = parseInt(id);
     let type = found[1];
     let ageId = parseInt(found[3]);
 

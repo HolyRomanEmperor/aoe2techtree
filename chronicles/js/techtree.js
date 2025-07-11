@@ -78,6 +78,10 @@ const UNIQUE_TECH_IMPERIAL_1 = 'UNIQUE TECH IMPERIAL 1';
 const UNIQUE_TECH_IMPERIAL_2 = 'UNIQUE TECH IMPERIAL 2';
 const MONK_SUFFIX_GENERIC = '_629';
 
+const PLACEHOLDERS = ['Classical Age placeholder', 'Imperial Age placeholder 1',
+    'Imperial Age placeholder 2', 'Imperial Age placeholder 3', 'Imperial Age placeholder 4'];
+const PLACEHOLDERS_IDS = PLACEHOLDERS.map(name => name.toLowerCase().replace(/ /g, '_'));
+
 // Buildings
 const BARRACKS = 12;
 const PORT = 2172;
@@ -196,10 +200,7 @@ const CASTLE_AGE = 102;
 const IMPERIAL_AGE = 103;
 const WHEELBARROW = 213;
 const HAND_CART = 249;
-
 const POLEMARCH = 2162;
-const TC_SPECIAL_TECH_PLACEHOLDERS = ['Classical Age placeholder', 'Imperial Age placeholder 1',
-    'Imperial Age placeholder 2','Imperial Age placeholder 3', 'Imperial Age placeholder 4'];
 
 // Market
 const TRADE_CART = 128;
@@ -488,6 +489,7 @@ function find_shenanigans(civ) {
         case 'Achaemenids': return [null, 1195, 1196, 1197, null];
         case 'Athenians': return [null, 1202, 1203, 1204, null];
         case 'Spartans': return [1225, 1223, 1224, null, 1226];
+        default: return [null, null, null, null, null];
     }
 }
 
@@ -556,12 +558,12 @@ function unique(ids, monk_suffix, shenanigans) {
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
         SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[5]});
 
-        for (let i = 0; i < TC_SPECIAL_TECH_PLACEHOLDERS.length; i++) {
-            const formattedId = formatId(TC_SPECIAL_TECH_PLACEHOLDERS[i]);
+        for (let i = 0; i < PLACEHOLDERS.length; i++) {
+            const formattedId = formatId(PLACEHOLDERS[i]);
             if (shenanigans[i] == null) {
                 SVG('#tech_' + formattedId + '_img').load('img/cross.png');
                 SVG('#tech_' + formattedId + '_text').text("");
-                SVG('#tech_' + formattedId + '_overlay').data({'name': TC_SPECIAL_TECH_PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
+                SVG('#tech_' + formattedId + '_overlay').data({'name': PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
                 SVG('#tech_' + formattedId + '_x').attr({'opacity': 1});
                 SVG('#tech_' + formattedId + '_disabled_gray').attr({'opacity': 1});
             } else {
@@ -828,11 +830,11 @@ function getDefaultTree() {
     towncenterlane.rows.classical_1.push(tech(TOWN_PATROL));
     towncenterlane.rows.classical_1.push(tech(IMPERIAL_AGE));
     towncenterlane.rows.classical_1.push(tech(HAND_CART));
-    towncenterlane.rows.classical_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[0]));
-    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[1]));
-    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[2]));
-    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[3]));
-    towncenterlane.rows.imperial_1.push(tech(TC_SPECIAL_TECH_PLACEHOLDERS[4]));
+    towncenterlane.rows.classical_1.push(tech(PLACEHOLDERS[0]));
+    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[1]));
+    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[2]));
+    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[3]));
+    towncenterlane.rows.imperial_1.push(tech(PLACEHOLDERS[4]));
     tree.lanes.push(towncenterlane);
 
 
@@ -963,7 +965,7 @@ function getConnections() {
         [b(FORT), t(SPIES_TREASON)],
         [b(TOWN_CENTER), u(VILLAGER)],
         [b(TOWN_CENTER), u(POLEMARCH)],
-        [t(TC_SPECIAL_TECH_PLACEHOLDERS[0]), t(TC_SPECIAL_TECH_PLACEHOLDERS[4])],
+        [t(PLACEHOLDERS[0]), t(PLACEHOLDERS[4])],
         [b(TOWN_CENTER), t(FEUDAL_AGE)],
         [t(FEUDAL_AGE), t(CASTLE_AGE)],
         [t(CASTLE_AGE), t(IMPERIAL_AGE)],
