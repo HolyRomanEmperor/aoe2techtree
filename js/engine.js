@@ -81,6 +81,14 @@ class Caret {
     }
 }
 
+function imagePrefix(name) {
+    if (name.includes('placeholder')) return 'missing';
+    return name.replace('_copy', '')
+        .replace('building_', 'Buildings/')
+        .replace('unit_', 'Units/')
+        .replace('tech_', 'Techs/');
+}
+
 function cost(cost_object) {
     let value = '';
     if (cost_object.Food) {

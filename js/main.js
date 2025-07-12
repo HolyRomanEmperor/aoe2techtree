@@ -107,11 +107,10 @@ function displayData() {
     let icon_width = 112;
     let vertical_spacing = (row_height - icon_height) / 2 - 10;
     let margin_left = 20;
-    let image_urls = AGE_IMAGES;
     let age_names = getAgeNames(data);
-    for (let i = 0; i < image_urls.length; i++) {
+    for (let i = 0; i < AGE_IMAGES.length; i++) {
         let age_image_group = draw.group().click(hideHelp);
-        let age_image = age_image_group.image('img/Ages/' + image_urls[i])
+        let age_image = age_image_group.image('img/Ages/' + AGE_IMAGES[i])
             .size(icon_width, icon_height)
             .x(margin_left)
             .y(row_height * i + vertical_spacing);
@@ -119,8 +118,7 @@ function displayData() {
             .text(age_names[i])
             .font({size: 16, weight: 'bold'}) /* Text-anchor: middle does not work. */
             .cx(icon_width / 2 + margin_left)
-            .y(age_image.attr('y') + age_image.attr('height') + 5)
-        ;
+            .y(age_image.attr('y') + age_image.attr('height') + 5);
     }
 
     const connectionGroup = draw.group().attr({id: 'connection_lines'});
@@ -244,14 +242,6 @@ function onAdvancedStatsStateUpdate() {
     } catch (e) {
         // pass
     }
-}
-
-function imagePrefix(name) {
-    if (name.includes('placeholder')) return 'missing';
-    return name.replace('_copy', '')
-        .replace('building_', 'Buildings/')
-        .replace('unit_', 'Units/')
-        .replace('tech_', 'Techs/');
 }
 
 function loadCiv() {
