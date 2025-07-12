@@ -324,6 +324,7 @@ function displayHelp(caretId) {
     let id = overlay.data('id').replace('_copy', '');
     let caret = overlay.data('caret');
     let type = overlay.data('type');
+    if (name.includes('placeholder')) return hideHelp();
     helptextContent.innerHTML = getHelpText(name, id, type);
     helptextAdvancedStats.innerHTML = getAdvancedStats(name, id, type);
     styleXRefBadges(name, id, type);
@@ -392,68 +393,10 @@ function positionHelptextToLeftOrRight(caret, helptext) {
     helptext.style.left = destX + 'px';
 }
 
-function chargeText(type) {
-    switch (type) {
-        case 1:
-            return 'Charge Attack:&nbsp;';
-        case 2:
-            return 'Charge Hit Points:&nbsp;';
-        case 3:
-            return 'Charged Area Attack:&nbsp;';
-        case 4:
-            return 'Projectile Dodging:&nbsp;';
-        default:
-            return 'Unknown Charge:&nbsp;';
-    }
-}
-
-function splitTrait(trait) {
-    const traits = [];
-    for (let x of [1, 2, 4, 8, 16, 32, 64, 128]) {
-        if ((trait & x) > 0) {
-            traits.push(x);
-        }
-    }
-    return traits;
-}
-
-function traitsIfDefined(trait, traitPiece) {
-    let traitdescriptions = [];
-    if (trait === undefined || trait === 0) {
-        return false;
-    }
-    const traits = splitTrait(trait);
-    for (let singleTrait of traits) {
-        switch (singleTrait) {
-            case 1:
-                traitdescriptions.push('Garrison Unit');
-                break;
-            case 2:
-                traitdescriptions.push('Ship Unit');
-                break;
-            case 4:
-                traitdescriptions.push('Builds:&nbsp;' + data.strings[data.data['buildings'][traitPiece]['LanguageNameId']]);
-                break;
-            case 8:
-                traitdescriptions.push('Transforms into:&nbsp;' + data.strings[(data.data['buildings'][traitPiece]||data.data['units'][traitPiece])['LanguageNameId']]);
-                break;
-            case 16:
-                traitdescriptions.push('<abbr title="has auto-scout behaviour if placed at start">Scout Unit</abbr>');
-                break;
-            default:
-                traitdescriptions.push('Unknown Trait:&nbsp;' + trait);
-        }
-    }
-    return traitdescriptions;
-}
-
 function getHelpText(name, id, type) {
     let entitytype = getEntityType(type);
     const items = id.split('_', 1);
     id = id.substring(items[0].length + 1);
-    if (id === "null") {
-        return '?';
-    }
     let text = data.strings[data.data[entitytype][id]['LanguageHelpId']];
     if (text === undefined) {
         return '?';
@@ -464,7 +407,7 @@ function getHelpText(name, id, type) {
             '<p class="helptext__heading">$1</p>' +
             '<p class="helptext__desc">$2</p>' +
             '<p class="helptext__stats">&nbsp;</p>');
-    } else if (type === 'UNIT' || type === 'UNIQUEUNIT' ) {
+    } else if (type === 'UNIT' || type === 'UNIQUEUNIT') {
         text = text.replace(/(.+?\(‹cost›\))(.+?)<i>\s*(.+?)<\/i>(.*)/m,
             '<p class="helptext__heading">$1</p>' +
             '<p class="helptext__desc">$2</p>' +
@@ -528,10 +471,13 @@ function getHelpText(name, id, type) {
         stats.push(ifDefined(meta.Speed, 'Speed:&nbsp;'));
         stats.push(secondsIfDefined(meta.TrainTime, 'Build Time:&nbsp;'));
         stats.push(secondsIfDefined(meta.ResearchTime, 'Research Time:&nbsp;'));
-        stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;', ranged));
+        //stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;', ranged));
         stats.push(traitsIfDefined(meta.Trait, meta.TraitPiece));
         stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, chargeText(meta.ChargeType)));
-        stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
+        if ([6, 7].includes(meta.ChargeType) && meta.ChargeEvent) {
+            stats.push('Charge Attack Range:&nbsp;' + (meta.ChargeEvent + meta.Range));
+        }
+        //stats.push(ifDefinedAndGreaterZero(meta.RechargeRate, 'Recharge Rate:&nbsp;'));
         stats.push(secondsIfDefined(meta.RechargeDuration, 'Recharge Duration:&nbsp;'));
         if (displayAttack) {
             stats.push(secondsIfDefined(meta.AttackDelaySeconds, 'Attack Delay:&nbsp;', ranged));
@@ -559,17 +505,6 @@ function getAdvancedStats(name, id, type) {
         console.error('No metadata found for ' + name);
     }
     return text;
-}
-
-function getEntityType(type) {
-    let entitytype = 'buildings';
-    if (type === 'UNIT' || type === 'UNIQUEUNIT') {
-        entitytype = 'units';
-    }
-    if (type === 'TECHNOLOGY') {
-        entitytype = 'techs';
-    }
-    return entitytype;
 }
 
 /**
@@ -622,8 +557,10 @@ function styleXRefBadges(name, id, type) {
                 if (civs[civ].techs.map((item) => `tech_${item.id}`).includes(id)) {
                     found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.castleAgeUniqueTech2}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech1}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech2}` === id) {
+                    // Chronicles unique technologies
                     found = true;
                 } else if (`tech_${civs[civ]?.unique?.castleAgeUniqueTech}` === id || `tech_${civs[civ]?.unique?.imperialAgeUniqueTech}` === id) {
+                    // Age of Empires II unique technologies
                     found = true;
                 }
             } else if (type === 'BUILDING') {
@@ -690,23 +627,6 @@ function repeatableIfDefined(value) {
         return value ? 'Repeatable' : 'Not Repeatable';
     }
     return '';
-}
-
-function cost(cost_object) {
-    let value = '';
-    if ('Food' in cost_object) {
-        value += `<span class="cost food" title="${cost_object.Food} Food">${cost_object.Food}</span>`;
-    }
-    if ('Wood' in cost_object) {
-        value += `<span class="cost wood" title="${cost_object.Wood} Wood">${cost_object.Wood}</span>`;
-    }
-    if ('Gold' in cost_object) {
-        value += `<span class="cost gold" title="${cost_object.Gold} Gold">${cost_object.Gold}</span>`;
-    }
-    if ('Stone' in cost_object) {
-        value += `<span class="cost stone" title="${cost_object.Stone} Stone">${cost_object.Stone}</span>`;
-    }
-    return value;
 }
 
 function create_building_index() {
@@ -819,13 +739,10 @@ function fillLocaleSelector(currentLocale) {
 }
 
 function getCompareLocale() {
-    switch (currentLocale){
-        case 'tw':
-            return 'zh-TW'
-        case 'jp':
-            return 'ja';
-        default:
-            return currentLocale;
+    switch (currentLocale) {
+        case 'tw': return 'zh-TW'
+        case 'jp': return 'ja';
+        default: return currentLocale;
     }
 }
 
@@ -885,11 +802,7 @@ function getShieldForEarlierAge(svgObj, actualAge) {
 }
 
 function SVGObjectIsOpaque(svgObj) {
-    return svgObj.attr('opacity') === 1
-}
-
-function SVGObjectIsTransparent(svgObj) {
-    return svgObj.attr('opacity') === 0
+    return svgObj.attr('opacity') === 1;
 }
 
 function makeSVGObjectOpaque(svgObj, opacity = 1) {
@@ -906,7 +819,7 @@ function parseSVGObjectId(svgObjId) {
     let id = parseInt(found[2]);
     let type = found[1];
 
-    return {id, type}
+    return {id, type};
 }
 
 function parseSVGObjectId2(svgObjId) {
@@ -921,7 +834,7 @@ function parseSVGObjectId2(svgObjId) {
     let type = found[1];
     let ageId = parseInt(found[3]);
 
-    return {id, type, ageId}
+    return {id, type, ageId};
 }
 
 function techtreeDoesNotHaveScrollbar() {
@@ -1033,7 +946,7 @@ function main() {
     });
 }
 
-if('loading' === document.readyState) {
+if ('loading' === document.readyState) {
     // Loading hasn't finished yet.
     document.addEventListener('DOMContentLoaded', main)
 } else {

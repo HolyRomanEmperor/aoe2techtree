@@ -1,19 +1,3 @@
-const TYPES = Object.freeze({
-    'BUILDING': {colour: '#922602', type: 'BUILDING', name: 'Building'},
-    'UNIT': {colour: '#3a6a80', type: 'UNIT', name: 'Unit'},
-    'UNIQUEUNIT': {colour: '#af30a3', type: 'UNIQUEUNIT', name: 'Unique Unit'},
-    'TECHNOLOGY': {colour: '#2c5729', type: 'TECHNOLOGY', name: 'Technology'}
-});
-
-const LEGEND = [TYPES.UNIT, TYPES.BUILDING, TYPES.TECHNOLOGY];
-
-const PREFIX = Object.freeze({
-    'BUILDING': 'building_',
-    'UNIT': 'unit_',
-    'UNIQUEUNIT': 'unit_',
-    'TECHNOLOGY': 'tech_'
-});
-
 const AGE_IMAGES = ['techtree_stone_age.png', 'techtree_tool_age.png', 'techtree_bronze_age.png', 'techtree_iron_age.png'];
 
 const getAgeNames = (data) => {
@@ -25,60 +9,6 @@ const getAgeNames = (data) => {
     ];
 }
 
-const unitClasses = {
-    0: '<abbr title="unused">Wonders</abbr>',
-    1: 'Infantry',
-    2: 'Heavy Warships',
-    3: 'Base Pierce',
-    4: 'Base Melee',
-    5: 'Elephants',
-    6: 'Unused',
-    7: 'Unused',
-    8: '<abbr title="except Camels">Mounted Units</abbr>',
-    9: 'Unused',
-    10: 'Unused',
-    11: 'All Buildings',
-    12: 'Unused',
-    13: 'Stone Walls & Gates & Towers',
-    14: 'Wolves etc.',
-    15: 'All Archers',
-    16: '<abbr title="except Fishing Ships">Ships</abbr>',
-    17: 'High Pierce Armor Siege Units',
-    18: 'Trees',
-    19: 'Unique Units',
-    20: 'Siege Units',
-    21: '<abbr title="except Wonders">Standard Buildings</abbr>',
-    22: 'Walls & Gates',
-    23: 'Gunpowder Units',
-    24: 'Boars etc.',
-    25: 'Monks',
-    26: 'Castles & Kreposts',
-    27: 'Spear Units',
-    28: 'Mounted Archers',
-    29: 'Shock Infantry',
-    30: 'Camels',
-    31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
-    32: 'Condottieri',
-    33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
-    34: 'Fishing Ships',
-    35: 'Mamelukes',
-    36: 'Heroes & Kings',
-    37: 'Heavy Siege',
-    38: 'Skirmishers',
-    39: 'Cavalry Resistance',
-    40: 'Houses'
-};
-
-const animation_duration = 50;
-
-const UNIQUE_UNIT = 'UNIQUE UNIT';
-const ELITE_UNIQUE_UNIT = 'ELITE UNIQUE UNIT';
-const UNIQUE_TECH_1 = 'UNIQUE TECH 1';
-const UNIQUE_TECH_2 = 'UNIQUE TECH 2';
-const MONK_PREFIX_MESO = 'meso_';
-const MONK_PREFIX_AFRICAN = 'african_';
-const MONK_PREFIX_ASIAN = 'asian_';
-const MONK_PREFIX_GENERIC = '';
 const BUILDING_STYLE_GENERIC = '';
 const BARRACKS = 12;
 const DOCK = 45;
@@ -223,6 +153,7 @@ const BUILDING_INDEX = [
     TEMPLE,
     DOCK,
 ];
+
 class Tree {
     constructor() {
         this.offsets = {
@@ -358,40 +289,6 @@ class Lane {
     }
 }
 
-class Caret {
-    constructor(type, name, id) {
-        this.type = type;
-        this.name = name;
-        this.id = PREFIX[type.type] + formatId(id);
-        this.width = 100;
-        this.height = 100;
-        this.x = 0;
-        this.y = 0;
-    }
-
-    isBuilding() {
-        return this.type === TYPES.BUILDING;
-    }
-}
-
-function formatId(string) {
-    return string.toString().replace(/\s/g, '_').replace(/\//g, '_').toLowerCase();
-}
-
-function checkIdUnique(tree) {
-    let ids = new Set();
-    for (let lane of tree.lanes) {
-        for (let r of Object.keys(lane.rows)) {
-            for (let caret of lane.rows[r]) {
-                if (ids.has(caret.id)) {
-                    console.error('ID ' + caret.id + ' is not unique!');
-                }
-                ids.add(caret.id);
-            }
-        }
-    }
-}
-
 function enable(buildings, units, techs) {
     for (let item of buildings) {
         SVG('#building_' + formatId(item.id) + '_x').attr({'opacity': 0});
@@ -462,31 +359,6 @@ function unique(building_style) {
 	SVG('#building_' + formatId(GUARD_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
 	SVG('#building_' + formatId(BALLISTA_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
 	SVG('#building_' + formatId(WONDER) + '_img').load('img/Buildings/' + WONDER + '_' + building_style + '.png');
-}
-
-function getName(id, itemtype) {
-    //ToDo handle unique stuff properly
-    if(id.toString().startsWith('UNIQUE')){
-        return id;
-    }
-    const languageNameId = data['data'][itemtype][id]['LanguageNameId'];
-    return data['strings'][languageNameId];
-}
-
-function building(id) {
-    return new Caret(TYPES.BUILDING, getName(id, 'buildings'), id);
-}
-
-function unit(id) {
-    return new Caret(TYPES.UNIT, getName(id, 'units'), id);
-}
-
-function uniqueunit(id) {
-    return new Caret(TYPES.UNIQUEUNIT, getName(id, 'units'), id);
-}
-
-function tech(id) {
-    return new Caret(TYPES.TECHNOLOGY, getName(id, 'techs'), id);
 }
 
 function getDefaultTree() {
@@ -714,18 +586,6 @@ function getDefaultTree() {
     return tree;
 }
 
-function u(unit) {
-    return 'unit_' + unit;
-}
-
-function b(building) {
-    return 'building_' + building;
-}
-
-function t(tech) {
-    return 'tech_' + tech;
-}
-
 function getConnections() {
     let connections = [
 		[b(ARCHERY_RANGE), b(SIEGE_WORKSHOP)],
@@ -852,20 +712,4 @@ function getConnections() {
         connection_ids.push([formatId(c[0]), formatId(c[1])]);
     }
     return connection_ids;
-}
-
-
-function getConnectionPoints(tree) {
-    let points = new Map();
-    for (let lane of tree.lanes) {
-        for (let r of Object.keys(lane.rows)) {
-            for (let caret of lane.rows[r]) {
-                points.set(caret.id, {
-                    x: caret.x + (caret.width / 2),
-                    y: caret.y + (caret.height / 2)
-                });
-            }
-        }
-    }
-    return points;
 }

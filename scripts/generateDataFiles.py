@@ -501,7 +501,7 @@ def gather_data(content, civs, unit_upgrades, node_types):
     return data
 
 
-def ror_gather_data(content, civs, unit_upgrades):
+def ror_gather_data(content, civs, unit_upgrades, node_types):
     ages = list(ROR_AGE_NAMES.keys())[1:]
     building_ids = {b['id'] for c in civs.values() for b in c['buildings']}
     unit_ids = {u['id'] for c in civs.values() for u in c['units']}
@@ -513,7 +513,7 @@ def ror_gather_data(content, civs, unit_upgrades):
     )
     gaia = content["Civs"][0]
     graphics = content["Graphics"]
-    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}}
+    data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
     for unit in gaia["Units"]:
         if unit["ID"] in building_ids:
             add_building(unit["ID"], unit, data)
@@ -618,16 +618,17 @@ def add_unit(key, unit, graphics, data):
         'Armours': unit["Type50"]["Armours"],
         'ReloadTime': unit["Type50"]["ReloadTime"],
         'AccuracyPercent': unit["Type50"]["AccuracyPercent"],
-        'FrameDelay': unit["Type50"]["FrameDelay"],
+        #'FrameDelay': unit["Type50"]["FrameDelay"],
         'AttackDelaySeconds': attack_delay_seconds,
         'MinRange': unit["Type50"]["MinRange"],
         'TrainTime': unit["Creatable"]["TrainTime"],
         'MaxCharge': unit["Creatable"]["MaxCharge"],
-        'RechargeRate': unit["Creatable"]["RechargeRate"],
+        #'RechargeRate': unit["Creatable"]["RechargeRate"],
         'ChargeEvent': unit["Creatable"]["ChargeEvent"],
         'ChargeType': unit["Creatable"]["ChargeType"],
         'LanguageNameId': unit['LanguageDLLName'],
         'LanguageHelpId': unit['LanguageDLLName'] + 21_000,
+        #'NumberOfProjectiles': (unit['PrimaryProjectileId'] !== -1) + unit['SecondaryProjectiles'],
     }
     if unit["Creatable"]["RechargeRate"] > 0:
         data['units'][key]['RechargeDuration'] = unit["Creatable"]["MaxCharge"] / unit["Creatable"]["RechargeRate"]
@@ -869,12 +870,15 @@ def ror_gather_civs(techtrees):
     unit_excludelist = ()
     civs = {}
     unit_upgrades = {}
+    node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
         current_civ = {'buildings': [], 'units': [], 'techs': []}
         for building in civ['civ_techs_buildings']:
+            node_types['buildings'][building['Node ID']] = building['Node Type']
             if building['Node Status'] != 'NotAvailable':
                 current_civ['buildings'].append({'id': building['Node ID'], 'age': building['Age ID']})
         for unit in filter(ror_is_unit, civ['civ_techs_units']):
+            node_types['units'][unit['Node ID']] = unit['Node Type']
             current_civ['units'].append({'id': unit['Node ID'], 'age': unit['Age ID']})
             if unit['Trigger Tech ID'] > -1:
                 unit_upgrades[unit['Node ID']] = unit['Trigger Tech ID']
@@ -894,7 +898,7 @@ def ror_gather_civs(techtrees):
 
         current_civ['buildingStyle'] = ROR_BUILDING_STYLES[civname]
 
-    return civs, unit_upgrades
+    return civs, unit_upgrades, node_types
 
 
 def ror_update_civ_techs(civs, data):
