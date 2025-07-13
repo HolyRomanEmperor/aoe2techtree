@@ -191,8 +191,6 @@ const LEITIS = 1234;
 const ELITE_LEITIS = 1236;
 const DISMOUNTED_KONNIK = 1252;
 const DISMOUNTED_ELITE_KONNIK = 1253;
-const KONNIK_2 = 1254;
-const ELITE_KONNIK_2 = 1255;
 const BATTERING_RAM = 1258;
 const FLAMING_CAMEL = 1263;
 const DRAGON_FIRE_SHIP = 1302;
@@ -426,10 +424,11 @@ class Lane {
             lane_width = Math.max(lane_width, row_width);
         }
         this.width = lane_width;
+        const leftLeaningBuildings = [b(KREPOST)];
 
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if (this.rows[r][i].isBuilding()) {
+                if (this.rows[r][i].isBuilding() && !leftLeaningBuildings.includes(this.rows[r][i].id)) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
@@ -742,7 +741,18 @@ function getDefaultTree() {
     tree.lanes.push(walllane);
 
 
+    let donjonlane = new Lane();
+    donjonlane.rows.dark_1.push(building(DONJON));
+    donjonlane.rows.feudal_1.push(unit(DSERJEANT));
+    donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
+    donjonlane.rows.castle_1.push(unit(DPIKEMAN));
+    donjonlane.rows.imperial_1.push(unit(ELITE_DSERJEANT));
+    donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
+    tree.lanes.push(donjonlane);
+
+
     let castlelane = new Lane();
+    castlelane.rows.castle_1.push(building(KREPOST));
     castlelane.rows.castle_1.push(building(CASTLE));
     castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, UNIQUE_UNIT, UNIQUE_UNIT));
     castlelane.rows.castle_2.push(unit(PETARD));
@@ -758,23 +768,6 @@ function getDefaultTree() {
     castlelane.rows.imperial_2.push(unit(CAO_CAO));
     castlelane.rows.imperial_2.push(unit(SUN_JIAN));
     tree.lanes.push(castlelane);
-
-
-    let krepostlane = new Lane();
-    krepostlane.rows.castle_1.push(building(KREPOST));
-    krepostlane.rows.castle_2.push(unit(KONNIK_2));
-    krepostlane.rows.imperial_1.push(unit(ELITE_KONNIK_2));
-    tree.lanes.push(krepostlane);
-
-
-    let donjonlane = new Lane();
-    donjonlane.rows.dark_1.push(building(DONJON));
-    donjonlane.rows.feudal_1.push(unit(DSERJEANT));
-    donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
-    donjonlane.rows.castle_1.push(unit(DPIKEMAN));
-    donjonlane.rows.imperial_1.push(unit(ELITE_DSERJEANT));
-    donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
-    tree.lanes.push(donjonlane);
 
 
     let monasterylane = new Lane();
@@ -898,7 +891,7 @@ function getDefaultTree() {
 }
 
 function getConnections() {
-    let connections = [
+    return [
         [b(ARCHERY_RANGE), u(ARCHER)],
         [u(ARCHER), u(CROSSBOWMAN)],
         [u(CROSSBOWMAN), u(ARBALESTER)],
@@ -994,8 +987,8 @@ function getConnections() {
         [b(CASTLE), t(SAPPERS)],
         [b(CASTLE), t(CONSCRIPTION)],
         [b(CASTLE), t(SPIES_TREASON)],
-        [b(KREPOST), u(KONNIK_2)],
-        [u(KONNIK_2), u(ELITE_KONNIK_2)],
+        [b(KREPOST), u(UNIQUE_UNIT)],
+        [u(UNIQUE_UNIT), u(ELITE_UNIQUE_UNIT)],
         [b(DONJON), u(DSERJEANT)],
         [u(DSERJEANT), u(ELITE_DSERJEANT)],
         [b(DONJON), u(DSPEARMAN)],
@@ -1088,10 +1081,4 @@ function getConnections() {
         [b(ARCHERY_RANGE), u(XIANBEI_RAIDER)],
         [b(DOCK), u(LONGBOAT)],
     ];
-
-    let connection_ids = [];
-    for (let c of connections) {
-        connection_ids.push([formatId(c[0]), formatId(c[1])]);
-    }
-    return connection_ids;
 }

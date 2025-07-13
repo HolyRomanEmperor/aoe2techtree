@@ -734,7 +734,7 @@ function getDefaultTree() {
 }
 
 function getConnections() {
-    let connections = [
+    return [
         [b(ARCHERY_RANGE), u(ARCHER)],
         [u(ARCHER), u(CROSSBOWMAN)],
         [u(CROSSBOWMAN), u(ARBALESTER)],
@@ -854,10 +854,4 @@ function getConnections() {
         [t(HEAVY_PLOW), t(CROP_ROTATION)],
         [b(MILL), b(FARM)],
     ];
-
-    let connection_ids = [];
-    for (let c of connections) {
-        connection_ids.push([formatId(c[0]), formatId(c[1])]);
-    }
-    return connection_ids;
 }

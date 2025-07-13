@@ -244,15 +244,15 @@ function tech(id) {
 }
 
 function u(unit) {
-    return 'unit_' + unit;
+    return formatId('unit_' + unit);
 }
 
 function b(building) {
-    return 'building_' + building;
+    return formatId('building_' + building);
 }
 
 function t(tech) {
-    return 'tech_' + tech;
+    return formatId('tech_' + tech);
 }
 
 function formatName(originalname) {
