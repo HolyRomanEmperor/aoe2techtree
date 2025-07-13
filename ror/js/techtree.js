@@ -146,8 +146,8 @@ const BUILDING_INDEX = [
     STABLE,
     ACADEMY,
     STORAGE_PIT,
-    GRANARY,
     WATCH_TOWER,
+    GRANARY,
     MARKET,
     GOVERNMENT_CENTER,
     TEMPLE,
@@ -243,7 +243,7 @@ class Lane {
 
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if (this.rows[r][i].isBuilding()) {
+                if (this.rows[r][i].isBuilding() && !this.rows[r][i].name.endsWith("Wall") && !this.rows[r][i].name.endsWith("Gate") && !this.rows[r][i].name.endsWith("Tower")) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
@@ -352,12 +352,10 @@ function getDefaultTree() {
 	archerylane.rows.bronze_1.push(unit(CHARIOT_ARCHER));
 	archerylane.rows.bronze_1.push(unit(IMPROVED_BOWMAN));
 	archerylane.rows.bronze_2.push(unit(COMPOSITE_BOWMAN));
-	archerylane.rows.iron_1.push(unit(ELEPHANT_ARCHER));
+    archerylane.rows.iron_1.push(unit(HORSE_ARCHER));
+    archerylane.rows.iron_2.push(unit(HEAVY_HORSE_ARCHER));
+	archerylane.rows.iron_2.push(unit(ELEPHANT_ARCHER));
 	tree.lanes.push(archerylane);
-	let horsearcherlane = new Lane();
-	horsearcherlane.rows.iron_1.push(unit(HORSE_ARCHER));
-	horsearcherlane.rows.iron_2.push(unit(HEAVY_HORSE_ARCHER));
-	tree.lanes.push(horsearcherlane);
 
 
 	let siegeworkshoplane = new Lane();
@@ -370,11 +368,9 @@ function getDefaultTree() {
     tree.lanes.push(siegeworkshoplane);
 
 
-	let scoutlane = new Lane();
-	scoutlane.rows.tool_2.push(unit(SCOUT));
-	tree.lanes.push(scoutlane);
 	let stablelane = new Lane();
 	stablelane.rows.tool_1.push(building(STABLE));
+    stablelane.rows.tool_2.push(unit(SCOUT));
 	stablelane.rows.bronze_1.push(unit(CHARIOT));
 	stablelane.rows.bronze_1.push(unit(CAVALRY));
 	stablelane.rows.bronze_1.push(unit(CAMEL_RIDER));
@@ -414,6 +410,20 @@ function getDefaultTree() {
 	tree.lanes.push(storagepitlane);
 
 
+    let defenseslane = new Lane();
+    defenseslane.rows.tool_1.push(building(WATCH_TOWER));
+    defenseslane.rows.tool_1.push(building(SMALL_WALL));
+    defenseslane.rows.tool_1.push(building(SMALL_GATE));
+    defenseslane.rows.bronze_1.push(building(SENTRY_TOWER));
+    defenseslane.rows.bronze_1.push(building(MEDIUM_WALL));
+    defenseslane.rows.bronze_1.push(building(MEDIUM_GATE));
+    defenseslane.rows.iron_1.push(building(GUARD_TOWER));
+    defenseslane.rows.iron_1.push(building(FORTIFIED_WALL));
+    defenseslane.rows.iron_1.push(building(FORTIFIED_GATE));
+    defenseslane.rows.iron_2.push(building(BALLISTA_TOWER));
+    tree.lanes.push(defenseslane);
+
+
 	let granarylane = new Lane();
 	granarylane.rows.stone_1.push(building(GRANARY));
 	granarylane.rows.tool_1.push(tech(SMALL_WALL_TECH));
@@ -424,28 +434,6 @@ function getDefaultTree() {
 	granarylane.rows.iron_1.push(tech(GUARD_TOWER_TECH));
 	granarylane.rows.iron_2.push(tech(BALLISTA_TOWER_TECH));
 	tree.lanes.push(granarylane);
-
-
-    let walllane = new Lane();
-    walllane.rows.tool_1.push(building(SMALL_WALL));
-    walllane.rows.bronze_1.push(building(MEDIUM_WALL));
-    walllane.rows.iron_1.push(building(FORTIFIED_WALL));
-    tree.lanes.push(walllane);
-
-
-    let towerlane = new Lane();
-    towerlane.rows.tool_1.push(building(WATCH_TOWER));
-    towerlane.rows.bronze_1.push(building(SENTRY_TOWER));
-    towerlane.rows.iron_1.push(building(GUARD_TOWER));
-    towerlane.rows.iron_2.push(building(BALLISTA_TOWER));
-    tree.lanes.push(towerlane);
-
-
-    let gatelane = new Lane();
-    gatelane.rows.tool_1.push(building(SMALL_GATE));
-    gatelane.rows.bronze_1.push(building(MEDIUM_GATE));
-    gatelane.rows.iron_1.push(building(FORTIFIED_GATE));
-    tree.lanes.push(gatelane);
 
 
     let marketlane = new Lane();
@@ -468,7 +456,10 @@ function getDefaultTree() {
 
 
     let farmlane = new Lane();
+    farmlane.rows.stone_1.push(building(HOUSE));
     farmlane.rows.tool_2.push(building(FARM));
+    farmlane.rows.bronze_2.push(building(TOWN_CENTER_2));
+    farmlane.rows.iron_2.push(building(WONDER));
     tree.lanes.push(farmlane);
 
 
@@ -486,10 +477,6 @@ function getDefaultTree() {
 	governmentcenterlane.rows.iron_1.push(tech(CONSCRIPTION));
 	tree.lanes.push(governmentcenterlane);
 
-	let newtowncenterlane = new Lane()
-	newtowncenterlane.rows.bronze_2.push(building(TOWN_CENTER_2));
-	tree.lanes.push(newtowncenterlane);
-
 
 	let templelane = new Lane();
 	templelane.rows.bronze_1.push(building(TEMPLE));
@@ -506,11 +493,6 @@ function getDefaultTree() {
 	tree.lanes.push(templelane);
 
 
-    let wonderlane = new Lane();
-    wonderlane.rows.iron_1.push(building(WONDER));
-    tree.lanes.push(wonderlane);
-
-
     let towncenterlane = new Lane();
     towncenterlane.rows.stone_1.push(building(TOWN_CENTER));
     towncenterlane.rows.stone_2.push(unit(VILLAGER));
@@ -521,14 +503,11 @@ function getDefaultTree() {
     tree.lanes.push(towncenterlane);
 
 
-    let houselane = new Lane();
-    houselane.rows.stone_1.push(building(HOUSE));
-    tree.lanes.push(houselane);
-
-
 	let fishinglane = new Lane();
 	fishinglane.rows.stone_2.push(unit(FISHING_BOAT));
 	fishinglane.rows.bronze_1.push(unit(FISHING_SHIP));
+    fishinglane.rows.iron_1.push(unit(CATAPULT_TRIREME));
+    fishinglane.rows.iron_2.push(unit(JUGGERNAUT));
 	tree.lanes.push(fishinglane);
     let docklane = new Lane();
     docklane.rows.stone_1.push(building(DOCK));
@@ -537,13 +516,11 @@ function getDefaultTree() {
 	docklane.rows.bronze_1.push(unit(WAR_GALLEY));
 	docklane.rows.iron_1.push(unit(HEAVY_TRANSPORT));
 	docklane.rows.iron_1.push(unit(TRIREME));
-	docklane.rows.iron_2.push(unit(FIRE_GALLEY));
 	tree.lanes.push(docklane);
 	let tradeboatlane = new Lane();
 	tradeboatlane.rows.bronze_1.push(unit(TRADE_BOAT));
 	tradeboatlane.rows.bronze_2.push(unit(MERCHANT_SHIP));
-	tradeboatlane.rows.iron_1.push(unit(CATAPULT_TRIREME));
-	tradeboatlane.rows.iron_2.push(unit(JUGGERNAUT));
+    tradeboatlane.rows.iron_2.push(unit(FIRE_GALLEY));
     tree.lanes.push(tradeboatlane);
 
 
@@ -562,7 +539,7 @@ function getConnections() {
         [b(ARCHERY_RANGE), u(IMPROVED_BOWMAN)],
         [u(IMPROVED_BOWMAN), u(COMPOSITE_BOWMAN)],
 //		[b(ARCHERY_RANGE), u(ELEPHANT_ARCHER)],
-        [b(ARCHERY_RANGE), u(HORSE_ARCHER)],
+//      [b(ARCHERY_RANGE), u(HORSE_ARCHER)],
         [u(HORSE_ARCHER), u(HEAVY_HORSE_ARCHER)],
         [b(SIEGE_WORKSHOP), u(STONE_THROWER)],
         [u(STONE_THROWER), u(CATAPULT)],
@@ -580,7 +557,7 @@ function getConnections() {
         [u(LONG_SWORDSMAN), u(LEGIONARY)],
         [b(STABLE), b(ACADEMY)],
         [b(STABLE), u(SCOUT)],
-        [b(STABLE), u(CHARIOT)],
+//      [b(STABLE), u(CHARIOT)],
         [u(CHARIOT), u(SCYTHE_CHARIOT)],
         [b(STABLE), u(CAVALRY)],
         [u(CAVALRY), u(HEAVY_CAVALRY)],
