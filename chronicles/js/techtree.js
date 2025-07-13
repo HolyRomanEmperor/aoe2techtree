@@ -362,13 +362,13 @@ class Lane {
 
 function enable(shenanigans, buildings, units, techs) {
     for (let item of buildings) {
-        SVG('#building_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + b(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + b(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of units) {
         try {
-            SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
-            SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+            SVG('#' + u(item.id) + '_x').attr({'opacity': 0});
+            SVG('#' + u(item.id) + '_disabled_gray').attr({'opacity': 0});
         } catch (e) {
             console.log(item);
         }
@@ -376,8 +376,8 @@ function enable(shenanigans, buildings, units, techs) {
     for (let item of techs) {
         if (shenanigans.includes(item.id)) continue;
         try {
-            SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
-            SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+            SVG('#' + t(item.id) + '_x').attr({'opacity': 0});
+            SVG('#' + t(item.id) + '_disabled_gray').attr({'opacity': 0});
         } catch (e) {
             console.log(item);
         }
@@ -444,36 +444,36 @@ function applySelectedCiv(selectedCiv) {
 function unique(ids, monk_suffix, shenanigans) {
     monk_suffix = monk_suffix || MONK_SUFFIX_GENERIC;
     try {
-        SVG('#unit_' + formatId(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
-        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
-        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
-        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
-        SVG('#unit_' + formatId(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
-        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
-        SVG('#unit_' + formatId(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
-        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
-        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
-        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
-        SVG('#tech_' + formatId(UNIQUE_TECH_CASTLE_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
-        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_text').text(formatName(data.strings[data.data.techs[ids[4]].LanguageNameId]));
-        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[4]].LanguageNameId], 'id':'tech_'+ids[4]});
-        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
-        SVG('#tech_' + formatId(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[5]});
+        SVG('#' + u(MONK) + '_img').load('img/Units/' + '125' + monk_suffix + '.png');
+        SVG('#' + u(UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[0]) + '.png');
+        SVG('#' + u(ELITE_UNIQUE_UNIT) + '_img').load('img/Units/' + formatId(ids[1]) + '.png');
+        SVG('#' + u(UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[0]].LanguageNameId]));
+        SVG('#' + u(UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[0]].LanguageNameId], 'id':'unit_'+ids[0]});
+        SVG('#' + u(ELITE_UNIQUE_UNIT) + '_text').text(formatName(data.strings[data.data.units[ids[1]].LanguageNameId]));
+        SVG('#' + u(ELITE_UNIQUE_UNIT) + '_overlay').data({'name': data.strings[data.data.units[ids[1]].LanguageNameId], 'id':'unit_'+ids[1]});
+        SVG('#' + t(UNIQUE_TECH_CASTLE_1) + '_text').text(formatName(data.strings[data.data.techs[ids[2]].LanguageNameId]));
+        SVG('#' + t(UNIQUE_TECH_CASTLE_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[2]].LanguageNameId], 'id':'tech_'+ids[2]});
+        SVG('#' + t(UNIQUE_TECH_CASTLE_2) + '_text').text(formatName(data.strings[data.data.techs[ids[3]].LanguageNameId]));
+        SVG('#' + t(UNIQUE_TECH_CASTLE_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[3]].LanguageNameId], 'id':'tech_'+ids[3]});
+        SVG('#' + t(UNIQUE_TECH_IMPERIAL_1) + '_text').text(formatName(data.strings[data.data.techs[ids[4]].LanguageNameId]));
+        SVG('#' + t(UNIQUE_TECH_IMPERIAL_1) + '_overlay').data({'name': data.strings[data.data.techs[ids[4]].LanguageNameId], 'id':'tech_'+ids[4]});
+        SVG('#' + t(UNIQUE_TECH_IMPERIAL_2) + '_text').text(formatName(data.strings[data.data.techs[ids[5]].LanguageNameId]));
+        SVG('#' + t(UNIQUE_TECH_IMPERIAL_2) + '_overlay').data({'name': data.strings[data.data.techs[ids[5]].LanguageNameId], 'id':'tech_'+ids[5]});
 
         for (let i = 0; i < TC_SPECIAL_TECHS_PLACEHOLDERS.length; i++) {
-            const formattedId = formatId(TC_SPECIAL_TECHS_PLACEHOLDERS[i]);
+            const formattedId = t(TC_SPECIAL_TECHS_PLACEHOLDERS[i]);
             if (shenanigans[i] == null) {
-                SVG('#tech_' + formattedId + '_img').load('img/cross.png');
-                SVG('#tech_' + formattedId + '_text').text("");
-                SVG('#tech_' + formattedId + '_overlay').data({'name': TC_SPECIAL_TECHS_PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
-                SVG('#tech_' + formattedId + '_x').attr({'opacity': 1});
-                SVG('#tech_' + formattedId + '_disabled_gray').attr({'opacity': 1});
+                SVG('#' + formattedId + '_img').load('img/cross.png');
+                SVG('#' + formattedId + '_text').text("");
+                SVG('#' + formattedId + '_overlay').data({'name': TC_SPECIAL_TECHS_PLACEHOLDERS[i], 'id':'tech_'+shenanigans[i]});
+                SVG('#' + formattedId + '_x').attr({'opacity': 1});
+                SVG('#' + formattedId + '_disabled_gray').attr({'opacity': 1});
             } else {
-                SVG('#tech_' + formattedId + '_img').load('img/Techs/' + formatId(shenanigans[i]) + '.png');
-                SVG('#tech_' + formattedId + '_text').text(formatName(data.strings[data.data.techs[shenanigans[i]].LanguageNameId]));
-                SVG('#tech_' + formattedId + '_overlay').data({'name': data.strings[data.data.techs[shenanigans[i]].LanguageNameId], 'id':'tech_'+shenanigans[i]});
-                SVG('#tech_' + formattedId + '_x').attr({'opacity': 0});
-                SVG('#tech_' + formattedId + '_disabled_gray').attr({'opacity': 0});
+                SVG('#' + formattedId + '_img').load('img/Techs/' + formatId(shenanigans[i]) + '.png');
+                SVG('#' + formattedId + '_text').text(formatName(data.strings[data.data.techs[shenanigans[i]].LanguageNameId]));
+                SVG('#' + formattedId + '_overlay').data({'name': data.strings[data.data.techs[shenanigans[i]].LanguageNameId], 'id':'tech_'+shenanigans[i]});
+                SVG('#' + formattedId + '_x').attr({'opacity': 0});
+                SVG('#' + formattedId + '_disabled_gray').attr({'opacity': 0});
             }
         }
     } catch (e) {

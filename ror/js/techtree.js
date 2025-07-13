@@ -291,16 +291,16 @@ class Lane {
 
 function enable(buildings, units, techs) {
     for (let item of buildings) {
-        SVG('#building_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#building_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + b(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + b(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of units) {
-        SVG('#unit_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#unit_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + u(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + u(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
     for (let item of techs) {
-        SVG('#tech_' + formatId(item.id) + '_x').attr({'opacity': 0});
-        SVG('#tech_' + formatId(item.id) + '_disabled_gray').attr({'opacity': 0});
+        SVG('#' + t(item.id) + '_x').attr({'opacity': 0});
+        SVG('#' + t(item.id) + '_disabled_gray').attr({'opacity': 0});
     }
 }
 
@@ -317,16 +317,16 @@ function unique(building_style) {
 	if (building_style === undefined) {
 		building_style = BUILDING_STYLE_GENERIC;
 	}
-	SVG('#building_' + formatId(BARRACKS) + '_img').load('img/Buildings/' + BARRACKS + '_' + building_style + '.png');
-	SVG('#building_' + formatId(ACADEMY) + '_img').load('img/Buildings/' + ACADEMY + '_' + building_style + '.png');
-	SVG('#building_' + formatId(TOWN_CENTER) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(TOWN_CENTER_2) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(MEDIUM_WALL) + '_img').load('img/Buildings/' + MEDIUM_WALL + '_' + building_style + '.png');
-	SVG('#building_' + formatId(FORTIFIED_WALL) + '_img').load('img/Buildings/' + FORTIFIED_WALL + '_' + building_style + '.png');
-	SVG('#building_' + formatId(GOVERNMENT_CENTER) + '_img').load('img/Buildings/' + GOVERNMENT_CENTER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(GUARD_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(BALLISTA_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
-	SVG('#building_' + formatId(WONDER) + '_img').load('img/Buildings/' + WONDER + '_' + building_style + '.png');
+	SVG('#' + b(BARRACKS) + '_img').load('img/Buildings/' + BARRACKS + '_' + building_style + '.png');
+	SVG('#' + b(ACADEMY) + '_img').load('img/Buildings/' + ACADEMY + '_' + building_style + '.png');
+	SVG('#' + b(TOWN_CENTER) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
+	SVG('#' + b(TOWN_CENTER_2) + '_img').load('img/Buildings/' + TOWN_CENTER + '_' + building_style + '.png');
+	SVG('#' + b(MEDIUM_WALL) + '_img').load('img/Buildings/' + MEDIUM_WALL + '_' + building_style + '.png');
+	SVG('#' + b(FORTIFIED_WALL) + '_img').load('img/Buildings/' + FORTIFIED_WALL + '_' + building_style + '.png');
+	SVG('#' + b(GOVERNMENT_CENTER) + '_img').load('img/Buildings/' + GOVERNMENT_CENTER + '_' + building_style + '.png');
+	SVG('#' + b(GUARD_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
+	SVG('#' + b(BALLISTA_TOWER) + '_img').load('img/Buildings/' + GUARD_TOWER + '_' + building_style + '.png');
+	SVG('#' + b(WONDER) + '_img').load('img/Buildings/' + WONDER + '_' + building_style + '.png');
 }
 
 function getDefaultTree() {
