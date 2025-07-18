@@ -772,6 +772,8 @@ def gather_civs(techtrees):
     unit_excludelist = (
         759,  # Huskarl from Barracks
         761,  # Elite Huskarl from Barracks
+        1254, # Konnik from Krepost
+        1255, # Elite Konnik from Krepost
         886,  # Tarkan from Stable
         887,  # Elite Tarkan from Stable
         1260,  # Elite Kipchak from the Cuman Mercenaries tech

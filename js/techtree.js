@@ -424,11 +424,10 @@ class Lane {
             lane_width = Math.max(lane_width, row_width);
         }
         this.width = lane_width;
-        const leftLeaningBuildings = [b(KREPOST)];
 
         for (let r of Object.keys(this.rows)) {
             for (let i = 0; i < this.rows[r].length; i++) {
-                if (this.rows[r][i].isBuilding() && !leftLeaningBuildings.includes(this.rows[r][i].id)) {
+                if (this.rows[r][i].isBuilding()) {
                     this.rows[r][i].x = this.x + ((this.width - this.padding) / 2) - (this.rows[r][i].width / 2);
                 }
             }
@@ -623,6 +622,16 @@ function getDefaultTree() {
     tree.lanes.push(stablelane);
 
 
+    let donjonlane = new Lane();
+    donjonlane.rows.dark_1.push(building(DONJON));
+    donjonlane.rows.feudal_1.push(unit(DSERJEANT));
+    donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
+    donjonlane.rows.castle_1.push(unit(DPIKEMAN));
+    donjonlane.rows.imperial_1.push(unit(ELITE_DSERJEANT));
+    donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
+    tree.lanes.push(donjonlane);
+
+
     let siegeworkshoplane = new Lane();
     siegeworkshoplane.rows.castle_1.push(building(SIEGE_WORKSHOP));
     siegeworkshoplane.rows.castle_2.push(unit(BATTERING_RAM));
@@ -740,24 +749,17 @@ function getDefaultTree() {
     walllane.rows.castle_1.push(building(FORTIFIED_WALL));
     tree.lanes.push(walllane);
 
-
-    let donjonlane = new Lane();
-    donjonlane.rows.dark_1.push(building(DONJON));
-    donjonlane.rows.feudal_1.push(unit(DSERJEANT));
-    donjonlane.rows.feudal_1.push(unit(DSPEARMAN));
-    donjonlane.rows.castle_1.push(unit(DPIKEMAN));
-    donjonlane.rows.imperial_1.push(unit(ELITE_DSERJEANT));
-    donjonlane.rows.imperial_1.push(unit(DHALBERDIER));
-    tree.lanes.push(donjonlane);
+    let krepostlane = new Lane();
+    krepostlane.rows.castle_1.push(building(KREPOST));
+    krepostlane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, UNIQUE_UNIT, UNIQUE_UNIT));
+    krepostlane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
+    tree.lanes.push(krepostlane);
 
 
     let castlelane = new Lane();
-    castlelane.rows.castle_1.push(building(KREPOST));
     castlelane.rows.castle_1.push(building(CASTLE));
-    castlelane.rows.castle_2.push(new Caret(TYPES.UNIQUEUNIT, UNIQUE_UNIT, UNIQUE_UNIT));
     castlelane.rows.castle_2.push(unit(PETARD));
     castlelane.rows.castle_2.push(tech(UNIQUE_TECH_1));
-    castlelane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
     castlelane.rows.imperial_1.push(unit(TREBUCHET));
     castlelane.rows.imperial_1.push(tech(UNIQUE_TECH_2));
     castlelane.rows.imperial_1.push(tech(HOARDINGS));
@@ -1017,6 +1019,8 @@ function getConnections() {
         [b(SIEGE_WORKSHOP), u(WAR_CHARIOT)],
         [u(BOMBARD_CANNON), u(HOUFNICE)],
         [b(BLACKSMITH), b(SIEGE_WORKSHOP)],
+        [b(DONJON), b(ARCHERY_RANGE)],
+        [b(DONJON), b(STABLE)],
         [b(BLACKSMITH), t(PADDED_ARCHER_ARMOR)],
         [t(PADDED_ARCHER_ARMOR), t(LEATHER_ARCHER_ARMOR)],
         [t(LEATHER_ARCHER_ARMOR), t(RING_ARCHER_ARMOR)],
