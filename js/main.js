@@ -461,7 +461,8 @@ function getHelpText(name, id, type) {
         stats.push(ifDefined(meta.Speed, 'Speed:&nbsp;'));
         stats.push(secondsIfDefined(meta.TrainTime, 'Build Time:&nbsp;'));
         stats.push(secondsIfDefined(meta.ResearchTime, 'Research Time:&nbsp;'));
-        //stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;', ranged));
+        stats.push(ifDefined(meta.FrameDelay, 'Frame Delay:&nbsp;', ranged));
+        stats.push(ifDefinedAndGreaterZero(meta.BlastWidth, 'Blast Radius:&nbsp;'));
         stats.push(traitsIfDefined(meta.Trait, meta.TraitPiece));
         stats.push(ifDefinedAndGreaterZero(meta.MaxCharge, chargeText(meta.ChargeType)));
         if ([6, 7].includes(meta.ChargeType) && meta.ChargeEvent) {
