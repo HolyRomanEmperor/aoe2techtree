@@ -28,3 +28,5 @@ open [localhost:8000](http://localhost:8000) in any browser:
 [ides315](https://github.com/ides315) - Plugged in the Return of Rome tech tree
 
 [HolyRomanEmperor](https://github.com/HolyRomanEmperor) - Plugged in the Chronicles tech tree
+
+[HolyRomanEmperor](https://github.com/HolyRomanEmperor) - Plugged in the Chronicles tech tree
