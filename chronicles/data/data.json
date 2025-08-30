@@ -1754,14 +1754,14 @@
             },
             "54": {
                 "Cost": {
-                    "Food": 300,
+                    "Stone": 50,
                     "Wood": 200
                 },
                 "ID": 54,
                 "LanguageHelpId": 28054,
                 "LanguageNameId": 7054,
                 "Repeatable": true,
-                "ResearchTime": 50,
+                "ResearchTime": 20,
                 "internal_name": "Stone cutting"
             },
             "55": {
@@ -2416,14 +2416,14 @@
             },
             "1110": {
                 "Cost": {
-                    "Gold": 200,
-                    "Wood": 300
+                    "Food": 350,
+                    "Gold": 300
                 },
                 "ID": 1110,
                 "LanguageHelpId": 428005,
                 "LanguageNameId": 407005,
                 "Repeatable": false,
-                "ResearchTime": 40,
+                "ResearchTime": 50,
                 "internal_name": "Sparabaras, Achaemenid Unique Tech"
             },
             "1111": {
@@ -2436,7 +2436,7 @@
                 "LanguageNameId": 407006,
                 "Repeatable": false,
                 "ResearchTime": 50,
-                "internal_name": "Satrapies, Achaemenid Unique Tech"
+                "internal_name": "Reed Arrows, Achaemenid Unique Tech"
             },
             "1112": {
                 "Cost": {
@@ -2453,14 +2453,14 @@
             "1113": {
                 "Cost": {
                     "Food": 600,
-                    "Gold": 500
+                    "Gold": 550
                 },
                 "ID": 1113,
                 "LanguageHelpId": 428008,
                 "LanguageNameId": 407008,
                 "Repeatable": false,
                 "ResearchTime": 50,
-                "internal_name": "Palta, Achaemenid Unique Tech"
+                "internal_name": "Sagaris, Achaemenid Unique Tech"
             },
             "1120": {
                 "Cost": {
@@ -2476,20 +2476,20 @@
             },
             "1121": {
                 "Cost": {
-                    "Gold": 300,
-                    "Wood": 400
+                    "Gold": 450,
+                    "Wood": 500
                 },
                 "ID": 1121,
                 "LanguageHelpId": 428010,
                 "LanguageNameId": 407010,
                 "Repeatable": false,
-                "ResearchTime": 40,
+                "ResearchTime": 50,
                 "internal_name": "Taxiarchs, Athenian Unique Tech"
             },
             "1122": {
                 "Cost": {
-                    "Food": 600,
-                    "Gold": 750
+                    "Food": 500,
+                    "Gold": 350
                 },
                 "ID": 1122,
                 "LanguageHelpId": 428011,
@@ -2500,15 +2500,15 @@
             },
             "1123": {
                 "Cost": {
-                    "Food": 900,
-                    "Gold": 600
+                    "Gold": 300,
+                    "Wood": 500
                 },
                 "ID": 1123,
                 "LanguageHelpId": 428012,
                 "LanguageNameId": 407012,
                 "Repeatable": false,
                 "ResearchTime": 60,
-                "internal_name": "Mines of Laurion, Athenian Unique Tech"
+                "internal_name": "Delian League, Athenian Unique Tech"
             },
             "1130": {
                 "Cost": {
@@ -2524,20 +2524,20 @@
             },
             "1131": {
                 "Cost": {
-                    "Food": 350,
-                    "Gold": 650
+                    "Food": 500,
+                    "Gold": 400
                 },
                 "ID": 1131,
                 "LanguageHelpId": 428014,
                 "LanguageNameId": 407014,
                 "Repeatable": false,
-                "ResearchTime": 50,
-                "internal_name": "Krypteia, Spartan Unique Tech"
+                "ResearchTime": 40,
+                "internal_name": "Agoge, Spartan Unique Tech"
             },
             "1132": {
                 "Cost": {
-                    "Food": 400,
-                    "Gold": 300
+                    "Food": 300,
+                    "Gold": 250
                 },
                 "ID": 1132,
                 "LanguageHelpId": 428015,
@@ -2549,7 +2549,7 @@
             "1133": {
                 "Cost": {
                     "Food": 700,
-                    "Gold": 400
+                    "Gold": 450
                 },
                 "ID": 1133,
                 "LanguageHelpId": 428016,
@@ -2627,7 +2627,7 @@
                 "LanguageHelpId": 428045,
                 "LanguageNameId": 407045,
                 "Repeatable": true,
-                "ResearchTime": 25,
+                "ResearchTime": 50,
                 "internal_name": "Economic Satrapy Upgrade"
             },
             "1196": {
@@ -2644,14 +2644,14 @@
             },
             "1197": {
                 "Cost": {
-                    "Stone": 225,
-                    "Wood": 0
+                    "Stone": 50,
+                    "Wood": 100
                 },
                 "ID": 1197,
                 "LanguageHelpId": 428047,
                 "LanguageNameId": 407047,
                 "Repeatable": true,
-                "ResearchTime": 50,
+                "ResearchTime": 15,
                 "internal_name": "Defensive Satrapy Upgrade"
             },
             "1202": {
@@ -2667,7 +2667,7 @@
             },
             "1203": {
                 "Cost": {
-                    "Gold": 50
+                    "Gold": 0
                 },
                 "ID": 1203,
                 "LanguageHelpId": 428052,
@@ -2678,7 +2678,7 @@
             },
             "1204": {
                 "Cost": {
-                    "Gold": 50
+                    "Gold": 0
                 },
                 "ID": 1204,
                 "LanguageHelpId": 428053,
@@ -2701,8 +2701,8 @@
             },
             "1224": {
                 "Cost": {
-                    "Food": 150,
-                    "Gold": 175
+                    "Food": 100,
+                    "Gold": 75
                 },
                 "ID": 1224,
                 "LanguageHelpId": 428055,
@@ -3020,7 +3020,7 @@
                     "Wood": 500
                 },
                 "ID": 1171,
-                "ResearchTime": 50,
+                "ResearchTime": 90,
                 "internal_name": "Elite War Chariot"
             }
         },
@@ -3069,6 +3069,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3141,8 +3142,13 @@
                     {
                         "Amount": 2,
                         "Class": 17
+                    },
+                    {
+                        "Amount": -10,
+                        "Class": 32
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3194,7 +3200,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.5066662222222222,
+                "AttackDelaySeconds": 0.506666,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -3221,6 +3227,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3272,7 +3279,7 @@
                     }
                 ],
                 "Attack": 2,
-                "AttackDelaySeconds": 0.5066666666666667,
+                "AttackDelaySeconds": 0.506667,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -3299,6 +3306,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3320,7 +3328,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 3,
                 "Speed": 0.96,
-                "TrainTime": 22,
+                "TrainTime": 26,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "XBOWM"
@@ -3346,8 +3354,9 @@
                     }
                 ],
                 "Attack": 0,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3417,6 +3426,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3464,7 +3474,7 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 10,
@@ -3493,8 +3503,13 @@
                     {
                         "Amount": 0,
                         "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3550,7 +3565,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.9099999999999999,
+                "AttackDelaySeconds": 0.91,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -3581,6 +3596,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3632,7 +3648,7 @@
                     }
                 ],
                 "Attack": 200,
-                "AttackDelaySeconds": 0.5133333333333334,
+                "AttackDelaySeconds": 0.513333,
                 "Attacks": [
                     {
                         "Amount": 250,
@@ -3643,6 +3659,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3690,7 +3707,7 @@
                     }
                 ],
                 "Attack": 4,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -3717,6 +3734,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3764,7 +3782,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -3791,6 +3809,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3838,7 +3857,7 @@
                     }
                 ],
                 "Attack": 9,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -3865,6 +3884,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3908,7 +3928,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -3935,6 +3955,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -3985,7 +4006,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -4016,7 +4037,7 @@
                         "Class": 30
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 0,
                         "Class": 35
                     },
                     {
@@ -4028,6 +4049,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4075,8 +4097,9 @@
                     }
                 ],
                 "Attack": 0,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4120,8 +4143,9 @@
                     }
                 ],
                 "Attack": 0,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4169,7 +4193,7 @@
                     }
                 ],
                 "Attack": 11,
-                "AttackDelaySeconds": 0.16000000000000003,
+                "AttackDelaySeconds": 0.16,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -4194,12 +4218,9 @@
                     {
                         "Amount": 1,
                         "Class": 1
-                    },
-                    {
-                        "Amount": 1,
-                        "Class": 32
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4247,7 +4268,7 @@
                     }
                 ],
                 "Attack": 40,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 35,
@@ -4270,6 +4291,7 @@
                         "Class": 25
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4317,7 +4339,7 @@
                     }
                 ],
                 "Attack": 12,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 12,
@@ -4346,8 +4368,13 @@
                     {
                         "Amount": 0,
                         "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4395,7 +4422,7 @@
                     }
                 ],
                 "Attack": 200,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 250,
@@ -4406,6 +4433,7 @@
                         "Class": 3
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4457,7 +4485,7 @@
                     }
                 ],
                 "Attack": 4,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -4488,7 +4516,7 @@
                         "Class": 30
                     },
                     {
-                        "Amount": 11,
+                        "Amount": 7,
                         "Class": 35
                     },
                     {
@@ -4500,6 +4528,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4551,7 +4580,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 1,
@@ -4582,7 +4611,7 @@
                         "Class": 30
                     },
                     {
-                        "Amount": 11,
+                        "Amount": 7,
                         "Class": 35
                     },
                     {
@@ -4594,6 +4623,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4624,7 +4654,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": -3,
+                        "Amount": -2,
                         "Class": 4
                     },
                     {
@@ -4645,7 +4675,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 160,
@@ -4660,6 +4690,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 1.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4674,7 +4705,7 @@
                 "LanguageNameId": 405094,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": -3,
+                "MeleeArmor": -2,
                 "MinRange": 0,
                 "PierceArmor": 190,
                 "Range": 0,
@@ -4740,8 +4771,13 @@
                     {
                         "Amount": 0,
                         "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4788,7 +4824,7 @@
                     }
                 ],
                 "Attack": 3,
-                "AttackDelaySeconds": 0.5400000000000001,
+                "AttackDelaySeconds": 0.54,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -4823,6 +4859,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4908,6 +4945,7 @@
                         "Class": 38
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -4955,7 +4993,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.3422216666666667,
+                "AttackDelaySeconds": 0.342222,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -4978,6 +5016,7 @@
                         "Class": 13
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5025,7 +5064,7 @@
                     }
                 ],
                 "Attack": 14,
-                "AttackDelaySeconds": 0.16000000000000003,
+                "AttackDelaySeconds": 0.16,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -5050,12 +5089,9 @@
                     {
                         "Amount": 2,
                         "Class": 1
-                    },
-                    {
-                        "Amount": 2,
-                        "Class": 32
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5136,8 +5172,13 @@
                     {
                         "Amount": 0,
                         "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5167,7 +5208,7 @@
                 "AccuracyPercent": 100,
                 "Armours": [
                     {
-                        "Amount": -3,
+                        "Amount": -1,
                         "Class": 4
                     },
                     {
@@ -5188,7 +5229,7 @@
                     }
                 ],
                 "Attack": 4,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 200,
@@ -5203,6 +5244,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 2,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5217,7 +5259,7 @@
                 "LanguageNameId": 405095,
                 "LineOfSight": 3,
                 "MaxCharge": 0,
-                "MeleeArmor": -3,
+                "MeleeArmor": -1,
                 "MinRange": 0,
                 "PierceArmor": 195,
                 "Range": 0,
@@ -5250,7 +5292,7 @@
                     }
                 ],
                 "Attack": 50,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 45,
@@ -5269,6 +5311,7 @@
                         "Class": 37
                     }
                 ],
+                "BlastWidth": 1.25,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5316,7 +5359,7 @@
                     }
                 ],
                 "Attack": 11,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -5343,6 +5386,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5390,7 +5434,7 @@
                     }
                 ],
                 "Attack": 14,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 14,
@@ -5419,8 +5463,13 @@
                     {
                         "Amount": 0,
                         "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5472,13 +5521,14 @@
                     }
                 ],
                 "Attack": 0,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Gold": 160,
-                    "Wood": 200
+                    "Gold": 120,
+                    "Wood": 100
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 10,
@@ -5525,7 +5575,7 @@
                     }
                 ],
                 "Attack": 2,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 150,
@@ -5540,6 +5590,7 @@
                         "Class": 20
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5595,7 +5646,7 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -5622,6 +5673,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5677,7 +5729,7 @@
                     }
                 ],
                 "Attack": 12,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -5704,6 +5756,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5755,7 +5808,7 @@
                     }
                 ],
                 "Attack": 15,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -5782,6 +5835,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5833,7 +5887,7 @@
                     }
                 ],
                 "Attack": 18,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -5860,6 +5914,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5911,7 +5966,7 @@
                     }
                 ],
                 "Attack": 9,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -5938,6 +5993,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -5989,7 +6045,7 @@
                     }
                 ],
                 "Attack": 11,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -6016,6 +6072,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6050,7 +6107,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 1,
                         "Class": 4
                     },
                     {
@@ -6067,14 +6124,14 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
                         "Class": 29
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 2,
                         "Class": 21
                     },
                     {
@@ -6094,6 +6151,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6108,14 +6166,14 @@
                 "LanguageNameId": 405007,
                 "LineOfSight": 4,
                 "MaxCharge": 0,
-                "MeleeArmor": 2,
+                "MeleeArmor": 1,
                 "MinRange": 0,
                 "PierceArmor": 1,
-                "Range": 0.3,
+                "Range": 0.5,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.9,
-                "TrainTime": 24,
+                "TrainTime": 28,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "Hoplite"
@@ -6128,7 +6186,7 @@
                         "Class": 1
                     },
                     {
-                        "Amount": 3,
+                        "Amount": 2,
                         "Class": 4
                     },
                     {
@@ -6145,7 +6203,7 @@
                     }
                 ],
                 "Attack": 12,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -6172,6 +6230,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6186,14 +6245,14 @@
                 "LanguageNameId": 405008,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
-                "MeleeArmor": 3,
+                "MeleeArmor": 2,
                 "MinRange": 0,
                 "PierceArmor": 1,
-                "Range": 0.3,
+                "Range": 0.5,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 0.9,
-                "TrainTime": 21,
+                "TrainTime": 25,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "Elite Hoplite"
@@ -6219,7 +6278,7 @@
                     }
                 ],
                 "Attack": 2,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -6242,6 +6301,7 @@
                         "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6289,7 +6349,7 @@
                     }
                 ],
                 "Attack": 4,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -6312,6 +6372,7 @@
                         "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6359,7 +6420,7 @@
                     }
                 ],
                 "Attack": 8,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -6382,6 +6443,7 @@
                         "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6429,7 +6491,7 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -6452,6 +6514,7 @@
                         "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6499,7 +6562,7 @@
                     }
                 ],
                 "Attack": 5,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 2,
@@ -6516,8 +6579,13 @@
                     {
                         "Amount": 3,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 1,
                 "ChargeType": 1,
                 "Cost": {
@@ -6536,7 +6604,7 @@
                 "MinRange": 0,
                 "PierceArmor": 2,
                 "Range": 0,
-                "RechargeDuration": 30.0,
+                "RechargeDuration": 29.99999880790715,
                 "RechargeRate": 0.3,
                 "ReloadTime": 2,
                 "Speed": 1.35,
@@ -6566,7 +6634,7 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 3,
@@ -6583,8 +6651,13 @@
                     {
                         "Amount": 3,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 1,
                 "ChargeType": 1,
                 "Cost": {
@@ -6603,7 +6676,7 @@
                 "MinRange": 0,
                 "PierceArmor": 4,
                 "Range": 0,
-                "RechargeDuration": 30.0,
+                "RechargeDuration": 29.99999955296517,
                 "RechargeRate": 0.4,
                 "ReloadTime": 2,
                 "Speed": 1.35,
@@ -6633,7 +6706,7 @@
                     }
                 ],
                 "Attack": 14,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 5,
@@ -6650,8 +6723,13 @@
                     {
                         "Amount": 3,
                         "Class": 17
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 1,
                 "ChargeType": 1,
                 "Cost": {
@@ -6704,7 +6782,7 @@
                     }
                 ],
                 "Attack": 6,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -6727,6 +6805,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6778,7 +6857,7 @@
                     }
                 ],
                 "Attack": 7,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 7,
@@ -6801,6 +6880,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6852,7 +6932,7 @@
                     }
                 ],
                 "Attack": 8,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -6875,6 +6955,7 @@
                         "Class": 34
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6922,7 +7003,7 @@
                     }
                 ],
                 "Attack": 70,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 180,
@@ -6941,6 +7022,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 2.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6988,7 +7070,7 @@
                     }
                 ],
                 "Attack": 80,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 220,
@@ -7007,6 +7089,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 3,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7054,7 +7137,7 @@
                     }
                 ],
                 "Attack": 100,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 280,
@@ -7073,6 +7156,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 3.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7124,7 +7208,7 @@
                     }
                 ],
                 "Attack": 35,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 15,
@@ -7143,6 +7227,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 1,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7194,7 +7279,7 @@
                     }
                 ],
                 "Attack": 50,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 20,
@@ -7213,6 +7298,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 1.25,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7260,7 +7346,7 @@
                     }
                 ],
                 "Attack": 60,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 225,
@@ -7279,6 +7365,7 @@
                         "Class": 17
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7326,8 +7413,9 @@
                     }
                 ],
                 "Attack": 0,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7374,8 +7462,9 @@
                     }
                 ],
                 "Attack": 0,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7427,7 +7516,7 @@
                     }
                 ],
                 "Attack": 8,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 5,
@@ -7450,18 +7539,19 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 5,
-                        "Class": 32
-                    },
-                    {
                         "Amount": 0,
                         "Class": 38
                     },
                     {
                         "Amount": -3,
                         "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0.4,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7481,7 +7571,7 @@
                 "PierceArmor": 0,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 1.8,
+                "ReloadTime": 2,
                 "Speed": 1.35,
                 "TrainTime": 24,
                 "Trait": 0,
@@ -7513,7 +7603,7 @@
                     }
                 ],
                 "Attack": 10,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 8,
@@ -7536,18 +7626,19 @@
                         "Class": 21
                     },
                     {
-                        "Amount": 8,
-                        "Class": 32
-                    },
-                    {
                         "Amount": 0,
                         "Class": 38
                     },
                     {
                         "Amount": -3,
                         "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
                     }
                 ],
+                "BlastWidth": 0.4,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7556,7 +7647,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 140,
+                "HP": 125,
                 "ID": 2151,
                 "LanguageHelpId": 426030,
                 "LanguageNameId": 405030,
@@ -7567,7 +7658,7 @@
                 "PierceArmor": 1,
                 "Range": 0,
                 "RechargeRate": 0,
-                "ReloadTime": 1.8,
+                "ReloadTime": 2,
                 "Speed": 1.35,
                 "TrainTime": 24,
                 "Trait": 0,
@@ -7590,7 +7681,7 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 3,
+                        "Amount": 1,
                         "Class": 3
                     },
                     {
@@ -7599,7 +7690,7 @@
                     }
                 ],
                 "Attack": 4,
-                "AttackDelaySeconds": 0.0,
+                "AttackDelaySeconds": 0,
                 "Attacks": [
                     {
                         "Amount": 0,
@@ -7638,6 +7729,7 @@
                         "Class": 15
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {},
@@ -7651,11 +7743,11 @@
                 "MaxCharge": 0,
                 "MeleeArmor": 0,
                 "MinRange": 0,
-                "PierceArmor": 3,
+                "PierceArmor": 1,
                 "Range": 0.5,
                 "RechargeRate": 0,
                 "ReloadTime": 2,
-                "Speed": 1.15,
+                "Speed": 1.05,
                 "TrainTime": 75,
                 "Trait": 0,
                 "TraitPiece": 0,
@@ -7725,6 +7817,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -7815,6 +7908,7 @@
                         "Class": 1
                     }
                 ],
+                "BlastWidth": 0,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -9368,6 +9462,10 @@
                 {
                     "age": 3,
                     "id": 322
+                },
+                {
+                    "age": 4,
+                    "id": 377
                 },
                 {
                     "age": 4,

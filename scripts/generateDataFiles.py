@@ -543,7 +543,7 @@ def chronicles_gather_data(content, civs, unit_upgrades, node_types):
                          {c['unique']['imperialAgeUniqueTech1'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueTech2'] for c in civs.values()}, \
         {TRACKING})
-    base_civilization: Civ = content["Civs"][46] # selecting Achaemenids as base, since Gaia does not work for Chronicles civs
+    base_civilization: Civ = content.civs[46] # selecting Achaemenids as base, since Gaia does not work for Chronicles civs
     graphics = content.graphics
     data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
     for unit in base_civilization.units:
@@ -956,7 +956,7 @@ def chronicles_gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] in UPPER_CASE_CHRONICLES_CIV_NAMES:
+        if civ['civ_id'] not in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
@@ -1078,16 +1078,14 @@ def main():
 
     args = parser.parse_args()
 
-    ##outputdir = Path(__file__).parent / '..' / 'data'
-    ##process_aoe2(args, outputdir)
+    outputdir = Path(__file__).parent / '..' / 'data'
+    process_aoe2(args, outputdir)
 
-    #outputdir = Path(__file__).parent / '..' / 'ror' / 'data'
-    #process_ror(args, outputdir)
+    outputdir = Path(__file__).parent / '..' / 'ror' / 'data'
+    process_ror(args, outputdir)
 
     outputdir = Path(__file__).parent / '..' / 'chronicles' / 'data'
     process_chronicles(args, outputdir)
-
-    input("Press Enter to exit...")
 
 
 
