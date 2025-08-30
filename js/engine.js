@@ -18,7 +18,7 @@ const PREFIX = Object.freeze({
 });
 
 const unitClasses = {
-    0: '<abbr title="unused">Wonders</abbr>',
+    0: 'Wonders',
     1: 'Infantry',
     2: 'Heavy Warships',
     3: 'Base Pierce',
@@ -29,7 +29,7 @@ const unitClasses = {
     8: '<abbr title="except Camels">Mounted Units</abbr>',
     9: 'Unused',
     10: 'Unused',
-    11: '<abbr title="except Fish Traps">All Buildings</abbr>',
+    11: 'All Buildings',
     12: 'Unused',
     13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
     14: 'Wolves etc.',
@@ -39,17 +39,17 @@ const unitClasses = {
     18: 'Trees',
     19: 'Unique Units',
     20: 'Siege Units',
-    21: '<abbr title="except Fish Traps and Wonders">Standard Buildings</abbr>',
+    21: '<abbr title="All buildings except Wonders">Standard Buildings</abbr>',
     22: 'Walls & Gates',
     23: 'Gunpowder Units',
     24: 'Boars etc.',
     25: 'Monks',
     26: 'Castles & Kreposts',
-    27: 'Spear Units',
+    27: 'Spearmen',
     28: 'Mounted Archers',
     29: 'Shock Infantry',
     30: 'Camels',
-    31: '<abbr title="previously used by the Leitis as armor-ignoring attack">Obsolete</abbr>',
+    31: '<abbr title="Armor-ignoring melee attack against units, but not against buildings">Unblockable Melee</abbr>',
     32: 'Condottieri',
     33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
     34: 'Fishing Ships',
@@ -59,7 +59,7 @@ const unitClasses = {
     38: 'Skirmishers',
     39: 'Cavalry Resistance',
     40: 'Houses',
-    60: 'Light Ranged Warships',
+    60: 'Antiquity Galleys and Catapult Ships'
 };
 
 const animation_duration = 50;
@@ -211,8 +211,8 @@ function traitsIfDefined(trait, traitPiece) {
 
 function getName(id, itemtype) {
     if (typeof id === 'string' && id.includes("placeholder")) return;
-    //ToDo handle unique stuff properly
-    if(id.toString().startsWith('UNIQUE')){
+    // ToDo handle unique stuff properly
+    if (id.toString().startsWith('UNIQUE')) {
         return id;
     }
     try {

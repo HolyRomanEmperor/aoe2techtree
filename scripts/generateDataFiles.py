@@ -409,42 +409,23 @@ def chronicles_gather_language_data(resourcedir, data, language):
         key_value[key] = key_value.get(value)
 
     for datatype in ("buildings", "units", "techs"):
-        for item_id in data.get(datatype, {}):
-            try:
-                name_id = data[datatype][item_id]['LanguageNameId']
-                help_id = data[datatype][item_id]['LanguageHelpId']
-                key_value_filtered[name_id] = key_value[name_id]
-                key_value_filtered[help_id] = key_value[help_id]
-            except Exception as e:
-                print(f"Error processing {datatype} item {item_id}: {e}")
-
+        for item_id in data[datatype]:
+            name_id = data[datatype][item_id]['LanguageNameId']
+            help_id = data[datatype][item_id]['LanguageHelpId']
+            key_value_filtered[name_id] = key_value[name_id]
+            key_value_filtered[help_id] = key_value[help_id]
     for name in CHRONICLES_CIV_HELPTEXTS:
-        try:
-            key = int(CHRONICLES_CIV_HELPTEXTS[name])
-            key_value_filtered[key] = key_value[key]
-        except Exception as e:
-            print(f"Error processing CHRONICLES_CIV_HELPTEXTS entry {name}: {e}")
-
+        key = int(CHRONICLES_CIV_HELPTEXTS[name])
+        key_value_filtered[key] = key_value[key]
     for name in CHRONICLES_CIV_NAMES:
-        try:
-            key = int(CHRONICLES_CIV_NAMES[name])
-            key_value_filtered[key] = key_value[key]
-        except Exception as e:
-            print(f"Error processing CHRONICLES_CIV_NAMES entry {name}: {e}")
-
+        key = int(CHRONICLES_CIV_NAMES[name])
+        key_value_filtered[key] = key_value[key]
     for name in CHRONICLES_AGE_NAMES:
-        try:
-            key = int(CHRONICLES_AGE_NAMES[name])
-            key_value_filtered[key] = key_value[key]
-        except Exception as e:
-            print(f"Error processing CHRONICLES_AGE_NAMES entry {name}: {e}")
-
+        key = int(CHRONICLES_AGE_NAMES[name])
+        key_value_filtered[key] = key_value[key]
     for name in TECH_TREE_STRINGS:
-        try:
-            key = int(TECH_TREE_STRINGS[name])
-            key_value_filtered[key] = key_value[key]
-        except Exception as e:
-            print(f"Error processing TECH_TREE_STRINGS entry {name}: {e}")
+        key = int(TECH_TREE_STRINGS[name])
+        key_value_filtered[key] = key_value[key]
     return key_value_filtered
 
 
@@ -562,16 +543,18 @@ def chronicles_gather_data(content, civs, unit_upgrades, node_types):
                          {c['unique']['imperialAgeUniqueTech1'] for c in civs.values()}, \
         {c['unique']['imperialAgeUniqueTech2'] for c in civs.values()}, \
         {TRACKING})
-    base_civilization = content["Civs"][46] # selecting Achaemenids as base, since Gaia does not work for Chronicles civs
-    graphics = content["Graphics"]
+    base_civilization: Civ = content["Civs"][46] # selecting Achaemenids as base, since Gaia does not work for Chronicles civs
+    graphics = content.graphics
     data = {"buildings": {}, "units": {}, "techs": {}, "unit_upgrades": {}, "node_types": node_types}
-    for unit in base_civilization["Units"]:
-        if unit["ID"] in building_ids:
-            add_building(unit["ID"], unit, data)
-        if unit["ID"] in unit_ids:
-            add_unit(unit["ID"], unit, graphics, data)
+    for unit in base_civilization.units:
+        if not unit:
+            continue
+        if unit.id in building_ids:
+            add_building(unit.id, unit, data)
+        if unit.id in unit_ids:
+            add_unit(unit.id, unit, graphics, data)
     tech_id = 0
-    for tech in content["Techs"]:
+    for tech in content.techs:
         if tech_id in tech_ids:
             add_tech(tech_id, tech, data)
         tech_id += 1
@@ -973,7 +956,7 @@ def chronicles_gather_civs(techtrees):
     unit_upgrades = {}
     node_types = {'buildings': {}, 'units':{}}
     for civ in techtrees['civs']:
-        if civ['civ_id'] not in UPPER_CASE_CHRONICLES_CIV_NAMES:
+        if civ['civ_id'] in UPPER_CASE_CHRONICLES_CIV_NAMES:
             continue
         current_civ = {'buildings': [], 'units': [], 'techs': [], 'unique': {}, 'monkSuffix': ''}
         for building in civ['civ_techs_buildings']:
@@ -1028,17 +1011,11 @@ def chronicles_gather_civs(techtrees):
 
 def chronicles_write_datafile(data, techtrees, outputdir):
     datafile = outputdir / 'data.json'
-    data = {
-        "age_names": CHRONICLES_AGE_NAMES,
-        "civ_helptexts": CHRONICLES_CIV_HELPTEXTS,
-        "civ_names": CHRONICLES_CIV_NAMES,
-        "data": data,
-        "tech_tree_strings": TECH_TREE_STRINGS,
-        "techtrees": techtrees,
-    }
     with datafile.open('w') as f:
         print(f'Writing data file {datafile}')
-        json.dump(data, f, indent=4, sort_keys=True, ensure_ascii=False)
+        json.dump({"tech_tree_strings": TECH_TREE_STRINGS, "age_names": CHRONICLES_AGE_NAMES, "civ_names": CHRONICLES_CIV_NAMES,
+                   "civ_helptexts": CHRONICLES_CIV_HELPTEXTS, "techtrees": techtrees, "data": data}, f, indent=4, sort_keys=True,
+                  ensure_ascii=False)
 
 
 def chronicles_write_language_files(args, data, outputdir):
@@ -1087,8 +1064,8 @@ def process_chronicles(args, outputdir):
     ttfcontent = re.sub(r',\n( +)\]', r'\n\1]', ttfcontent)
     techtrees = json.loads(ttfcontent)
     civs, unit_upgrades, node_types = chronicles_gather_civs(techtrees)
-    datafile = Path(args.datafile)
-    content = json.loads(datafile.read_text())
+    datafile = Path(args.programdir) / 'resources' / '_common' / 'dat' / 'empires2_x2_p1.dat'
+    content = DatFile.parse(datafile)
     data = chronicles_gather_data(content, civs, unit_upgrades, node_types)
     chronicles_write_datafile(data, civs, outputdir)
     chronicles_write_language_files(args, data, outputdir)
@@ -1101,14 +1078,16 @@ def main():
 
     args = parser.parse_args()
 
-    outputdir = Path(__file__).parent / '..' / 'data'
-    process_aoe2(args, outputdir)
+    ##outputdir = Path(__file__).parent / '..' / 'data'
+    ##process_aoe2(args, outputdir)
 
-    outputdir = Path(__file__).parent / '..' / 'ror' / 'data'
-    process_ror(args, outputdir)
+    #outputdir = Path(__file__).parent / '..' / 'ror' / 'data'
+    #process_ror(args, outputdir)
 
     outputdir = Path(__file__).parent / '..' / 'chronicles' / 'data'
     process_chronicles(args, outputdir)
+
+    input("Press Enter to exit...")
 
 
 
