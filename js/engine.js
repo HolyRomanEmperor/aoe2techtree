@@ -24,15 +24,10 @@ const unitClasses = {
     3: 'Base Pierce',
     4: 'Base Melee',
     5: 'Elephants',
-    6: 'Unused',
-    7: 'Unused',
     8: '<abbr title="except Camels">Mounted Units</abbr>',
-    9: 'Unused',
-    10: 'Unused',
     11: 'All Buildings',
-    12: 'Unused',
     13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
-    14: 'Wolves etc.',
+    14: 'Predator Animals',
     15: 'All Archers',
     16: '<abbr title="except Fishing Ships">Ships</abbr>',
     17: 'High Pierce Armor Siege Units',
@@ -43,7 +38,7 @@ const unitClasses = {
     22: 'Walls & Gates',
     23: 'Gunpowder Units',
     24: 'Boars etc.',
-    25: 'Monks',
+    25: 'Monastery Units',
     26: 'Castles & Kreposts',
     27: 'Spearmen',
     28: 'Mounted Archers',
@@ -51,7 +46,6 @@ const unitClasses = {
     30: 'Camels',
     31: '<abbr title="Armor-ignoring melee attack against units, but not against buildings">Unblockable Melee</abbr>',
     32: 'Condottieri',
-    33: '<abbr title="no unit has this armor class">Gunpowder units secondary projectile attack</abbr>',
     34: 'Fishing Ships',
     35: 'Mamelukes',
     36: 'Heroes & Kings',
@@ -59,7 +53,7 @@ const unitClasses = {
     38: 'Skirmishers',
     39: 'Cavalry Resistance',
     40: 'Houses',
-    60: 'Antiquity Galleys and Catapult Ships'
+    60: 'Long-Range Warships'
 };
 
 const animation_duration = 50;
@@ -213,7 +207,7 @@ function traitsIfDefined(trait, traitPiece) {
     }
     const traits = splitTrait(trait);
     for (let singleTrait of traits) {
-        traitdescriptions.push(getTraitDefinition(singleTrait, traitPiece));
+        traitdescriptions.push(getTraitDefinition(singleTrait, Number(traitPiece)));
     }
     return traitdescriptions;
 }
