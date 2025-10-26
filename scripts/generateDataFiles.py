@@ -114,7 +114,10 @@ ROR_CIV_NAMES = {
 CHRONICLES_CIV_NAMES = {
     "Achaemenids": "10316",
     "Athenians": "10317",
-    "Spartans": "10318"
+    "Spartans": "10318",
+    "Macedonians": "10324",
+    "Thracians": "10325",
+    "Puru": "10326",
 }
 
 UPPER_CASE_CHRONICLES_CIV_NAMES = {key.upper() for key in CHRONICLES_CIV_NAMES}
