@@ -37,7 +37,7 @@ const unitClasses = {
     21: '<abbr title="All buildings except Wonders">Standard Buildings</abbr>',
     22: 'Walls & Gates',
     23: 'Gunpowder Units',
-    24: 'Boars etc.',
+    24: 'Aggressive Huntable Animals',
     25: 'Monastery Units',
     26: 'Castles & Kreposts',
     27: 'Spearmen',
