@@ -45,6 +45,7 @@ const GATE = 487;
 const LUMBER_CAMP = 562;
 const MINING_CAMP = 584;
 const OUTPOST = 598;
+const FORTIFIED_OUTPOST = 0;
 const TOWN_CENTER_2 = 621;
 const PALISADE_GATE = 792;
 
@@ -153,6 +154,8 @@ const TREBUCHET = 331;
 const CONSCRIPTION = 315;
 const HOARDINGS = 379;
 const SPIES_TREASON = 408;
+const DEFENSIVE_EMPLACEMENT = 0;
+const OFFENSIVE_EMPLACEMENT = 0;
 
 // University
 const CHEMISTRY = 47;
@@ -618,6 +621,7 @@ function getDefaultTree() {
 
     let towerlane = new Lane();
     towerlane.rows.archaic_1.push(building(OUTPOST));
+    towerlane.rows.archaic_2.push(building(FORTIFIED_OUTPOST));
     towerlane.rows.civic_1.push(building(WATCH_TOWER));
     towerlane.rows.classical_1.push(building(GUARD_TOWER));
     towerlane.rows.imperial_1.push(building(KEEP));
@@ -641,8 +645,10 @@ function getDefaultTree() {
     classicallane.rows.imperial_1.push(new Caret(TYPES.UNIQUEUNIT, ELITE_UNIQUE_UNIT, ELITE_UNIQUE_UNIT));
     classicallane.rows.imperial_1.push(tech(UNIQUE_TECH_IMPERIAL_1));
     classicallane.rows.imperial_1.push(tech(UNIQUE_TECH_IMPERIAL_2));
+    classicallane.rows.imperial_1.push(tech(HOARDINGS));
     classicallane.rows.imperial_2.push(unit(TREBUCHET));
-    classicallane.rows.imperial_2.push(tech(HOARDINGS));
+    classicallane.rows.imperial_2.push(tech(DEFENSIVE_EMPLACEMENT));
+    classicallane.rows.imperial_2.push(tech(OFFENSIVE_EMPLACEMENT));
     classicallane.rows.imperial_2.push(tech(CONSCRIPTION));
     classicallane.rows.imperial_2.push(tech(SPIES_TREASON));
     tree.lanes.push(classicallane);
@@ -781,6 +787,7 @@ function getConnections() {
         [u(WAR_GALLEY), u(ELITE_GALLEY)],
         [b(SHIPYARD), t(HYPOZOMATA)],
         [u(CATAPULT_SHIP), u(ONAGER_SHIP)],
+        [b(OUTPOST), b(FORTIFIED_OUTPOST)],
         [b(WATCH_TOWER), b(GUARD_TOWER)],
         [b(GUARD_TOWER), b(KEEP)],
         [b(STONE_WALL), b(FORTIFIED_WALL)],
