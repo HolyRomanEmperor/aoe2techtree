@@ -205,7 +205,10 @@ ROR_CIV_HELPTEXTS = {
 CHRONICLES_CIV_HELPTEXTS = {
     "Achaemenids": "120195",
     "Athenians": "120196",
-    "Spartans": "120197"
+    "Spartans": "120197",
+    "Macedonians": "120203",
+    "Thracians": "120204",
+    "Puru": "120205",
 }
 
 ROR_BUILDING_STYLES = {
