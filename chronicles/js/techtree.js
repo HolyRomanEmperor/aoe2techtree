@@ -74,7 +74,6 @@ const ELITE_HOPLITE = 2111;
 const ARSON = 602;
 const SQUIRES = 215;
 const BATTLE_DRILLS = 1173;
-const SUPPLIES = 716;
 
 // Stable
 const SCOUT_CAVALRY = 448;
@@ -85,6 +84,8 @@ const CAVALIER = 283;
 const PALADIN = 569;
 const WAR_CHARIOT = 2150;
 const ELITE_WAR_CHARIOT = 2151;
+const SANNAHYA = 2390;
+const ELITE_SANNAHYA = 2391;
 const HUSBANDRY = 39;
 const BLOODLINES = 435;
 
@@ -93,6 +94,8 @@ const SIEGE_TOWER = 1105;
 const BATTERING_RAM = 1258;
 const CAPPED_RAM = 422;
 const SIEGE_RAM = 548;
+const ARMORED_ELEPHANT = 1744;
+const SIEGE_ELEPHANT = 1746;
 const MANGONEL = 280;
 const ONAGER = 550;
 const SCORPION = 279;
@@ -509,7 +512,6 @@ function getDefaultTree() {
     barrackslane.rows.civic_1.push(unit(MAN_AT_ARMS));
     barrackslane.rows.civic_1.push(unit(SPEARMAN));
     barrackslane.rows.civic_1.push(tech(ARSON));
-    barrackslane.rows.civic_1.push(tech(SUPPLIES));
     barrackslane.rows.classical_1.push(unit(LONG_SWORDSMAN));
     barrackslane.rows.classical_1.push(unit(PIKEMAN));
     barrackslane.rows.classical_1.push(tech(SQUIRES));
@@ -528,20 +530,24 @@ function getDefaultTree() {
     stablelane.rows.classical_1.push(unit(LIGHT_CAVALRY));
     stablelane.rows.classical_1.push(unit(KNIGHT));
     stablelane.rows.classical_1.push(unit(WAR_CHARIOT));
+    stablelane.rows.classical_1.push(unit(SANNAHYA));
     stablelane.rows.classical_1.push(tech(HUSBANDRY));
     stablelane.rows.imperial_1.push(unit(HUSSAR));
     stablelane.rows.imperial_1.push(unit(CAVALIER));
     stablelane.rows.imperial_1.push(unit(ELITE_WAR_CHARIOT));
+    stablelane.rows.imperial_1.push(unit(ELITE_SANNAHYA));
     stablelane.rows.imperial_2.push(unit(PALADIN));
     tree.lanes.push(stablelane);
 
 
     let siegeworkshoplane = new Lane();
     siegeworkshoplane.rows.classical_1.push(building(SIEGE_WORKSHOP));
+    siegeworkshoplane.rows.classical_2.push(unit(ARMORED_ELEPHANT));
     siegeworkshoplane.rows.classical_2.push(unit(BATTERING_RAM));
     siegeworkshoplane.rows.classical_2.push(unit(MANGONEL));
     siegeworkshoplane.rows.classical_2.push(unit(SCORPION));
     siegeworkshoplane.rows.classical_2.push(unit(SIEGE_TOWER));
+    siegeworkshoplane.rows.imperial_1.push(unit(SIEGE_ELEPHANT));
     siegeworkshoplane.rows.imperial_1.push(unit(CAPPED_RAM));
     siegeworkshoplane.rows.imperial_1.push(unit(ONAGER));
     siegeworkshoplane.rows.imperial_1.push(unit(HEAVY_SCORPION));
@@ -758,7 +764,6 @@ function getConnections() {
         [b(BARRACKS), u(SPEARMAN)],
         [u(SPEARMAN), u(PIKEMAN)],
         [u(PIKEMAN), u(HALBERDIER)],
-        [b(BARRACKS), t(SUPPLIES)],
         [u(HOPLITE), u(ELITE_HOPLITE)],
         [b(BARRACKS), t(ARSON)],
         [b(STABLE), u(SCOUT_CAVALRY)],
@@ -766,7 +771,9 @@ function getConnections() {
         [u(LIGHT_CAVALRY), u(HUSSAR)],
         [b(STABLE), t(BLOODLINES)],
         [b(STABLE), u(WAR_CHARIOT)],
+        [b(STABLE), u(SANNAHYA)],
         [u(WAR_CHARIOT), u(ELITE_WAR_CHARIOT)],
+        [u(SANNAHYA), u(ELITE_SANNAHYA)],
         [b(STABLE), t(HUSBANDRY)],
         [u(KNIGHT), u(CAVALIER)],
         [u(CAVALIER), u(PALADIN)],
