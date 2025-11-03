@@ -17,7 +17,7 @@ const PREFIX = Object.freeze({
     'TECHNOLOGY': 'tech_'
 });
 
-const unitClasses = {
+const armorClasses = {
     0: 'Wonders',
     1: 'Infantry',
     2: 'Heavy Warships',
@@ -32,7 +32,7 @@ const unitClasses = {
     11: 'All Buildings',
     12: 'Unused',
     13: '<abbr title="except Castles and Kreposts">Stone Defense & Harbors</abbr>',
-    14: 'Wolves etc.',
+    14: 'Predator Animals',
     15: 'All Archers',
     16: '<abbr title="except Fishing Ships">Ships</abbr>',
     17: 'High Pierce Armor Siege Units',
@@ -42,8 +42,8 @@ const unitClasses = {
     21: '<abbr title="All buildings except Wonders">Standard Buildings</abbr>',
     22: 'Walls & Gates',
     23: 'Gunpowder Units',
-    24: 'Boars etc.',
-    25: 'Monks',
+    24: 'Aggressive Huntable Animals',
+    25: 'Monastery Units',
     26: 'Castles & Kreposts',
     27: 'Spearmen',
     28: 'Mounted Archers',
@@ -59,7 +59,7 @@ const unitClasses = {
     38: 'Skirmishers',
     39: 'Cavalry Resistance',
     40: 'Houses',
-    60: 'Antiquity Galleys and Catapult Ships'
+    60: 'Long-Range Warships'
 };
 
 const animation_duration = 50;
@@ -128,15 +128,23 @@ function checkIdUnique(tree) {
 function getColourForNodeType(nodeType) {
     switch (nodeType) {
         case 'BuildingTech':
-        case 'BuildingNonTech': return '#b54e18';
-        case 'RegionalBuilding': return '#cc4422';
-        case 'UniqueBuilding': return '#d43652';
+        case 'BuildingNonTech':
+            return '#b54e18';
+        case 'RegionalBuilding':
+            return '#cc4422';
+        case 'UniqueBuilding':
+            return '#d43652';
         case 'Unit':
-        case 'UnitUpgrade': return '#00739c';
-        case 'RegionalUnit': return '#515ae3';
-        case 'UniqueUnit': return '#703b7a';
-        case 'Technology': return '#397139';
-        default: return '#ff0000';
+        case 'UnitUpgrade':
+            return '#00739c';
+        case 'RegionalUnit':
+            return '#515ae3';
+        case 'UniqueUnit':
+            return '#703b7a';
+        case 'Technology':
+            return '#397139';
+        default:
+            return '#ff0000';
     }
 }
 
@@ -155,9 +163,11 @@ function chargeText(type) {
 
 function getEntityType(type) {
     switch (type) {
-        case 'TECHNOLOGY': return 'techs';
+        case 'TECHNOLOGY':
+            return 'techs';
         case 'UNIT':
-        case 'UNIQUEUNIT': return 'units';
+        case 'UNIQUEUNIT':
+            return 'units';
     }
     return 'buildings';
 }
@@ -204,7 +214,7 @@ function traitsIfDefined(trait, traitPiece) {
     }
     const traits = splitTrait(trait);
     for (let singleTrait of traits) {
-        traitdescriptions.push(getTraitDefinition(singleTrait, traitPiece));
+        traitdescriptions.push(getTraitDefinition(singleTrait, Number(traitPiece)));
     }
     return traitdescriptions;
 }
