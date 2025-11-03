@@ -178,7 +178,7 @@ def process_chronicles(techtrees):
             print(type_, picture_index)
             sourcetype = type_.lower()
             if sourcetype == 'techs':
-                sourcetype = 'tech';
+                sourcetype = 'tech'
             source_dds_list = (list((BASE_PATH / sourcetype).glob(f'{picture_index:03}_*.dds')) +
                           list((BASE_PATH / sourcetype).glob(f'{picture_index:03}_*.DDS')))
             if len(source_dds_list) > 1:

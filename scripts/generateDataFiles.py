@@ -410,6 +410,10 @@ def chronicles_gather_language_data(resourcedir, data, language):
         5100: 5484, # Trade Cart name
         405001: 405084, # Immortal name
         405002: 405085, # Elite Immortal name
+        405127: 405029, # War Chariot name
+        405128: 405030, # Elite War Chariot name
+        426127: 426029, # War Chariot description
+        426128: 426030, # Elite War Chariot description
     }
     for key, value in substitutions.items():
         key_value[key] = key_value.get(value)
@@ -999,6 +1003,10 @@ def chronicles_gather_civs(techtrees):
                     current_civ['unique']['imperialAgeUniqueTech2'] = tech['Node ID']
                 else:
                     current_civ['techs'].append({'id': tech['Node ID'], 'age': tech['Age ID']})
+
+        if civ['civ_id'] == 'PURU':
+            current_civ['techs'].append({'id': 1323, 'age': 4}) # Adding defensive emplacement
+            current_civ['techs'].append({'id': 1324, 'age': 4}) # Adding offensive emplacement
 
         current_civ['buildings'] = sorted(current_civ['buildings'], key=lambda x: x['id'])
         current_civ['units'] = sorted(current_civ['units'], key=lambda x: x['id'])

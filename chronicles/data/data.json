@@ -8,12 +8,18 @@
     "civ_helptexts": {
         "Achaemenids": "120195",
         "Athenians": "120196",
-        "Spartans": "120197"
+        "Macedonians": "120203",
+        "Puru": "120205",
+        "Spartans": "120197",
+        "Thracians": "120204"
     },
     "civ_names": {
         "Achaemenids": "10316",
         "Athenians": "10317",
-        "Spartans": "10318"
+        "Macedonians": "10324",
+        "Puru": "10326",
+        "Spartans": "10318",
+        "Thracians": "10325"
     },
     "data": {
         "buildings": {
@@ -1486,6 +1492,55 @@
                 "ReloadTime": 0,
                 "TrainTime": 35,
                 "internal_name": "Port 1"
+            },
+            "2415": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 2,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 3
+                    }
+                ],
+                "Cost": {
+                    "Stone": 5,
+                    "Wood": 25
+                },
+                "GarrisonCapacity": 0,
+                "HP": 500,
+                "ID": 2415,
+                "LanguageHelpId": 426139,
+                "LanguageNameId": 405139,
+                "LineOfSight": 6,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 4,
+                "ReloadTime": 2,
+                "TrainTime": 15,
+                "internal_name": "Fortified Outpost"
             }
         },
         "node_types": {
@@ -1518,7 +1573,8 @@
                 "621": "BuildingNonTech",
                 "792": "BuildingNonTech",
                 "2119": "BuildingTech",
-                "2172": "BuildingTech"
+                "2172": "BuildingTech",
+                "2415": "UniqueBuilding"
             },
             "units": {
                 "4": "Unit",
@@ -1527,6 +1583,7 @@
                 "7": "Unit",
                 "13": "Unit",
                 "24": "UnitUpgrade",
+                "36": "Unit",
                 "38": "Unit",
                 "39": "Unit",
                 "74": "Unit",
@@ -1553,8 +1610,11 @@
                 "550": "UnitUpgrade",
                 "567": "UnitUpgrade",
                 "569": "UnitUpgrade",
+                "588": "UnitUpgrade",
                 "1105": "Unit",
                 "1258": "Unit",
+                "1744": "RegionalUnit",
+                "1746": "RegionalUnit",
                 "2101": "UniqueUnit",
                 "2102": "UniqueUnit",
                 "2104": "UniqueUnit",
@@ -1583,7 +1643,17 @@
                 "2149": "Unit",
                 "2150": "RegionalUnit",
                 "2151": "RegionalUnit",
-                "2162": "UniqueUnit"
+                "2162": "UniqueUnit",
+                "2382": "UniqueUnit",
+                "2383": "UniqueUnit",
+                "2384": "UniqueUnit",
+                "2385": "UniqueUnit",
+                "2386": "UniqueUnit",
+                "2387": "UniqueUnit",
+                "2388": "UniqueUnit",
+                "2389": "UniqueUnit",
+                "2390": "UniqueUnit",
+                "2391": "UniqueUnit"
             }
         },
         "techs": {
@@ -2402,18 +2472,6 @@
                 "ResearchTime": 25,
                 "internal_name": "Arrowslits"
             },
-            "716": {
-                "Cost": {
-                    "Food": 75,
-                    "Gold": 75
-                },
-                "ID": 716,
-                "LanguageHelpId": 28403,
-                "LanguageNameId": 7403,
-                "Repeatable": false,
-                "ResearchTime": 20,
-                "internal_name": "Supplies"
-            },
             "1110": {
                 "Cost": {
                     "Food": 350,
@@ -2734,6 +2792,174 @@
                 "Repeatable": false,
                 "ResearchTime": 40,
                 "internal_name": "Hippagretai"
+            },
+            "1284": {
+                "Cost": {
+                    "Food": 200,
+                    "Gold": 150
+                },
+                "ID": 1284,
+                "LanguageHelpId": 428141,
+                "LanguageNameId": 407141,
+                "Repeatable": false,
+                "ResearchTime": 20,
+                "internal_name": "Veteran Chiliarchs, Macedonian Unique Tech"
+            },
+            "1285": {
+                "Cost": {
+                    "Stone": 100,
+                    "Wood": 300
+                },
+                "ID": 1285,
+                "LanguageHelpId": 428142,
+                "LanguageNameId": 407142,
+                "Repeatable": false,
+                "ResearchTime": 30,
+                "internal_name": "Ends of the World, Macedonian Unique Tech"
+            },
+            "1286": {
+                "Cost": {
+                    "Food": 500,
+                    "Gold": 450
+                },
+                "ID": 1286,
+                "LanguageHelpId": 428143,
+                "LanguageNameId": 407143,
+                "Repeatable": false,
+                "ResearchTime": 40,
+                "internal_name": "Pezhetairoi, Macedonian Unique Tech"
+            },
+            "1287": {
+                "Cost": {
+                    "Food": 300,
+                    "Gold": 500
+                },
+                "ID": 1287,
+                "LanguageHelpId": 428144,
+                "LanguageNameId": 407144,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Sarissophoroi, Macedonian Unique Tech"
+            },
+            "1296": {
+                "Cost": {
+                    "Food": 300,
+                    "Gold": 150
+                },
+                "ID": 1296,
+                "LanguageHelpId": 428145,
+                "LanguageNameId": 407145,
+                "Repeatable": false,
+                "ResearchTime": 20,
+                "internal_name": "Odomantian Raiders, Thracian Unique Tech"
+            },
+            "1297": {
+                "Cost": {
+                    "Gold": 200,
+                    "Wood": 300
+                },
+                "ID": 1297,
+                "LanguageHelpId": 428146,
+                "LanguageNameId": 407146,
+                "Repeatable": false,
+                "ResearchTime": 30,
+                "internal_name": "Dii Plunderers, Thracian Unique Tech"
+            },
+            "1298": {
+                "Cost": {
+                    "Food": 1100,
+                    "Gold": 700
+                },
+                "ID": 1298,
+                "LanguageHelpId": 428147,
+                "LanguageNameId": 407147,
+                "Repeatable": false,
+                "ResearchTime": 40,
+                "internal_name": "Bessian Metalworking, Thracian Unique Tech"
+            },
+            "1299": {
+                "Cost": {
+                    "Gold": 900,
+                    "Wood": 800
+                },
+                "ID": 1299,
+                "LanguageHelpId": 428148,
+                "LanguageNameId": 407148,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Peltasts, Thracian Unique Tech"
+            },
+            "1307": {
+                "Cost": {
+                    "Food": 300,
+                    "Gold": 150
+                },
+                "ID": 1307,
+                "LanguageHelpId": 428149,
+                "LanguageNameId": 407149,
+                "Repeatable": false,
+                "ResearchTime": 20,
+                "internal_name": "Vadhavadha, Puru Unique Tech"
+            },
+            "1308": {
+                "Cost": {
+                    "Gold": 200,
+                    "Wood": 300
+                },
+                "ID": 1308,
+                "LanguageHelpId": 428150,
+                "LanguageNameId": 407150,
+                "Repeatable": false,
+                "ResearchTime": 30,
+                "internal_name": "Leaf-Headed Shafts, Puru Unique Tech"
+            },
+            "1309": {
+                "Cost": {
+                    "Food": 1100,
+                    "Gold": 700
+                },
+                "ID": 1309,
+                "LanguageHelpId": 428151,
+                "LanguageNameId": 407151,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Vedic Teachings, Puru Unique Tech"
+            },
+            "1310": {
+                "Cost": {
+                    "Gold": 900,
+                    "Wood": 800
+                },
+                "ID": 1310,
+                "LanguageHelpId": 428152,
+                "LanguageNameId": 407152,
+                "Repeatable": false,
+                "ResearchTime": 50,
+                "internal_name": "Skandhavaras, Puru Unique Tech"
+            },
+            "1323": {
+                "Cost": {
+                    "Stone": 50,
+                    "Wood": 100
+                },
+                "ID": 1323,
+                "LanguageHelpId": 428153,
+                "LanguageNameId": 407153,
+                "Repeatable": true,
+                "ResearchTime": 70,
+                "internal_name": "Defensive Emplacement"
+            },
+            "1324": {
+                "Cost": {
+                    "Stone": 50,
+                    "Wood": 150
+                },
+                "ID": 1324,
+                "LanguageHelpId": 428154,
+                "LanguageNameId": 407154,
+                "Repeatable": true,
+                "ResearchTime": 40,
+                "internal_name": "Offensive Emplacement"
             }
         },
         "unit_upgrades": {
@@ -2888,6 +3114,23 @@
                 "ResearchTime": 170,
                 "internal_name": "Paladin"
             },
+            "588": {
+                "Cost": {
+                    "Food": 1450,
+                    "Gold": 1000
+                },
+                "ID": 320,
+                "ResearchTime": 150,
+                "internal_name": "Siege Onager"
+            },
+            "1746": {
+                "Cost": {
+                    "Food": 850
+                },
+                "ID": 838,
+                "ResearchTime": 60,
+                "internal_name": "Elite Armored Elephant"
+            },
             "2102": {
                 "Cost": {
                     "Food": 850,
@@ -3022,6 +3265,51 @@
                 "ID": 1171,
                 "ResearchTime": 90,
                 "internal_name": "Elite War Chariot"
+            },
+            "2383": {
+                "Cost": {
+                    "Food": 1100,
+                    "Gold": 800
+                },
+                "ID": 1289,
+                "ResearchTime": 50,
+                "internal_name": "Elite Companion"
+            },
+            "2385": {
+                "Cost": {
+                    "Food": 600,
+                    "Gold": 500
+                },
+                "ID": 1291,
+                "ResearchTime": 40,
+                "internal_name": " Elite Phalangite"
+            },
+            "2387": {
+                "Cost": {
+                    "Food": 700,
+                    "Gold": 400
+                },
+                "ID": 1301,
+                "ResearchTime": 40,
+                "internal_name": "Elite Rhomphaia Warrior"
+            },
+            "2389": {
+                "Cost": {
+                    "Gold": 700,
+                    "Wood": 900
+                },
+                "ID": 1326,
+                "ResearchTime": 40,
+                "internal_name": "Elite Pattiyodha Longbowman"
+            },
+            "2391": {
+                "Cost": {
+                    "Food": 1000,
+                    "Gold": 900
+                },
+                "ID": 1328,
+                "ResearchTime": 70,
+                "internal_name": "Elite Sannahya"
             }
         },
         "units": {
@@ -3452,6 +3740,89 @@
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "CARCH"
+            },
+            "36": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 23
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 40,
+                "AttackDelaySeconds": 0.21,
+                "Attacks": [
+                    {
+                        "Amount": 200,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 40,
+                        "Class": 16
+                    },
+                    {
+                        "Amount": 40,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 20,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 40,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 40,
+                        "Class": 34
+                    },
+                    {
+                        "Amount": 40,
+                        "Class": 37
+                    }
+                ],
+                "BlastWidth": 0.5,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 225,
+                    "Wood": 225
+                },
+                "FrameDelay": 9,
+                "GarrisonCapacity": 0,
+                "HP": 80,
+                "ID": 36,
+                "LanguageHelpId": 426163,
+                "LanguageNameId": 405163,
+                "LineOfSight": 14,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 5,
+                "PierceArmor": 5,
+                "Range": 12,
+                "RechargeRate": 0,
+                "ReloadTime": 6.5,
+                "Speed": 0.7,
+                "TrainTime": 56,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "BCANN"
             },
             "38": {
                 "AccuracyPercent": 100,
@@ -5064,7 +5435,7 @@
                     }
                 ],
                 "Attack": 14,
-                "AttackDelaySeconds": 0.16,
+                "AttackDelaySeconds": 0.08,
                 "Attacks": [
                     {
                         "Amount": 6,
@@ -5496,6 +5867,73 @@
                 "TraitPiece": 0,
                 "internal_name": "HEROC"
             },
+            "588": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 75,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 60,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 75,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 50,
+                        "Class": 37
+                    }
+                ],
+                "BlastWidth": 1.5,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 135,
+                    "Wood": 160
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 70,
+                "ID": 588,
+                "LanguageHelpId": 426098,
+                "LanguageNameId": 405098,
+                "LineOfSight": 10,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 3,
+                "PierceArmor": 8,
+                "Range": 8,
+                "RechargeRate": 0,
+                "ReloadTime": 6,
+                "Speed": 0.6,
+                "TrainTime": 46,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "SNAGR"
+            },
             "1105": {
                 "AccuracyPercent": 0,
                 "Armours": [
@@ -5617,6 +6055,188 @@
                 "TraitPiece": 0,
                 "internal_name": "BTRAM"
             },
+            "1744": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 17,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": -2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 140,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 4,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 90,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 25,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 120,
+                    "Gold": 95
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 180,
+                "ID": 1744,
+                "LanguageHelpId": 26428,
+                "LanguageNameId": 5428,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": -2,
+                "MinRange": 0,
+                "PierceArmor": 140,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 3,
+                "Speed": 0.6,
+                "TrainTime": 36,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "ARELE"
+            },
+            "1746": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 20,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": -2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 150,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 4,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 105,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 35,
+                        "Class": 20
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    }
+                ],
+                "BlastWidth": 1.5,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 120,
+                    "Gold": 95
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 220,
+                "ID": 1746,
+                "LanguageHelpId": 26430,
+                "LanguageNameId": 5430,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": -2,
+                "MinRange": 0,
+                "PierceArmor": 150,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 3,
+                "Speed": 0.6,
+                "TrainTime": 36,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "EARELE"
+            },
             "2101": {
                 "AccuracyPercent": 100,
                 "Armours": [
@@ -5737,7 +6357,7 @@
                     },
                     {
                         "Amount": 0,
-                        "Class": 0
+                        "Class": 21
                     },
                     {
                         "Amount": 12,
@@ -5993,7 +6613,7 @@
                         "Class": 15
                     }
                 ],
-                "BlastWidth": 0,
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6002,7 +6622,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 80,
+                "HP": 90,
                 "ID": 2107,
                 "LanguageHelpId": 426005,
                 "LanguageNameId": 405005,
@@ -6072,7 +6692,7 @@
                         "Class": 15
                     }
                 ],
-                "BlastWidth": 0,
+                "BlastWidth": 0.5,
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
@@ -6081,7 +6701,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 90,
+                "HP": 100,
                 "ID": 2108,
                 "LanguageHelpId": 426006,
                 "LanguageNameId": 405006,
@@ -7343,6 +7963,10 @@
                     {
                         "Amount": 0,
                         "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 60
                     }
                 ],
                 "Attack": 60,
@@ -7562,8 +8186,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 100,
                 "ID": 2150,
-                "LanguageHelpId": 426029,
-                "LanguageNameId": 405029,
+                "LanguageHelpId": 426127,
+                "LanguageNameId": 405127,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": 1,
@@ -7649,8 +8273,8 @@
                 "GarrisonCapacity": 0,
                 "HP": 125,
                 "ID": 2151,
-                "LanguageHelpId": 426030,
-                "LanguageNameId": 405030,
+                "LanguageHelpId": 426128,
+                "LanguageNameId": 405128,
                 "LineOfSight": 5,
                 "MaxCharge": 0,
                 "MeleeArmor": 2,
@@ -7934,6 +8558,804 @@
                 "Trait": 8,
                 "TraitPiece": 2102,
                 "internal_name": "Elite Immortal Ranged"
+            },
+            "2382": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    }
+                ],
+                "Attack": 11,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 11,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 5,
+                        "Class": 19
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 70,
+                    "Gold": 65
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 90,
+                "ID": 2382,
+                "LanguageHelpId": 426129,
+                "LanguageNameId": 405129,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.9,
+                "Speed": 1.4,
+                "TrainTime": 26,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Companion Cavalry"
+            },
+            "2383": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    }
+                ],
+                "Attack": 13,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 13,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 11
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 19
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 70,
+                    "Gold": 65
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 120,
+                "ID": 2383,
+                "LanguageHelpId": 426130,
+                "LanguageNameId": 405130,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 4,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 1.9,
+                "Speed": 1.4,
+                "TrainTime": 26,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Companion Cavalry"
+            },
+            "2384": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 6,
+                "AttackDelaySeconds": 0.95,
+                "Attacks": [
+                    {
+                        "Amount": 6,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 20,
+                        "Class": 5
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 40
+                },
+                "FrameDelay": 19,
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 2384,
+                "LanguageHelpId": 426131,
+                "LanguageNameId": 405131,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0.5,
+                "PierceArmor": 0,
+                "Range": 1.8,
+                "RechargeRate": 0,
+                "ReloadTime": 2.5,
+                "Speed": 0.9,
+                "TrainTime": 19,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Phalangite"
+            },
+            "2385": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 8,
+                "AttackDelaySeconds": 0.95,
+                "Attacks": [
+                    {
+                        "Amount": 8,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 30
+                    },
+                    {
+                        "Amount": 20,
+                        "Class": 5
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 40
+                },
+                "FrameDelay": 19,
+                "GarrisonCapacity": 0,
+                "HP": 65,
+                "ID": 2385,
+                "LanguageHelpId": 426132,
+                "LanguageNameId": 405132,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0.5,
+                "PierceArmor": 0,
+                "Range": 1.8,
+                "RechargeRate": 0,
+                "ReloadTime": 2.5,
+                "Speed": 0.9,
+                "TrainTime": 15,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Phalangite"
+            },
+            "2386": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 8,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 6,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 14,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 30
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 40
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 60,
+                "ID": 2386,
+                "LanguageHelpId": 426133,
+                "LanguageNameId": 405133,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.1,
+                "TrainTime": 13,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Rhomphaia Warrior"
+            },
+            "2387": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 1
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 10,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 29
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 22,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 18,
+                        "Class": 30
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 50,
+                    "Gold": 40
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 60,
+                "ID": 2387,
+                "LanguageHelpId": 426134,
+                "LanguageNameId": 405134,
+                "LineOfSight": 4,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 1,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 1.1,
+                "TrainTime": 13,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Rhomphaia Warrior"
+            },
+            "2388": {
+                "AccuracyPercent": 40,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 7,
+                "AttackDelaySeconds": 0.95,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 7,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 5
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 35,
+                    "Wood": 60
+                },
+                "FrameDelay": 19,
+                "GarrisonCapacity": 0,
+                "HP": 50,
+                "ID": 2388,
+                "LanguageHelpId": 426135,
+                "LanguageNameId": 405135,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 0,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 4,
+                "RechargeRate": 0,
+                "ReloadTime": 2.2,
+                "Speed": 0.9,
+                "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Pattiyodha Longbowman"
+            },
+            "2389": {
+                "AccuracyPercent": 60,
+                "Armours": [
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    }
+                ],
+                "Attack": 8,
+                "AttackDelaySeconds": 0.95,
+                "Attacks": [
+                    {
+                        "Amount": 2,
+                        "Class": 27
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 8,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 17
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 5
+                    }
+                ],
+                "BlastWidth": 0,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Gold": 35,
+                    "Wood": 60
+                },
+                "FrameDelay": 19,
+                "GarrisonCapacity": 0,
+                "HP": 60,
+                "ID": 2389,
+                "LanguageHelpId": 426136,
+                "LanguageNameId": 405136,
+                "LineOfSight": 5,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 0,
+                "Range": 4,
+                "RechargeRate": 0,
+                "ReloadTime": 2.2,
+                "Speed": 0.9,
+                "TrainTime": 16,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Pattiyodha Longbowman"
+            },
+            "2390": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 1,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 3,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    }
+                ],
+                "Attack": 10,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 4,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 10,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    }
+                ],
+                "BlastWidth": 0.5,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 90,
+                    "Gold": 80
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 300,
+                "ID": 2390,
+                "LanguageHelpId": 426137,
+                "LanguageNameId": 405137,
+                "LineOfSight": 7,
+                "MaxCharge": 0,
+                "MeleeArmor": 1,
+                "MinRange": 0,
+                "PierceArmor": 3,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.8,
+                "TrainTime": 26,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Sannahya"
+            },
+            "2391": {
+                "AccuracyPercent": 100,
+                "Armours": [
+                    {
+                        "Amount": 0,
+                        "Class": 5
+                    },
+                    {
+                        "Amount": 2,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 8
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 3
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 31
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 19
+                    }
+                ],
+                "Attack": 12,
+                "AttackDelaySeconds": 0,
+                "Attacks": [
+                    {
+                        "Amount": 4,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 12,
+                        "Class": 4
+                    },
+                    {
+                        "Amount": 4,
+                        "Class": 13
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 15
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 21
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 38
+                    },
+                    {
+                        "Amount": -3,
+                        "Class": 39
+                    },
+                    {
+                        "Amount": 0,
+                        "Class": 20
+                    }
+                ],
+                "BlastWidth": 0.5,
+                "ChargeEvent": 0,
+                "ChargeType": 0,
+                "Cost": {
+                    "Food": 90,
+                    "Gold": 80
+                },
+                "FrameDelay": 0,
+                "GarrisonCapacity": 0,
+                "HP": 400,
+                "ID": 2391,
+                "LanguageHelpId": 426138,
+                "LanguageNameId": 405138,
+                "LineOfSight": 7,
+                "MaxCharge": 0,
+                "MeleeArmor": 2,
+                "MinRange": 0,
+                "PierceArmor": 4,
+                "Range": 0,
+                "RechargeRate": 0,
+                "ReloadTime": 2,
+                "Speed": 0.8,
+                "TrainTime": 22,
+                "Trait": 0,
+                "TraitPiece": 0,
+                "internal_name": "Elite Sannahya"
             }
         }
     },
@@ -8306,16 +9728,12 @@
                     "id": 441
                 },
                 {
-                    "age": 3,
+                    "age": 2,
                     "id": 602
                 },
                 {
                     "age": 4,
                     "id": 608
-                },
-                {
-                    "age": 2,
-                    "id": 716
                 },
                 {
                     "age": 3,
@@ -8719,10 +10137,6 @@
                     "id": 50
                 },
                 {
-                    "age": 3,
-                    "id": 50
-                },
-                {
                     "age": 4,
                     "id": 51
                 },
@@ -8927,16 +10341,12 @@
                     "id": 441
                 },
                 {
-                    "age": 3,
+                    "age": 2,
                     "id": 602
                 },
                 {
                     "age": 4,
                     "id": 608
-                },
-                {
-                    "age": 2,
-                    "id": 716
                 },
                 {
                     "age": 3,
@@ -9171,6 +10581,1144 @@
                 {
                     "age": 2,
                     "id": 2149
+                }
+            ]
+        },
+        "Macedonians": {
+            "buildings": [
+                {
+                    "age": 1,
+                    "id": 12
+                },
+                {
+                    "age": 3,
+                    "id": 49
+                },
+                {
+                    "age": 1,
+                    "id": 50
+                },
+                {
+                    "age": 1,
+                    "id": 68
+                },
+                {
+                    "age": 1,
+                    "id": 70
+                },
+                {
+                    "age": 1,
+                    "id": 72
+                },
+                {
+                    "age": 2,
+                    "id": 79
+                },
+                {
+                    "age": 3,
+                    "id": 82
+                },
+                {
+                    "age": 2,
+                    "id": 84
+                },
+                {
+                    "age": 2,
+                    "id": 87
+                },
+                {
+                    "age": 2,
+                    "id": 101
+                },
+                {
+                    "age": 2,
+                    "id": 103
+                },
+                {
+                    "age": 3,
+                    "id": 104
+                },
+                {
+                    "age": 1,
+                    "id": 109
+                },
+                {
+                    "age": 2,
+                    "id": 117
+                },
+                {
+                    "age": 3,
+                    "id": 155
+                },
+                {
+                    "age": 2,
+                    "id": 199
+                },
+                {
+                    "age": 3,
+                    "id": 209
+                },
+                {
+                    "age": 3,
+                    "id": 234
+                },
+                {
+                    "age": 4,
+                    "id": 276
+                },
+                {
+                    "age": 2,
+                    "id": 487
+                },
+                {
+                    "age": 1,
+                    "id": 562
+                },
+                {
+                    "age": 1,
+                    "id": 584
+                },
+                {
+                    "age": 1,
+                    "id": 598
+                },
+                {
+                    "age": 3,
+                    "id": 621
+                },
+                {
+                    "age": 1,
+                    "id": 792
+                },
+                {
+                    "age": 2,
+                    "id": 2119
+                },
+                {
+                    "age": 1,
+                    "id": 2172
+                },
+                {
+                    "age": 1,
+                    "id": 2415
+                }
+            ],
+            "monkSuffix": "",
+            "techs": [
+                {
+                    "age": 2,
+                    "id": 8
+                },
+                {
+                    "age": 4,
+                    "id": 12
+                },
+                {
+                    "age": 3,
+                    "id": 13
+                },
+                {
+                    "age": 2,
+                    "id": 14
+                },
+                {
+                    "age": 4,
+                    "id": 15
+                },
+                {
+                    "age": 4,
+                    "id": 17
+                },
+                {
+                    "age": 1,
+                    "id": 22
+                },
+                {
+                    "age": 3,
+                    "id": 23
+                },
+                {
+                    "age": 3,
+                    "id": 39
+                },
+                {
+                    "age": 4,
+                    "id": 45
+                },
+                {
+                    "age": 4,
+                    "id": 47
+                },
+                {
+                    "age": 3,
+                    "id": 48
+                },
+                {
+                    "age": 3,
+                    "id": 50
+                },
+                {
+                    "age": 4,
+                    "id": 51
+                },
+                {
+                    "age": 3,
+                    "id": 54
+                },
+                {
+                    "age": 2,
+                    "id": 55
+                },
+                {
+                    "age": 2,
+                    "id": 67
+                },
+                {
+                    "age": 3,
+                    "id": 68
+                },
+                {
+                    "age": 2,
+                    "id": 74
+                },
+                {
+                    "age": 4,
+                    "id": 75
+                },
+                {
+                    "age": 3,
+                    "id": 76
+                },
+                {
+                    "age": 4,
+                    "id": 77
+                },
+                {
+                    "age": 3,
+                    "id": 93
+                },
+                {
+                    "age": 1,
+                    "id": 101
+                },
+                {
+                    "age": 2,
+                    "id": 102
+                },
+                {
+                    "age": 3,
+                    "id": 103
+                },
+                {
+                    "age": 3,
+                    "id": 140
+                },
+                {
+                    "age": 3,
+                    "id": 182
+                },
+                {
+                    "age": 3,
+                    "id": 194
+                },
+                {
+                    "age": 2,
+                    "id": 199
+                },
+                {
+                    "age": 3,
+                    "id": 200
+                },
+                {
+                    "age": 2,
+                    "id": 202
+                },
+                {
+                    "age": 3,
+                    "id": 203
+                },
+                {
+                    "age": 2,
+                    "id": 211
+                },
+                {
+                    "age": 3,
+                    "id": 212
+                },
+                {
+                    "age": 2,
+                    "id": 213
+                },
+                {
+                    "age": 3,
+                    "id": 215
+                },
+                {
+                    "age": 4,
+                    "id": 233
+                },
+                {
+                    "age": 3,
+                    "id": 249
+                },
+                {
+                    "age": 3,
+                    "id": 252
+                },
+                {
+                    "age": 2,
+                    "id": 278
+                },
+                {
+                    "age": 3,
+                    "id": 279
+                },
+                {
+                    "age": 3,
+                    "id": 280
+                },
+                {
+                    "age": 4,
+                    "id": 315
+                },
+                {
+                    "age": 3,
+                    "id": 316
+                },
+                {
+                    "age": 3,
+                    "id": 319
+                },
+                {
+                    "age": 3,
+                    "id": 322
+                },
+                {
+                    "age": 4,
+                    "id": 377
+                },
+                {
+                    "age": 3,
+                    "id": 380
+                },
+                {
+                    "age": 4,
+                    "id": 408
+                },
+                {
+                    "age": 2,
+                    "id": 435
+                },
+                {
+                    "age": 4,
+                    "id": 436
+                },
+                {
+                    "age": 3,
+                    "id": 437
+                },
+                {
+                    "age": 4,
+                    "id": 438
+                },
+                {
+                    "age": 3,
+                    "id": 441
+                },
+                {
+                    "age": 2,
+                    "id": 602
+                },
+                {
+                    "age": 3,
+                    "id": 1161
+                },
+                {
+                    "age": 3,
+                    "id": 1162
+                },
+                {
+                    "age": 3,
+                    "id": 1165
+                },
+                {
+                    "age": 4,
+                    "id": 1173
+                }
+            ],
+            "unique": {
+                "classicalAgeUniqueTech1": 1284,
+                "classicalAgeUniqueTech2": 1285,
+                "classicalAgeUniqueUnit": 2382,
+                "imperialAgeUniqueTech1": 1286,
+                "imperialAgeUniqueTech2": 1287,
+                "imperialAgeUniqueUnit": 2383
+            },
+            "units": [
+                {
+                    "age": 2,
+                    "id": 4
+                },
+                {
+                    "age": 3,
+                    "id": 6
+                },
+                {
+                    "age": 2,
+                    "id": 7
+                },
+                {
+                    "age": 1,
+                    "id": 13
+                },
+                {
+                    "age": 3,
+                    "id": 24
+                },
+                {
+                    "age": 4,
+                    "id": 36
+                },
+                {
+                    "age": 3,
+                    "id": 38
+                },
+                {
+                    "age": 3,
+                    "id": 39
+                },
+                {
+                    "age": 1,
+                    "id": 74
+                },
+                {
+                    "age": 2,
+                    "id": 75
+                },
+                {
+                    "age": 3,
+                    "id": 77
+                },
+                {
+                    "age": 1,
+                    "id": 83
+                },
+                {
+                    "age": 2,
+                    "id": 93
+                },
+                {
+                    "age": 3,
+                    "id": 125
+                },
+                {
+                    "age": 2,
+                    "id": 128
+                },
+                {
+                    "age": 3,
+                    "id": 279
+                },
+                {
+                    "age": 3,
+                    "id": 280
+                },
+                {
+                    "age": 4,
+                    "id": 283
+                },
+                {
+                    "age": 4,
+                    "id": 331
+                },
+                {
+                    "age": 3,
+                    "id": 358
+                },
+                {
+                    "age": 4,
+                    "id": 359
+                },
+                {
+                    "age": 4,
+                    "id": 422
+                },
+                {
+                    "age": 2,
+                    "id": 448
+                },
+                {
+                    "age": 4,
+                    "id": 542
+                },
+                {
+                    "age": 3,
+                    "id": 546
+                },
+                {
+                    "age": 4,
+                    "id": 548
+                },
+                {
+                    "age": 4,
+                    "id": 550
+                },
+                {
+                    "age": 4,
+                    "id": 569
+                },
+                {
+                    "age": 4,
+                    "id": 588
+                },
+                {
+                    "age": 3,
+                    "id": 1105
+                },
+                {
+                    "age": 3,
+                    "id": 1258
+                },
+                {
+                    "age": 1,
+                    "id": 2123
+                },
+                {
+                    "age": 2,
+                    "id": 2124
+                },
+                {
+                    "age": 3,
+                    "id": 2125
+                },
+                {
+                    "age": 2,
+                    "id": 2127
+                },
+                {
+                    "age": 3,
+                    "id": 2128
+                },
+                {
+                    "age": 4,
+                    "id": 2129
+                },
+                {
+                    "age": 2,
+                    "id": 2130
+                },
+                {
+                    "age": 3,
+                    "id": 2131
+                },
+                {
+                    "age": 4,
+                    "id": 2132
+                },
+                {
+                    "age": 2,
+                    "id": 2133
+                },
+                {
+                    "age": 3,
+                    "id": 2134
+                },
+                {
+                    "age": 3,
+                    "id": 2138
+                },
+                {
+                    "age": 4,
+                    "id": 2139
+                },
+                {
+                    "age": 4,
+                    "id": 2140
+                },
+                {
+                    "age": 1,
+                    "id": 2148
+                },
+                {
+                    "age": 2,
+                    "id": 2149
+                },
+                {
+                    "age": 3,
+                    "id": 2384
+                },
+                {
+                    "age": 4,
+                    "id": 2385
+                }
+            ]
+        },
+        "Puru": {
+            "buildings": [
+                {
+                    "age": 1,
+                    "id": 12
+                },
+                {
+                    "age": 3,
+                    "id": 49
+                },
+                {
+                    "age": 1,
+                    "id": 50
+                },
+                {
+                    "age": 1,
+                    "id": 68
+                },
+                {
+                    "age": 1,
+                    "id": 70
+                },
+                {
+                    "age": 1,
+                    "id": 72
+                },
+                {
+                    "age": 2,
+                    "id": 79
+                },
+                {
+                    "age": 3,
+                    "id": 82
+                },
+                {
+                    "age": 2,
+                    "id": 84
+                },
+                {
+                    "age": 2,
+                    "id": 87
+                },
+                {
+                    "age": 2,
+                    "id": 101
+                },
+                {
+                    "age": 2,
+                    "id": 103
+                },
+                {
+                    "age": 3,
+                    "id": 104
+                },
+                {
+                    "age": 1,
+                    "id": 109
+                },
+                {
+                    "age": 2,
+                    "id": 117
+                },
+                {
+                    "age": 3,
+                    "id": 155
+                },
+                {
+                    "age": 2,
+                    "id": 199
+                },
+                {
+                    "age": 3,
+                    "id": 209
+                },
+                {
+                    "age": 3,
+                    "id": 234
+                },
+                {
+                    "age": 4,
+                    "id": 235
+                },
+                {
+                    "age": 4,
+                    "id": 276
+                },
+                {
+                    "age": 2,
+                    "id": 487
+                },
+                {
+                    "age": 1,
+                    "id": 562
+                },
+                {
+                    "age": 1,
+                    "id": 584
+                },
+                {
+                    "age": 1,
+                    "id": 598
+                },
+                {
+                    "age": 3,
+                    "id": 621
+                },
+                {
+                    "age": 1,
+                    "id": 792
+                },
+                {
+                    "age": 2,
+                    "id": 2119
+                },
+                {
+                    "age": 1,
+                    "id": 2172
+                }
+            ],
+            "monkSuffix": "",
+            "techs": [
+                {
+                    "age": 2,
+                    "id": 8
+                },
+                {
+                    "age": 4,
+                    "id": 12
+                },
+                {
+                    "age": 3,
+                    "id": 13
+                },
+                {
+                    "age": 2,
+                    "id": 14
+                },
+                {
+                    "age": 4,
+                    "id": 15
+                },
+                {
+                    "age": 4,
+                    "id": 17
+                },
+                {
+                    "age": 1,
+                    "id": 22
+                },
+                {
+                    "age": 3,
+                    "id": 23
+                },
+                {
+                    "age": 3,
+                    "id": 39
+                },
+                {
+                    "age": 4,
+                    "id": 45
+                },
+                {
+                    "age": 4,
+                    "id": 47
+                },
+                {
+                    "age": 3,
+                    "id": 48
+                },
+                {
+                    "age": 3,
+                    "id": 50
+                },
+                {
+                    "age": 3,
+                    "id": 54
+                },
+                {
+                    "age": 2,
+                    "id": 55
+                },
+                {
+                    "age": 4,
+                    "id": 63
+                },
+                {
+                    "age": 2,
+                    "id": 67
+                },
+                {
+                    "age": 3,
+                    "id": 68
+                },
+                {
+                    "age": 2,
+                    "id": 74
+                },
+                {
+                    "age": 4,
+                    "id": 75
+                },
+                {
+                    "age": 3,
+                    "id": 76
+                },
+                {
+                    "age": 4,
+                    "id": 80
+                },
+                {
+                    "age": 2,
+                    "id": 81
+                },
+                {
+                    "age": 3,
+                    "id": 82
+                },
+                {
+                    "age": 3,
+                    "id": 93
+                },
+                {
+                    "age": 1,
+                    "id": 101
+                },
+                {
+                    "age": 2,
+                    "id": 102
+                },
+                {
+                    "age": 3,
+                    "id": 103
+                },
+                {
+                    "age": 3,
+                    "id": 140
+                },
+                {
+                    "age": 3,
+                    "id": 194
+                },
+                {
+                    "age": 2,
+                    "id": 199
+                },
+                {
+                    "age": 3,
+                    "id": 200
+                },
+                {
+                    "age": 4,
+                    "id": 201
+                },
+                {
+                    "age": 2,
+                    "id": 202
+                },
+                {
+                    "age": 3,
+                    "id": 203
+                },
+                {
+                    "age": 2,
+                    "id": 211
+                },
+                {
+                    "age": 3,
+                    "id": 212
+                },
+                {
+                    "age": 2,
+                    "id": 213
+                },
+                {
+                    "age": 3,
+                    "id": 215
+                },
+                {
+                    "age": 4,
+                    "id": 219
+                },
+                {
+                    "age": 4,
+                    "id": 221
+                },
+                {
+                    "age": 4,
+                    "id": 230
+                },
+                {
+                    "age": 4,
+                    "id": 233
+                },
+                {
+                    "age": 3,
+                    "id": 249
+                },
+                {
+                    "age": 2,
+                    "id": 278
+                },
+                {
+                    "age": 3,
+                    "id": 279
+                },
+                {
+                    "age": 3,
+                    "id": 280
+                },
+                {
+                    "age": 4,
+                    "id": 315
+                },
+                {
+                    "age": 3,
+                    "id": 316
+                },
+                {
+                    "age": 3,
+                    "id": 319
+                },
+                {
+                    "age": 3,
+                    "id": 322
+                },
+                {
+                    "age": 4,
+                    "id": 379
+                },
+                {
+                    "age": 3,
+                    "id": 380
+                },
+                {
+                    "age": 4,
+                    "id": 408
+                },
+                {
+                    "age": 4,
+                    "id": 436
+                },
+                {
+                    "age": 4,
+                    "id": 438
+                },
+                {
+                    "age": 3,
+                    "id": 441
+                },
+                {
+                    "age": 2,
+                    "id": 602
+                },
+                {
+                    "age": 3,
+                    "id": 1161
+                },
+                {
+                    "age": 3,
+                    "id": 1162
+                },
+                {
+                    "age": 3,
+                    "id": 1165
+                },
+                {
+                    "age": 4,
+                    "id": 1323
+                },
+                {
+                    "age": 4,
+                    "id": 1324
+                }
+            ],
+            "unique": {
+                "classicalAgeUniqueTech1": 1307,
+                "classicalAgeUniqueTech2": 1308,
+                "classicalAgeUniqueUnit": 2388,
+                "imperialAgeUniqueTech1": 1309,
+                "imperialAgeUniqueTech2": 1310,
+                "imperialAgeUniqueUnit": 2389
+            },
+            "units": [
+                {
+                    "age": 2,
+                    "id": 4
+                },
+                {
+                    "age": 3,
+                    "id": 6
+                },
+                {
+                    "age": 2,
+                    "id": 7
+                },
+                {
+                    "age": 1,
+                    "id": 13
+                },
+                {
+                    "age": 3,
+                    "id": 24
+                },
+                {
+                    "age": 3,
+                    "id": 38
+                },
+                {
+                    "age": 3,
+                    "id": 39
+                },
+                {
+                    "age": 1,
+                    "id": 74
+                },
+                {
+                    "age": 2,
+                    "id": 75
+                },
+                {
+                    "age": 3,
+                    "id": 77
+                },
+                {
+                    "age": 1,
+                    "id": 83
+                },
+                {
+                    "age": 2,
+                    "id": 93
+                },
+                {
+                    "age": 3,
+                    "id": 125
+                },
+                {
+                    "age": 2,
+                    "id": 128
+                },
+                {
+                    "age": 3,
+                    "id": 279
+                },
+                {
+                    "age": 3,
+                    "id": 280
+                },
+                {
+                    "age": 4,
+                    "id": 283
+                },
+                {
+                    "age": 4,
+                    "id": 331
+                },
+                {
+                    "age": 3,
+                    "id": 358
+                },
+                {
+                    "age": 4,
+                    "id": 441
+                },
+                {
+                    "age": 2,
+                    "id": 448
+                },
+                {
+                    "age": 4,
+                    "id": 474
+                },
+                {
+                    "age": 4,
+                    "id": 492
+                },
+                {
+                    "age": 4,
+                    "id": 542
+                },
+                {
+                    "age": 3,
+                    "id": 546
+                },
+                {
+                    "age": 3,
+                    "id": 1105
+                },
+                {
+                    "age": 3,
+                    "id": 1744
+                },
+                {
+                    "age": 4,
+                    "id": 1746
+                },
+                {
+                    "age": 1,
+                    "id": 2123
+                },
+                {
+                    "age": 2,
+                    "id": 2124
+                },
+                {
+                    "age": 3,
+                    "id": 2125
+                },
+                {
+                    "age": 4,
+                    "id": 2126
+                },
+                {
+                    "age": 2,
+                    "id": 2127
+                },
+                {
+                    "age": 3,
+                    "id": 2128
+                },
+                {
+                    "age": 2,
+                    "id": 2130
+                },
+                {
+                    "age": 3,
+                    "id": 2131
+                },
+                {
+                    "age": 4,
+                    "id": 2132
+                },
+                {
+                    "age": 2,
+                    "id": 2133
+                },
+                {
+                    "age": 3,
+                    "id": 2134
+                },
+                {
+                    "age": 4,
+                    "id": 2135
+                },
+                {
+                    "age": 3,
+                    "id": 2138
+                },
+                {
+                    "age": 4,
+                    "id": 2140
+                },
+                {
+                    "age": 1,
+                    "id": 2148
+                },
+                {
+                    "age": 2,
+                    "id": 2149
+                },
+                {
+                    "age": 3,
+                    "id": 2390
+                },
+                {
+                    "age": 4,
+                    "id": 2391
                 }
             ]
         },
@@ -9496,12 +12044,8 @@
                     "id": 439
                 },
                 {
-                    "age": 3,
-                    "id": 602
-                },
-                {
                     "age": 2,
-                    "id": 716
+                    "id": 602
                 },
                 {
                     "age": 3,
@@ -9732,6 +12276,575 @@
                 {
                     "age": 2,
                     "id": 2162
+                }
+            ]
+        },
+        "Thracians": {
+            "buildings": [
+                {
+                    "age": 1,
+                    "id": 12
+                },
+                {
+                    "age": 3,
+                    "id": 49
+                },
+                {
+                    "age": 1,
+                    "id": 50
+                },
+                {
+                    "age": 1,
+                    "id": 68
+                },
+                {
+                    "age": 1,
+                    "id": 70
+                },
+                {
+                    "age": 1,
+                    "id": 72
+                },
+                {
+                    "age": 2,
+                    "id": 79
+                },
+                {
+                    "age": 3,
+                    "id": 82
+                },
+                {
+                    "age": 2,
+                    "id": 84
+                },
+                {
+                    "age": 2,
+                    "id": 87
+                },
+                {
+                    "age": 2,
+                    "id": 101
+                },
+                {
+                    "age": 2,
+                    "id": 103
+                },
+                {
+                    "age": 3,
+                    "id": 104
+                },
+                {
+                    "age": 1,
+                    "id": 109
+                },
+                {
+                    "age": 2,
+                    "id": 117
+                },
+                {
+                    "age": 3,
+                    "id": 155
+                },
+                {
+                    "age": 2,
+                    "id": 199
+                },
+                {
+                    "age": 3,
+                    "id": 209
+                },
+                {
+                    "age": 3,
+                    "id": 234
+                },
+                {
+                    "age": 4,
+                    "id": 235
+                },
+                {
+                    "age": 4,
+                    "id": 276
+                },
+                {
+                    "age": 2,
+                    "id": 487
+                },
+                {
+                    "age": 1,
+                    "id": 562
+                },
+                {
+                    "age": 1,
+                    "id": 584
+                },
+                {
+                    "age": 1,
+                    "id": 598
+                },
+                {
+                    "age": 3,
+                    "id": 621
+                },
+                {
+                    "age": 1,
+                    "id": 792
+                },
+                {
+                    "age": 2,
+                    "id": 2119
+                },
+                {
+                    "age": 1,
+                    "id": 2172
+                }
+            ],
+            "monkSuffix": "",
+            "techs": [
+                {
+                    "age": 2,
+                    "id": 8
+                },
+                {
+                    "age": 3,
+                    "id": 13
+                },
+                {
+                    "age": 2,
+                    "id": 14
+                },
+                {
+                    "age": 4,
+                    "id": 15
+                },
+                {
+                    "age": 4,
+                    "id": 17
+                },
+                {
+                    "age": 1,
+                    "id": 22
+                },
+                {
+                    "age": 3,
+                    "id": 23
+                },
+                {
+                    "age": 4,
+                    "id": 47
+                },
+                {
+                    "age": 3,
+                    "id": 48
+                },
+                {
+                    "age": 3,
+                    "id": 50
+                },
+                {
+                    "age": 4,
+                    "id": 51
+                },
+                {
+                    "age": 2,
+                    "id": 55
+                },
+                {
+                    "age": 4,
+                    "id": 63
+                },
+                {
+                    "age": 2,
+                    "id": 67
+                },
+                {
+                    "age": 3,
+                    "id": 68
+                },
+                {
+                    "age": 2,
+                    "id": 74
+                },
+                {
+                    "age": 3,
+                    "id": 76
+                },
+                {
+                    "age": 4,
+                    "id": 80
+                },
+                {
+                    "age": 2,
+                    "id": 81
+                },
+                {
+                    "age": 3,
+                    "id": 82
+                },
+                {
+                    "age": 3,
+                    "id": 93
+                },
+                {
+                    "age": 1,
+                    "id": 101
+                },
+                {
+                    "age": 2,
+                    "id": 102
+                },
+                {
+                    "age": 3,
+                    "id": 103
+                },
+                {
+                    "age": 3,
+                    "id": 140
+                },
+                {
+                    "age": 3,
+                    "id": 182
+                },
+                {
+                    "age": 3,
+                    "id": 194
+                },
+                {
+                    "age": 2,
+                    "id": 199
+                },
+                {
+                    "age": 3,
+                    "id": 200
+                },
+                {
+                    "age": 4,
+                    "id": 201
+                },
+                {
+                    "age": 2,
+                    "id": 202
+                },
+                {
+                    "age": 3,
+                    "id": 203
+                },
+                {
+                    "age": 2,
+                    "id": 211
+                },
+                {
+                    "age": 3,
+                    "id": 212
+                },
+                {
+                    "age": 2,
+                    "id": 213
+                },
+                {
+                    "age": 3,
+                    "id": 215
+                },
+                {
+                    "age": 4,
+                    "id": 219
+                },
+                {
+                    "age": 4,
+                    "id": 230
+                },
+                {
+                    "age": 3,
+                    "id": 231
+                },
+                {
+                    "age": 4,
+                    "id": 233
+                },
+                {
+                    "age": 3,
+                    "id": 249
+                },
+                {
+                    "age": 3,
+                    "id": 252
+                },
+                {
+                    "age": 2,
+                    "id": 278
+                },
+                {
+                    "age": 3,
+                    "id": 279
+                },
+                {
+                    "age": 3,
+                    "id": 280
+                },
+                {
+                    "age": 4,
+                    "id": 315
+                },
+                {
+                    "age": 3,
+                    "id": 316
+                },
+                {
+                    "age": 3,
+                    "id": 319
+                },
+                {
+                    "age": 3,
+                    "id": 322
+                },
+                {
+                    "age": 4,
+                    "id": 379
+                },
+                {
+                    "age": 3,
+                    "id": 380
+                },
+                {
+                    "age": 4,
+                    "id": 408
+                },
+                {
+                    "age": 2,
+                    "id": 435
+                },
+                {
+                    "age": 4,
+                    "id": 436
+                },
+                {
+                    "age": 4,
+                    "id": 438
+                },
+                {
+                    "age": 3,
+                    "id": 439
+                },
+                {
+                    "age": 3,
+                    "id": 441
+                },
+                {
+                    "age": 2,
+                    "id": 602
+                },
+                {
+                    "age": 4,
+                    "id": 608
+                },
+                {
+                    "age": 3,
+                    "id": 1161
+                },
+                {
+                    "age": 3,
+                    "id": 1162
+                },
+                {
+                    "age": 3,
+                    "id": 1165
+                },
+                {
+                    "age": 4,
+                    "id": 1167
+                },
+                {
+                    "age": 3,
+                    "id": 1173
+                }
+            ],
+            "unique": {
+                "classicalAgeUniqueTech1": 1296,
+                "classicalAgeUniqueTech2": 1297,
+                "classicalAgeUniqueUnit": 2386,
+                "imperialAgeUniqueTech1": 1298,
+                "imperialAgeUniqueTech2": 1299,
+                "imperialAgeUniqueUnit": 2387
+            },
+            "units": [
+                {
+                    "age": 2,
+                    "id": 4
+                },
+                {
+                    "age": 3,
+                    "id": 6
+                },
+                {
+                    "age": 2,
+                    "id": 7
+                },
+                {
+                    "age": 1,
+                    "id": 13
+                },
+                {
+                    "age": 3,
+                    "id": 24
+                },
+                {
+                    "age": 3,
+                    "id": 38
+                },
+                {
+                    "age": 3,
+                    "id": 39
+                },
+                {
+                    "age": 1,
+                    "id": 74
+                },
+                {
+                    "age": 2,
+                    "id": 75
+                },
+                {
+                    "age": 3,
+                    "id": 77
+                },
+                {
+                    "age": 1,
+                    "id": 83
+                },
+                {
+                    "age": 2,
+                    "id": 93
+                },
+                {
+                    "age": 3,
+                    "id": 125
+                },
+                {
+                    "age": 2,
+                    "id": 128
+                },
+                {
+                    "age": 3,
+                    "id": 279
+                },
+                {
+                    "age": 3,
+                    "id": 280
+                },
+                {
+                    "age": 4,
+                    "id": 283
+                },
+                {
+                    "age": 4,
+                    "id": 331
+                },
+                {
+                    "age": 3,
+                    "id": 358
+                },
+                {
+                    "age": 4,
+                    "id": 359
+                },
+                {
+                    "age": 4,
+                    "id": 422
+                },
+                {
+                    "age": 4,
+                    "id": 441
+                },
+                {
+                    "age": 2,
+                    "id": 448
+                },
+                {
+                    "age": 3,
+                    "id": 546
+                },
+                {
+                    "age": 4,
+                    "id": 550
+                },
+                {
+                    "age": 4,
+                    "id": 567
+                },
+                {
+                    "age": 3,
+                    "id": 1105
+                },
+                {
+                    "age": 3,
+                    "id": 1258
+                },
+                {
+                    "age": 3,
+                    "id": 2110
+                },
+                {
+                    "age": 1,
+                    "id": 2123
+                },
+                {
+                    "age": 2,
+                    "id": 2124
+                },
+                {
+                    "age": 3,
+                    "id": 2125
+                },
+                {
+                    "age": 4,
+                    "id": 2126
+                },
+                {
+                    "age": 2,
+                    "id": 2127
+                },
+                {
+                    "age": 3,
+                    "id": 2128
+                },
+                {
+                    "age": 4,
+                    "id": 2129
+                },
+                {
+                    "age": 2,
+                    "id": 2130
+                },
+                {
+                    "age": 3,
+                    "id": 2131
+                },
+                {
+                    "age": 4,
+                    "id": 2132
+                },
+                {
+                    "age": 2,
+                    "id": 2133
+                },
+                {
+                    "age": 3,
+                    "id": 2134
+                },
+                {
+                    "age": 3,
+                    "id": 2138
+                },
+                {
+                    "age": 4,
+                    "id": 2140
+                },
+                {
+                    "age": 1,
+                    "id": 2148
+                },
+                {
+                    "age": 2,
+                    "id": 2149
                 }
             ]
         }
