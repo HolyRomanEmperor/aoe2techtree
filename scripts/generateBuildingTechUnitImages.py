@@ -139,7 +139,7 @@ def process_aoe2(techtrees):
                 ids['Units'].add((item['Node ID'], item['Picture Index']))
             if item['Use Type'] == 'Building':
                 ids['Buildings'].add((item['Node ID'], item['Picture Index']))
-            if item['Use Type'] == 'Tech':
+            if item['Use Type'] == 'Tech' and item['Picture Index'] not in (33, 107):
                 ids['Techs'].add((item['Node ID'], item['Picture Index']))
     for type_, ids_for_type in sorted(ids.items()):
         for pair in sorted(ids_for_type):
@@ -170,8 +170,12 @@ def process_chronicles(techtrees):
                 ids['Units'].add((item['Node ID'], item['Picture Index']))
             if item['Use Type'] == 'Building':
                 ids['Buildings'].add((item['Node ID'], item['Picture Index']))
-            if item['Use Type'] == 'Tech':
+            if item['Use Type'] == 'Tech' and item['Picture Index'] not in (164, 165, 166, 167):
                 ids['Techs'].add((item['Node ID'], item['Picture Index']))
+
+        ids['Techs'].add((1323, 300)) # Adding defensive emplacement
+        ids['Techs'].add((1324, 301)) # Adding offensive emplacement
+
     for type_, ids_for_type in sorted(ids.items()):
         for pair in sorted(ids_for_type):
             id_, picture_index = pair
