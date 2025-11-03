@@ -121,7 +121,10 @@ ROR_CIV_NAMES = {
 CHRONICLES_CIV_NAMES = {
     "Achaemenids": "10316",
     "Athenians": "10317",
-    "Spartans": "10318"
+    "Spartans": "10318",
+    "Macedonians": "10324",
+    "Thracians": "10325",
+    "Puru": "10326",
 }
 
 UPPER_CASE_CHRONICLES_CIV_NAMES = {key.upper() for key in CHRONICLES_CIV_NAMES}
@@ -1000,11 +1003,6 @@ def chronicles_gather_civs(techtrees):
 
         civname = civ['civ_id'].capitalize()
         civs[civname] = current_civ
-
-    node_types['units'][2110] = 'RegionalUnit' # Marking Hoplite as regional
-    node_types['units'][2111] = 'RegionalUnit' # Marking Elite Hoplite as regional
-    node_types['units'][2150] = 'RegionalUnit' # Marking Hoplite as regional
-    node_types['units'][2151] = 'RegionalUnit' # Marking Hoplite as regional
 
     return civs, unit_upgrades, node_types
 

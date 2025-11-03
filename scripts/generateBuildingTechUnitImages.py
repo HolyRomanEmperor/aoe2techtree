@@ -11,7 +11,7 @@ from PIL.Image import Resampling
 PLAYER_COLOUR = (0, 119, 228)
 # PLAYER_COLOUR = (236,9,9)
 
-UPPER_CASE_CHRONICLES_CIV_NAMES = {"ACHAEMENIDS", "ATHENIANS", "SPARTANS"}
+UPPER_CASE_CHRONICLES_CIV_NAMES = {"ACHAEMENIDS", "ATHENIANS", "SPARTANS", "MACEDONIANS", "PURU", "THRACIANS"}
 
 BASE_PATH = Path.home() / 'aoe/Aoe2DE proton/widgetui/textures/ingame'
 TARGET_SIZE = (48, 48)
@@ -147,7 +147,7 @@ def process_aoe2(techtrees):
             print(type_, picture_index)
             sourcetype = type_.lower()
             if sourcetype == 'techs':
-                sourcetype = 'tech';
+                sourcetype = 'tech'
             source_dds_list = (list((BASE_PATH / sourcetype).glob(f'{picture_index:03}_*.dds')) +
                           list((BASE_PATH / sourcetype).glob(f'{picture_index:03}_*.DDS')))
             if len(source_dds_list) > 1:
