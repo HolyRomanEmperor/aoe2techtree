@@ -472,7 +472,7 @@ def gather_civs(techtrees, civs_info, era: str):
             if building['Node Status'] != 'NotAvailable':
                 current_civ['Building'].append(building['Node ID'])
         for item in chain(civ['civ_techs_buildings'], civ['civ_techs_units']):
-            if item['Trigger Tech ID'] > -1:
+            if 'Trigger Tech ID' in item and item['Trigger Tech ID'] > -1:
                 unit_upgrades[item['Node ID']] = item['Trigger Tech ID']
             if item['Node Status'] != 'NotAvailable':
                 current_civ[item['Use Type']].append(item['Node ID'])

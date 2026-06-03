@@ -42,13 +42,13 @@ class TechTreeItem:
             row=(age_id - 1) * 2,
             building_id=building_id,
             help_string_id=json_data['Help String ID'],
-            link_id=json_data['Link ID'],
-            link_node_type=json_data['Link Node Type'],
+            link_id=json_data.get('Link ID'),
+            link_node_type=json_data.get('Link Node Type'),
             name=json_data['Name'],
             name_string_id=json_data['Name String ID'],
             node_id=node_id,
             node_status=json_data['Node Status'],
-            node_type=json_data['Node Type'],
+            node_type=json_data.get('Node Type'),
             picture_index=json_data['Picture Index'],
             building_in_new_column=json_data.get('Building in new column'),
             building_upgraded_from_id=json_data.get('Building upgraded from ID'),
@@ -118,7 +118,7 @@ def main():
             if building.row == item.row:
                 item.row += 1
             linked_item_coordinates = None
-            if item.link_id != -1:
+            if item.link_id and item.link_id != -1:
                 linked_items_with_id = list(filter(lambda x: x.node_id == item.link_id, registry))
                 if len(linked_items_with_id) != 1:
                     linked_items_with_id = list(
@@ -147,7 +147,7 @@ def main():
                     col += 1
             if building.grid[row][col] is not None:
                 offending_item = next(filter(lambda x: x.id == building.grid[row][col], registry))
-                if offending_item.building_in_new_column:
+                if offending_item.building_in_new_column or offending_item.node_type == 'UniqueBuilding':
                     add_column(building)
                     building.grid[row][col + 1] = building.grid[row][col]
                     building.grid[row][col] = None

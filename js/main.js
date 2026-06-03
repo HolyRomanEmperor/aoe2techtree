@@ -911,7 +911,7 @@ function drawGrid(building, element_height, tree_height, draw, index) {
 function drawItem(itemToDraw, element_height, tree_height, draw) {
     const item = draw.group().attr({id: itemToDraw.id}).addClass('node');
     const rect = item.rect(element_height, element_height).attr({
-        fill: getColourForNodeType(itemToDraw.node_type),
+        fill: getColourForNodeType(itemToDraw.node_type || itemToDraw.use_type),
         id: `${itemToDraw.id}_bg`
     }).move(itemToDraw.x, itemToDraw.y);
     let name = formatName(data.strings[itemToDraw.name_string_id]);

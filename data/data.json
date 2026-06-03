@@ -101,7 +101,6 @@
                 321,
                 322,
                 374,
-                375,
                 379,
                 380,
                 408,
@@ -155,6 +154,7 @@
                 542,
                 545,
                 546,
+                548,
                 550,
                 567,
                 1103,
@@ -3382,6 +3382,7 @@
                 527,
                 528,
                 529,
+                532,
                 539,
                 545,
                 546,
@@ -8635,7 +8636,7 @@
                 "Attack": 3,
                 "Attacks": [
                     {
-                        "Amount": 3,
+                        "Amount": 0,
                         "Class": 16
                     },
                     {
@@ -8809,7 +8810,7 @@
                         "Class": 3
                     },
                     {
-                        "Amount": -2,
+                        "Amount": 0,
                         "Class": 31
                     },
                     {
@@ -8972,7 +8973,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 6,
+                        "Amount": 5,
                         "Class": 16
                     },
                     {
@@ -9554,7 +9555,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 8,
+                        "Amount": 7,
                         "Class": 16
                     },
                     {
@@ -9622,7 +9623,7 @@
                         "Class": 11
                     },
                     {
-                        "Amount": 9,
+                        "Amount": 8,
                         "Class": 16
                     },
                     {
@@ -14621,8 +14622,8 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 70,
-                    "Wood": 10
+                    "Food": 50,
+                    "Wood": 25
                 },
                 "FrameDelay": 14,
                 "GarrisonCapacity": 0,
@@ -21004,7 +21005,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 60,
+                    "Food": 70,
                     "Gold": 30
                 },
                 "FrameDelay": 24,
@@ -21082,7 +21083,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 60,
+                    "Food": 70,
                     "Gold": 30
                 },
                 "FrameDelay": 24,
@@ -28290,7 +28291,7 @@
                 },
                 "FrameDelay": 12,
                 "GarrisonCapacity": 0,
-                "HP": 45,
+                "HP": 50,
                 "ID": 1802,
                 "LanguageNameId": 5034,
                 "LineOfSight": 7,
@@ -29865,7 +29866,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 115,
+                "HP": 110,
                 "ID": 1949,
                 "LanguageNameId": 5074,
                 "LineOfSight": 5,
@@ -29877,7 +29878,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
-                "TrainTime": 15,
+                "TrainTime": 18,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "TIGERCAV"
@@ -29951,7 +29952,7 @@
                 },
                 "FrameDelay": 0,
                 "GarrisonCapacity": 0,
-                "HP": 130,
+                "HP": 125,
                 "ID": 1951,
                 "LanguageNameId": 5153,
                 "LineOfSight": 5,
@@ -29963,7 +29964,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 1.9,
                 "Speed": 1.35,
-                "TrainTime": 15,
+                "TrainTime": 18,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "ETIGERCAV"
@@ -30950,7 +30951,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1,
-                "TrainTime": 45,
+                "TrainTime": 42,
                 "Trait": 20,
                 "TraitPiece": 598,
                 "internal_name": "CHAMPIR"
@@ -31137,10 +31138,6 @@
                     {
                         "Amount": 0,
                         "Class": 19
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 40
                     }
                 ],
                 "Attack": 6,
@@ -31184,7 +31181,7 @@
                 },
                 "FrameDelay": 25,
                 "GarrisonCapacity": 0,
-                "HP": 50,
+                "HP": 55,
                 "ID": 2562,
                 "LanguageNameId": 5510,
                 "LineOfSight": 4,
@@ -31227,10 +31224,6 @@
                     {
                         "Amount": 0,
                         "Class": 19
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 40
                     }
                 ],
                 "Attack": 8,
@@ -31274,7 +31267,7 @@
                 },
                 "FrameDelay": 25,
                 "GarrisonCapacity": 0,
-                "HP": 50,
+                "HP": 60,
                 "ID": 2564,
                 "LanguageNameId": 5511,
                 "LineOfSight": 5,
@@ -31485,10 +31478,6 @@
                     {
                         "Amount": 0,
                         "Class": 31
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 40
                     }
                 ],
                 "Attack": 5,
@@ -31588,10 +31577,6 @@
                     {
                         "Amount": 0,
                         "Class": 31
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 40
                     }
                 ],
                 "Attack": 6,
@@ -31683,10 +31668,6 @@
                     {
                         "Amount": 0,
                         "Class": 31
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 40
                     }
                 ],
                 "Attack": 4,
@@ -31734,7 +31715,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 1.5,
                 "Speed": 1.1,
-                "TrainTime": 14,
+                "TrainTime": 18,
                 "Trait": 0,
                 "TraitPiece": 0,
                 "internal_name": "BLCKWOOD"
@@ -31761,10 +31742,6 @@
                     {
                         "Amount": 0,
                         "Class": 31
-                    },
-                    {
-                        "Amount": 0,
-                        "Class": 40
                     }
                 ],
                 "Attack": 4,
@@ -32001,19 +31978,19 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 3,
+                        "Amount": 5,
                         "Class": 8
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 4,
                         "Class": 30
                     },
                     {
-                        "Amount": 3,
+                        "Amount": 5,
                         "Class": 5
                     },
                     {
-                        "Amount": 2,
+                        "Amount": 4,
                         "Class": 16
                     },
                     {
@@ -32025,7 +32002,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 80,
+                    "Food": 70,
                     "Gold": 45
                 },
                 "FrameDelay": 0,
@@ -32083,19 +32060,19 @@
                         "Class": 4
                     },
                     {
-                        "Amount": 6,
+                        "Amount": 8,
                         "Class": 8
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 6,
                         "Class": 30
                     },
                     {
-                        "Amount": 5,
+                        "Amount": 8,
                         "Class": 5
                     },
                     {
-                        "Amount": 4,
+                        "Amount": 6,
                         "Class": 16
                     },
                     {
@@ -32107,7 +32084,7 @@
                 "ChargeEvent": 0,
                 "ChargeType": 0,
                 "Cost": {
-                    "Food": 80,
+                    "Food": 70,
                     "Gold": 45
                 },
                 "FrameDelay": 0,
@@ -32202,7 +32179,7 @@
                 "RechargeRate": 0,
                 "ReloadTime": 2,
                 "Speed": 1.1,
-                "TrainTime": 40,
+                "TrainTime": 34,
                 "Trait": 20,
                 "TraitPiece": 598,
                 "internal_name": "CHAMPIS"
@@ -33408,7 +33385,7 @@
             },
             "2552": {
                 "Cost": {
-                    "Food": 200,
+                    "Food": 150,
                     "Gold": 175
                 },
                 "ID": 1351,
@@ -33480,11 +33457,11 @@
             },
             "2588": {
                 "Cost": {
-                    "Food": 120,
+                    "Food": 90,
                     "Gold": 60
                 },
                 "ID": 1402,
-                "ResearchTime": 50,
+                "ResearchTime": 40,
                 "internal_name": "Champi Runner"
             },
             "2627": {
